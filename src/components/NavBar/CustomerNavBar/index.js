@@ -8,7 +8,7 @@ function CustomerNavBar(props) {
     <div className={css.navFlex}>
       <div className={css.innerFlex}>
         <div>
-          <h1>Pete the meat</h1>
+          <h2>Pete the meat</h2>
         </div>
         <div className={css.basketButtonFlex}>
           {/* <Link className={css.links} to={`/`}>
