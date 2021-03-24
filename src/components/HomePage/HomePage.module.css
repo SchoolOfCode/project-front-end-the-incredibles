@@ -1,1 +1,44 @@
-rfc
+.HomePage {
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  border: 1px solid red;
+}
+
+.feature {
+  width: 100%;
+  height: 100%;
+  border: solid 1px blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  align-self: center;
+  border: 1px solid green;
+}
+
+img {
+  width: 80%;
+  height: 80%;
+}
+
+@media (max-width: 700px) {
+  .container {
+    flex-direction: column;
+  }
+}
