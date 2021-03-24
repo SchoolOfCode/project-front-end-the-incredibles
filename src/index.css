@@ -1,8 +1,8 @@
 :root {
-  --accent-color: #FF5A5F;
-  --white: #F1F1F1;
-  --black: #1E1E24;
-  --gray: #E0E1E8;
+  --accent-color: #ff5a5f;
+  --white: #f1f1f1;
+  --black: #1e1e24;
+  --gray: #e0e1e8;
   --main-font-family: Roboto;
 }
 
@@ -22,7 +22,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
