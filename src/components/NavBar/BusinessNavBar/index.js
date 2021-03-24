@@ -2,6 +2,8 @@ import React from "react";
 import css from "../NavBar.module.css";
 // import { Link } from "react-router-dom";
 import "../../../index.css";
+import SignInUpButton from "../../Buttons/SignInUpButton";
+import SignOutButton from "../../Buttons/SignOutButton";
 
 function BusinessNavBar(props) {
   return (
@@ -30,7 +32,7 @@ function BusinessNavBar(props) {
             Tutorial
           </a>
 
-          <button>Sign Out</button>
+          <SignOutButton />
         </div>
       </div>
     </div>
