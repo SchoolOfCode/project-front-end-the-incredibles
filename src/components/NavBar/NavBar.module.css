@@ -47,8 +47,26 @@
   .navFlex {
     width: 100vw;
   }
-  .linkFlex {
-    width: 60%;
-    justify-content: space-between;
+
+  .basketButtonFlex {
+    justify-self: flex-end;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .innerFlex {
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .innerFlexCustomer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
   }
 }
