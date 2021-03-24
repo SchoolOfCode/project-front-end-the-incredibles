@@ -16,6 +16,7 @@
 body {
   margin: 0;
   font-family: var(--main-font-family);
+  font-size: 1.25rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
