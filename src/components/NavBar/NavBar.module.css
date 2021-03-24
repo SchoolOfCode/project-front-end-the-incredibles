@@ -37,11 +37,26 @@
 .links {
   text-decoration: none;
   color: inherit;
+  font-weight: bold;
+  position: relative;
 }
-
 .links:visited {
   color: inherit;
+  opacity: .8;
   text-decoration: none;
+}
+/*for hover effect*/
+.links::before{
+  background: var(--accent-color);
+  bottom: -1px;
+  content: "";
+  height: 2px;
+  position: absolute;
+  transition: width .25s ease-in-out;
+  width: 0%;
+}
+.links:hover::before{
+  width: 100%;
 }
 
 @media (max-width: 768px) {
