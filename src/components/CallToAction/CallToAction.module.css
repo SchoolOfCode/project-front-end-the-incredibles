@@ -1,0 +1,21 @@
+.callToAction {
+	text-align: center;
+	margin: auto;
+	max-width: 400px;
+	letter-spacing: 1.25px;
+}
+
+.heading,
+.subheading {
+    padding: 0 1rem 0;
+}
+
+.heading {
+	padding-bottom: 1rem;
+	border-bottom: 3px solid var(--accent-color);
+	margin: 0;
+}
+
+.subheading {
+    margin: 1rem auto 0;
+}
