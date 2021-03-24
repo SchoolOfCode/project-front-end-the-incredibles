@@ -1,0 +1,18 @@
+.input {
+    border: none;
+    background: var(--white);
+    border-bottom: 2px solid var(--gray);
+    margin-left: .5rem;
+    opacity: .9;
+    text-align: right;
+    transition: border .25s;
+}
+
+.input:focus{
+    border-bottom: 2px solid var(--accent-color);
+    outline: none;
+}
+
+input[type=file]:focus {
+    border-bottom: 2px solid var(--gray);
+}
