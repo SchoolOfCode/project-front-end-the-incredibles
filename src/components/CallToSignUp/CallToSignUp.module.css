@@ -2,7 +2,8 @@
 	margin: 2rem auto 1rem;
 	display: flex;
 	justify-content: space-between;
-	width: 70%;
+	max-width: 400px;
+	width: 100%;
 }
 
 .callToSignUp button {
