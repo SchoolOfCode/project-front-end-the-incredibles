@@ -18,6 +18,14 @@
   justify-content: space-between;
 }
 
+.linkFlex {
+  justify-self: flex-end;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .basketButtonFlex {
   justify-self: flex-end;
   width: 20%;
@@ -39,15 +47,26 @@
   .navFlex {
     width: 100vw;
   }
+
   .basketButtonFlex {
     justify-self: flex-end;
-    width: 40%;
+    width: 50%;
     display: flex;
+    justify-content: space-around;
     align-items: center;
   }
 
   .innerFlex {
+    flex-direction: column;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
+  }
+
+  .innerFlexCustomer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
   }
 }

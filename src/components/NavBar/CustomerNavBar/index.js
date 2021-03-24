@@ -6,7 +6,7 @@ import Button from "../../Buttons/Button";
 function CustomerNavBar(props) {
   return (
     <div className={css.navFlex}>
-      <div className={css.innerFlex}>
+      <div className={css.innerFlexCustomer}>
         <div>
           <h2>Pete the meat</h2>
         </div>
