@@ -32,8 +32,8 @@ function BusinessNavBar(props) {
             Tutorial
           </a>
 
-          <SignOutButton />
         </div>
+          <SignOutButton />
       </div>
     </div>
   );
