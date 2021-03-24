@@ -4,8 +4,8 @@ function PublishCartShopButton() {
 	return (
 		<Button
 			className='blackBtn'
-			textContent='Publish CartShop'
-			onClick={console.log('publish')}
+			textContent='Checkout'
+			onClick={console.log('checkout')}
 		/>
 	);
 }

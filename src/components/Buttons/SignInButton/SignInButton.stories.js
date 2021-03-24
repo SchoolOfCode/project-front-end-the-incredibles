@@ -1,5 +1,6 @@
 import React from 'react';
 import SignInButton from './index.js';
+import "../../../index.css";
 
 //👇 This default export determines where your story goes in the story list
 // eslint-disable-next-line import/no-anonymous-default-export

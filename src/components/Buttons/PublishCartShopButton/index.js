@@ -2,7 +2,7 @@ import Button from "../Button"
 
 function AddToCartButton() {
 	return (
-		<Button className="blackBtn" textContent="Checkout" onClick={console.log("checkout")}/>
+		<Button className="blackBtn" textContent="Publish" onClick={console.log("publish")}/>
 	);
 }
 

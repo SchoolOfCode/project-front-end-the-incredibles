@@ -1,11 +1,12 @@
 import React from 'react';
-import RemoveProductButton from './index.js';
+import AddToCartButton from './index.js';
+import "../../../index.css";
 
 //👇 This default export determines where your story goes in the story list
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-	title     : 'Remove Product',
-	component : RemoveProductButton,
+	title     : 'Add to Cart',
+	component : AddToCartButton,
 	argTypes  : {
 		onClick : (e) => {
 			e.target.textContent = 'I was clicked!';
@@ -14,7 +15,7 @@ export default {
 };
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args) => <RemoveProductButton {...args} />;
+const Template = (args) => <AddToCartButton {...args} />;
 
 export const PlainButton = Template.bind({});
 
