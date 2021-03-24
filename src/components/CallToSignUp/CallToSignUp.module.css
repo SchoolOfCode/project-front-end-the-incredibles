@@ -1,0 +1,15 @@
+.callToSignUp {
+	margin: 2rem auto 1rem;
+	display: flex;
+	justify-content: space-between;
+	width: 70%;
+}
+
+.callToSignUp button {
+	color: var(--white);
+	background: var(--accent-color);
+}
+.callToSignUp button:hover {
+	color: var(--accent-color);
+	background: var(--white);
+}
