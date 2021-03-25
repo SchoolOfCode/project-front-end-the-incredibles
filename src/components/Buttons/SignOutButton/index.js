@@ -1,9 +1,16 @@
-import Button from "../Button"
+import Button from "../Button";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function SignOutButton() {
-	return (
-		<Button className="signOut" textContent="Sign Out" onClick={console.log("sign Out")}/>
-	);
+  const { logout } = useAuth0();
+
+  return (
+    <Button
+      className="signOut"
+      textContent="Sign Out"
+      onClick={() => logout({ returnTo: window.location.origin })}
+    />
+  );
 }
 
 export default SignOutButton;
