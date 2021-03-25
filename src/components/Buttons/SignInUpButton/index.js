@@ -1,8 +1,15 @@
-import Button from "../Button"
+import { useAuth0 } from '@auth0/auth0-react';
+import Button from '../Button';
 
-function SignInUpButton({textContent}) {
+function SignInUpButton({ textContent }) {
+	const { loginWithRedirect } = useAuth0();
+
 	return (
-		<Button className="signInUp" textContent={textContent} onClick={console.log("sign in")}/>
+		<Button
+			className='signInUp'
+			textContent={textContent}
+			onClick={loginWithRedirect}
+		/>
 	);
 }
 
