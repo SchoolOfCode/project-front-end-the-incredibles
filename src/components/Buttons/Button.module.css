@@ -55,3 +55,9 @@
     border: 2px solid var(--black);
     opacity: 1;
 }
+
+@media (max-width: 500px) {
+    .button{
+        font-size: .75rem;
+    }
+}

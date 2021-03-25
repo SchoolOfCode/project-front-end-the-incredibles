@@ -7,11 +7,12 @@ import {
 	Switch,
 } from 'react-router-dom';
 import HomePage from '../../HomePage';
-
+import About from "../../About"
 import '../../../index.css';
 import SignInUpButton from '../../Buttons/SignInUpButton';
 import SignOutButton from '../../Buttons/SignOutButton';
 import css from '../NavBar.module.css';
+import Tutorial from '../../Tutorial';
 
 function BusinessNavBar(props) {
 	const { isAuthenticated } = useAuth0();
@@ -52,10 +53,10 @@ function BusinessNavBar(props) {
 			</div>
 			<Switch>
 				<Route path='/about'>
-					<p>about</p>
+					<About/>
 				</Route>
 				<Route path='/tutorial'>
-					<p>tut</p>
+					<Tutorial/>
 				</Route>
 				<Route path='/'>
 					<HomePage />

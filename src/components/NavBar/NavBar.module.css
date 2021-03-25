@@ -1,59 +1,61 @@
 .navFlex {
-  /*always at top*/
-  grid-area: header;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin: 0;
-  padding: .75rem 3rem;
-  width: 100%;
-  z-index: 2;
+	/*always at top*/
+	grid-area: header;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	margin: 0;
+	padding: .75rem 3rem 1rem;
+	width: 100%;
+	z-index: 2;
 }
-.linkFlex h1{
-  font-size: 1.75rem;
+.linkFlex h1 {
+	font-size: 1.75rem;
 }
 
 .linkFlex {
-  align-items: center;
-  justify-content: space-between;
-  display: flex;
+	align-items: center;
+	justify-content: space-between;
+	display: flex;
 }
 
 .links {
-  text-decoration: none;
-  color: inherit;
-  font-weight: bold;
-  position: relative;
+	text-decoration: none;
+	color: inherit;
+	font-weight: bold;
+	position: relative;
 }
 .links:visited {
-  color: inherit;
-  opacity: .8;
-  text-decoration: none;
+	color: inherit;
+	opacity: .8;
+	text-decoration: none;
 }
 /*for hover effect*/
-.links::before{
-  background: var(--accent-color);
-  bottom: -1px;
-  content: "";
-  height: 2px;
-  position: absolute;
-  transition: width .25s ease-in-out;
-  width: 0%;
+.links::before {
+	background: var(--accent-color);
+	bottom: -1px;
+	content: "";
+	height: 2px;
+	position: absolute;
+	transition: width .25s ease-in-out;
+	width: 0%;
 }
-.links:hover::before{
-  width: 100%;
+.links:hover::before {
+	width: 100%;
 }
-.active{
-  color: var(--accent-color)!important;
+.active {
+	color: var(--accent-color) !important;
 }
-
 
 @media (max-width: 768px) {
-  .linkFlex {
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-  }
-  .links {
-    margin: .25em 0;
-  }
+	.linkFlex {
+		flex-direction: column;
+		width: 100%;
+		justify-content: center;
+		text-align: center;
+	}
+	.links {
+		margin: .25em 0;
+	}
+	.linkFlex h1 {
+		margin: .5rem 0;
+	}
 }

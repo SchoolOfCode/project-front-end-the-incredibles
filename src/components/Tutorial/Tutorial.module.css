@@ -1,0 +1,41 @@
+:root {
+	--section-bg: rgba(0, 0, 0, 0.904);
+}
+
+.tutorial {
+	text-align: center;
+}
+
+.heading,
+.subheading {
+	font-weight: bold;
+	border-bottom: 2px solid var(--accent-color);
+	width: max-content;
+}
+
+.heading {
+	border-bottom: 3px solid var(--accent-color);
+	margin: 1em auto;
+	font-size: 3rem;
+}
+
+.subheading {
+	font-size: 1.25rem;
+	margin: 0 auto .75rem;
+}
+
+.introduction,
+.mission {
+	background: var(--section-bg);
+	color: white;
+	padding: 3rem 3rem 0;
+}
+
+.mission {
+	padding-bottom: 3rem;
+}
+.mission ul {
+	list-style-position: inside;
+    margin: .5rem 0;
+}
+
