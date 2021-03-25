@@ -8,7 +8,7 @@ import styles from "./HomePage.module.css";
 function HomePage() {
   return (
     <div className={styles.HomePage}>
-      {/* <BusinessNavBar /> */}
+      <BusinessNavBar />
       <div className={styles.container}>
         <div className={styles.content}>
           <CallToAction />
