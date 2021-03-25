@@ -4,6 +4,8 @@
 	max-width: 500px;
 	position: relative;
 	margin-left: 10%;
+	/*covers nav box shadow*/
+	z-index: 3;
 }
 
 .contentContainer {
@@ -28,7 +30,7 @@
 	margin-top: .25em;
 }
 .businessAbout {
-	margin: 1em 0;
+	margin: 1em 0 0;
 	padding: 1em 0;
 	border-top: 1px solid var(--accent-color);
 	border-bottom: 1px solid var(--accent-color);
