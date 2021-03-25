@@ -9,6 +9,7 @@ import '../../index.css';
 // import SignInUpButton from '../Buttons/SignInUpButton';
 // import SignOutButton from '../Buttons/SignOutButton';
 import HomePage from '../HomePage';
+import Footer from "../Footer";
 import BusinessNavBar from '../NavBar/BusinessNavBar';
 import './App.css';
 
@@ -29,6 +30,7 @@ function App() {
 					</Route>
 				</Switch>
 			</Router>
+			<Footer />
 		</div>
 	);
 }

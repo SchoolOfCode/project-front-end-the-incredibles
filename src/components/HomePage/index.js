@@ -10,7 +10,6 @@ function HomePage() {
 	return (
 		<div className={styles.HomePage}>
 			{isAuthenticated ? <p> you're logged in</p> : <LandingPage />}
-			<Footer />
 		</div>
 	);
 }
