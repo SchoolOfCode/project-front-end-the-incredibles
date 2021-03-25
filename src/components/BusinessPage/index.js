@@ -25,7 +25,7 @@ function BusinessPage() {
       </div>
       <div className={cardContainer}>
         {products.map((product, i) => (
-          <ProductCard key={i} />
+          <ProductCard name={product.name} price={product.price} key={i} inventoryQuantity={product.inventoryQuantity }/>
         ))}
       </div>
     </div>

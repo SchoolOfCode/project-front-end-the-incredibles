@@ -10,32 +10,32 @@ const mockBusiness = {
 		{
 			name     : 'one',
 			price    : 2.56,
-			quantity : 4,
+			inventoryQuantity : 4,
 		},
 		{
 			name     : 'two',
 			price    : 2.56,
-			quantity : 0,
+			inventoryQuantity : 0,
 		},
 		{
 			name     : 'three',
 			price    : 2.56,
-			quantity : 3,
+			inventoryQuantity : 3,
 		},
 		{
 			name     : 'one',
 			price    : 2.56,
-			quantity : 4,
+			inventoryQuantity : 4,
 		},
 		{
 			name     : 'two',
 			price    : 2.56,
-			quantity : 0,
+			inventoryQuantity : 0,
 		},
 		{
 			name     : 'three',
 			price    : 2.56,
-			quantity : 3,
+			inventoryQuantity : 3,
 		},
 	],
 };
