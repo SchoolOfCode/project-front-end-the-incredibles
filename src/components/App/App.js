@@ -11,7 +11,7 @@ import BusinessNavBar from "../NavBar/BusinessNavBar";
 import CustomerNavBar from "../NavBar/CustomerNavBar";
 import "./App.css";
 import QuantityInput from "../Inputs/NumberInput";
-import { QuantityInputExample } from "../Inputs/NumberInput/QuantityInput.stories";
+import ProductCard from "../ProductCard";
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-      <QuantityInput />
+      <ProductCard />
       <Footer />
     </div>
   );
