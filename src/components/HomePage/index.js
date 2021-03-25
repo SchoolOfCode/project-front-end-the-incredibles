@@ -15,7 +15,7 @@ function HomePage() {
         </div>
         <div className={styles.feature}>
           <img
-            src="https://images.unsplash.com/photo-1551028150-64b9f398f678?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80"
+            src="https://images.unsplash.com/photo-1606074508174-6fa572bd2777?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
             alt="demo"
           />
         </div>
