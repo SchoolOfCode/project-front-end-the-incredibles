@@ -26,7 +26,6 @@ function App() {
           </Route>
         </Switch>
       </Router>
-      <ProductCard />
       <Footer />
     </div>
   );

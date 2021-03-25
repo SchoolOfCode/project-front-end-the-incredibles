@@ -1,6 +1,5 @@
 .app {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
 	min-height: 100vh;
+	/*allows for easy position of nav and footer relative to whole app*/
+	position: relative;
 }
