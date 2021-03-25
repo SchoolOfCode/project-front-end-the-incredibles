@@ -3,7 +3,7 @@
 	padding: 2em 2em 1em;
 	max-width: 500px;
 	position: relative;
-	margin-left: 60px;
+	margin-left: 10%;
 }
 
 .contentContainer {
@@ -16,15 +16,16 @@
 .businessImg {
 	border-radius: 50%;
 	object-fit: cover;
-	height: 100px;
+	height: 150px;
 	position: absolute;
-	top: -20%;
+	top: -30px;
 	right: 10px;
-	width: 100px;
+	width: 150px;
 }
 
 .businessName {
 	font-size: 2.5rem;
+	margin-top: .25em;
 }
 .businessAbout {
 	margin: 1em 0;
@@ -40,20 +41,26 @@
 		margin: auto;
 		max-width: 90%;
 	}
+	/*fix img position*/
+	.businessImg {
+		height: 125px;
+		top: 0px;
+		width: 125px;
+	}
+	.businessAbout{
+		width: max-content;
+	}
 }
 /*change to column when small*/
 @media (max-width: 450px) {
 	.contentContainer {
 		grid-template-areas: "img" "name" "about";
-    grid-template-columns: 1fr;
-    text-align: center;
+		grid-template-columns: 1fr;
+		text-align: center;
 	}
-  /*centre image below name*/
-  .businessImg {
-	position: static;
-  margin: auto;
-}
-.businessName{
-  margin-top: .25em;
-}
+	/*centre image below name*/
+	.businessImg {
+		position: static;
+		margin: auto;
+	}
 }

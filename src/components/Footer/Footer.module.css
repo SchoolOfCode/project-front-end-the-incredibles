@@ -5,8 +5,7 @@
   color: var(--white);
   padding: 1rem 3rem;
   /*always on bottom*/
-  position: absolute;
-  bottom: 0;
+  grid-area: footer;
 }
 .contentFlex {
   display: flex;

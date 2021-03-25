@@ -19,11 +19,8 @@ function BusinessNavBar(props) {
 	return (
 		<Router>
 			<div className={css.navFlex}>
-				<div className={css.innerFlex}>
-					<div>
-						<h1> CartShop</h1>
-					</div>
 					<nav className={css.linkFlex}>
+						<h1> CartShop</h1>
 						<NavLink
 							to={'/'}
 							exact
@@ -46,13 +43,12 @@ function BusinessNavBar(props) {
 						>
 							Tutorial
 						</NavLink>
-					</nav>
 					{isAuthenticated ? (
 						<SignOutButton />
 					) : (
 						<SignInUpButton textContent='Sign in/up' />
 					)}
-				</div>
+					</nav>
 			</div>
 			<Switch>
 				<Route path='/about'>

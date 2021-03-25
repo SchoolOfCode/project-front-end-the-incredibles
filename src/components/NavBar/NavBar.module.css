@@ -1,38 +1,22 @@
 .navFlex {
-  align-items: center;
-  align-items: center;
+  /*always at top*/
+  grid-area: header;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  display: flex;
-  font-family: var(--main-font-family);
-  justify-content: space-between;
-  margin: 0 auto;
-  padding: .5em .25em;
-  min-height: fit-content;
+  margin: 0;
+  padding: .75rem 3rem;
   width: 100%;
+  z-index: 2;
 }
-.innerFlex {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  margin: auto;
-  width: 100%;
+.linkFlex h1{
+  font-size: 1.75rem;
 }
 
 .linkFlex {
-  justify-self: flex-end;
-  width: 80%;
-  display: flex;
-  justify-content: space-evenly;
   align-items: center;
+  justify-content: space-between;
+  display: flex;
 }
 
-.basketButtonFlex {
-  justify-self: flex-end;
-  width: 20%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
 .links {
   text-decoration: none;
   color: inherit;
@@ -61,33 +45,15 @@
   color: var(--accent-color)!important;
 }
 
+
 @media (max-width: 768px) {
-  .navFlex {
-    width: 100vw;
-  }
-
-  .basketButtonFlex {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .innerFlex {
+  .linkFlex {
     flex-direction: column;
     width: 100%;
     justify-content: center;
+    text-align: center;
   }
-
-  .innerFlexCustomer {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .linkFlex {
-    margin: 1em 0;
+  .links {
+    margin: .25em 0;
   }
 }

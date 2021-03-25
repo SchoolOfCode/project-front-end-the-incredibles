@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {
 	BrowserRouter as Router,
@@ -6,29 +5,32 @@ import {
 	Route,
 	Switch,
 } from 'react-router-dom';
-import HomePage from '../../HomePage';
-
 import '../../../index.css';
-import Button from "../../Buttons/Button"
 import css from '../NavBar.module.css';
 
 function CustomerNavBar(props) {
 	return (
 		<Router>
 			<div className={css.navFlex}>
-				<div className={css.innerFlex}>
-					<nav className={css.linkFlex}>
-						<NavLink
-							to={'/store'}
-							exact
-							className={css.links}
-							activeClassName={css.active}
-						>
-							Pete the Meat
-						</NavLink>
-					</nav>
-					<Button textContent='Basket' />
-				</div>
+				<nav className={css.linkFlex}>
+					<h1> CartShop</h1>
+					<NavLink
+						to={'/store'}
+						exact
+						className={css.links}
+						activeClassName={css.active}
+					>
+						Pete the Meat
+					</NavLink>
+					<NavLink
+						to={'/basket'}
+						exact
+						className={css.links}
+						activeClassName={css.active}
+					>
+						Basket
+					</NavLink>
+				</nav>
 			</div>
 			<Switch>
 				<Route path='/store'>
