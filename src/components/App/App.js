@@ -6,27 +6,21 @@ import {
 	Switch,
 } from 'react-router-dom';
 import '../../index.css';
-// import SignInUpButton from '../Buttons/SignInUpButton';
-// import SignOutButton from '../Buttons/SignOutButton';
-import HomePage from '../HomePage';
-import Footer from "../Footer";
+import Footer from '../Footer';
 import BusinessNavBar from '../NavBar/BusinessNavBar';
+import CustomerNavBar from '../NavBar/CustomerNavBar';
 import './App.css';
 
 function App() {
 	return (
 		<div className='app'>
 			<Router>
-				<BusinessNavBar />
 				<Switch>
-					<Route path='/about'>
-						<p>about</p>
-					</Route>
-					<Route path='/tutorial'>
-						<p>tut</p>
+					<Route path='/store'>
+						<CustomerNavBar />
 					</Route>
 					<Route path='/'>
-						<HomePage />
+						<BusinessNavBar />
 					</Route>
 				</Switch>
 			</Router>
