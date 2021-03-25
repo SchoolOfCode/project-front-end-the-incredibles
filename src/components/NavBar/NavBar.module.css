@@ -58,6 +58,9 @@
 .links:hover::before{
   width: 100%;
 }
+.active{
+  color: var(--accent-color)!important;
+}
 
 @media (max-width: 768px) {
   .navFlex {
