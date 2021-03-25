@@ -10,7 +10,6 @@
   align-items: center;
 }
 .contentFlex {
-  max-width: 1200px;
   display: flex;
   justify-content: space-between;
   width: 90%;
