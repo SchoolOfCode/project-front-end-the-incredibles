@@ -1,6 +1,8 @@
 .app {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
 	min-height: 100vh;
+	/*allows for easy position of nav and footer*/
+	 display: grid;
+    /* let content auto to occupy remaining height and pass value in fit-content with min-height for header and footer */
+    grid-template-rows: min-content auto min-content;
+    grid-template-areas: "header" "main" "footer";
 }

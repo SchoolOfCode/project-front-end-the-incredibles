@@ -15,7 +15,7 @@ function QuantityInput(props) {
   });
   const inc = getIncrementButtonProps();
   const dec = getDecrementButtonProps();
-  const input = getInputProps({ isReadOnly: true });
+  const input = getInputProps({onChange: () => console.log("hi") });
 
   return (
     <HStack maxW="150px">
