@@ -5,16 +5,15 @@ import ProductCard from "../ProductCard";
 import mockData from "../../libs/mockData.js";
 import useBasket from "../../hooks/useBasket";
 
-
 import {
   container,
   profileContainer,
   cardContainer,
 } from "./CustomerPage.module.css";
-import Basket from '../Basket';
+import Basket from "../Basket";
 
 function CustomerPage() {
-  const {cartItems, onAdd, onRemove} = useBasket();
+  const { cartItems, onAdd, onRemove } = useBasket();
   const {
     businessName,
     businessAbout,
@@ -25,7 +24,7 @@ function CustomerPage() {
 
   return (
     <div className={container}>
-      <Basket cartItems={cartItems} onRemove={onRemove}/>
+      <Basket cartItems={cartItems} onRemove={onRemove} />
       <div className={profileContainer}>
         <BusinessProfile
           name={businessName}
@@ -36,17 +35,7 @@ function CustomerPage() {
       </div>
       <div className={cardContainer}>
         {products.map((product, i) => (
-          <ProductCard
-            name={product.productName}
-            price={product.price}
-            key={i}
-            inventoryQuantity={product.inventoryQuantity}
-            onClick={() => {
-              console.log(product);
-              console.log("called")
-              onAdd(product)
-            }}
-          />
+          <ProductCard product={product} key={i} onClick={onAdd} />
         ))}
       </div>
     </div>

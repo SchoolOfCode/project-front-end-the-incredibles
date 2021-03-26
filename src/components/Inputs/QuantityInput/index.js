@@ -1,7 +1,7 @@
 import React from "react";
 import { useNumberInput, Button, HStack, Input } from "@chakra-ui/react";
 
-function QuantityInput(props) {
+function QuantityInput({ setState }) {
   const {
     getInputProps,
     getIncrementButtonProps,
@@ -15,7 +15,9 @@ function QuantityInput(props) {
   });
   const inc = getIncrementButtonProps();
   const dec = getDecrementButtonProps();
-  const input = getInputProps({onChange: () => console.log("hi") });
+  const input = getInputProps({ onChange: () => console.log("hi") });
+  const hello = input.value;
+  setState(hello);
 
   return (
     <HStack maxW="150px">

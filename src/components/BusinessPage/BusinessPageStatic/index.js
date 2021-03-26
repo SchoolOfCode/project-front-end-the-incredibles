@@ -31,12 +31,7 @@ function BusinessPageStatic({ businessInfo, toggleCanEdit }) {
       <Button textContent="edit" onClick={toggleCanEdit} />
       <div className={cardContainer}>
         {products.map((product, i) => (
-          <ProductCard
-            name={product.name}
-            price={product.price}
-            key={i}
-            inventoryQuantity={product.inventoryQuantity}
-          />
+          <ProductCard key={i} product={product} />
         ))}
       </div>
     </div>
