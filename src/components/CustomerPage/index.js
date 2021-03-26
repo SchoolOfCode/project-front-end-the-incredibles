@@ -9,6 +9,7 @@ import {
   profileContainer,
   cardContainer,
 } from "./CustomerPage.module.css";
+import Basket from '../Basket';
 
 function CustomerPage() {
   const {
@@ -21,6 +22,7 @@ function CustomerPage() {
 
   return (
     <div className={container}>
+      <Basket/>
       <div className={profileContainer}>
         <BusinessProfile
           name={businessName}

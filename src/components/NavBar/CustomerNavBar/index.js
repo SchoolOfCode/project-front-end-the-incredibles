@@ -10,6 +10,11 @@ import {
 import "../../../index.css";
 import css from "../NavBar.module.css";
 
+function toggleBasket(){
+const basket = document.querySelector(".basket");
+basket.classList.toggle("showBasket")
+}
+
 function CustomerNavBar(props) {
   return (
     <Router>
@@ -25,7 +30,7 @@ function CustomerNavBar(props) {
             Macrambé Master
           </NavLink>
 
-          <Button textContent={"basket"}></Button>
+          <Button textContent={"basket"} onClick={toggleBasket}></Button>
         </nav>
       </div>
       <Switch>
