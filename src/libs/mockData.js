@@ -13,6 +13,7 @@ const mockBusiness = {
       price: 2.56,
       inventoryQuantity: 4,
       productId: 1,
+      qty: 0
     },
     {
       productName: "two",
