@@ -1,41 +1,20 @@
-import React from "react";
-import Button from "../../Buttons/Button";
-import BusinessProfile from "../../BusinessProfile";
-import ProductCard from "../../ProductCard";
+import React from 'react';
+import BusinessProfile from '../../BusinessProfile';
+import Button from '../../Buttons/Button';
+import ProductCardGrid from '../../ProductCardGrid';
 
-import {
-  container,
-  profileContainer,
-  cardContainer,
-} from "./BusinessPageStatic.module.css";
+import { container, profileContainer } from './BusinessPageStatic.module.css';
 
 function BusinessPageStatic({ businessInfo, toggleCanEdit }) {
-  const {
-    businessName,
-    businessAbout,
-    businessImg,
-    isTrading,
-    products,
-  } = businessInfo;
-
-  return (
-    <div className={container}>
-      <div className={profileContainer}>
-        <BusinessProfile
-          name={businessName}
-          about={businessAbout}
-          img={businessImg}
-          isTrading={isTrading}
-        />
-      </div>
-      <Button textContent="edit" onClick={toggleCanEdit} />
-      <div className={cardContainer}>
-        {products.map((product, i) => (
-          <ProductCard key={i} product={product} />
-        ))}
-      </div>
-    </div>
-  );
+	return (
+		<div className={container}>
+			<div className={profileContainer}>
+				<BusinessProfile businessInfo={businessInfo} />
+			</div>
+			<Button textContent='edit' onClick={toggleCanEdit} />
+			<ProductCardGrid products={businessInfo.products} />
+		</div>
+	);
 }
 
 export default BusinessPageStatic;

@@ -8,7 +8,7 @@ function QuantityInput({ setState }) {
     getDecrementButtonProps,
   } = useNumberInput({
     step: 1,
-    defaultValue: 0,
+    defaultValue: 1,
     min: 0,
     max: 100,
     precision: 0,

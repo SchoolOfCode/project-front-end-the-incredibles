@@ -3,22 +3,12 @@ import useBasket from '../../hooks/useBasket';
 import mockData from '../../libs/mockData.js';
 import Basket from '../Basket';
 import BusinessProfile from '../BusinessProfile';
-import ProductCard from '../ProductCard';
-import {
-	cardContainer,
-	container,
-	profileContainer,
-} from './CustomerPage.module.css';
+import ProductCardGrid from '../ProductCardGrid';
+import { container, profileContainer } from './CustomerPage.module.css';
 
 function CustomerPage() {
 	const { cartItems, onAdd, onRemoveAll, onRemoveOne } = useBasket();
-	const {
-		businessName,
-		businessAbout,
-		businessImg,
-		isTrading,
-		products,
-	} = mockData;
+	const { products } = mockData;
 
 	return (
 		<div className={container}>
@@ -29,18 +19,9 @@ function CustomerPage() {
 				onAdd={onAdd}
 			/>
 			<div className={profileContainer}>
-				<BusinessProfile
-					name={businessName}
-					about={businessAbout}
-					img={businessImg}
-					isTrading={isTrading}
-				/>
+				<BusinessProfile businessInfo={mockData} />
 			</div>
-			<div className={cardContainer}>
-				{products.map((product, i) => (
-					<ProductCard product={product} key={i} onClick={onAdd} />
-				))}
-			</div>
+			<ProductCardGrid products={products} />
 		</div>
 	);
 }

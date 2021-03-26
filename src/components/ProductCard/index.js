@@ -4,18 +4,18 @@ import QuantityInput from "../Inputs/QuantityInput";
 import styles from "./ProductCard.module.css";
 
 function ProductCard({ product, onClick }) {
+  const { productName, price, img, inventoryQuantity } = product;
   const [desiredQuantity, setDesiredQuantity] = useState(0);
-  //const { name, price, inventoryQuantity } = product;
-  const inStockClass = product.inventoryQuantity ? "Stocked" : "OutOfStock";
+  const inStockClass = inventoryQuantity ? "Stocked" : "OutOfStock";
   return (
     <div className={`${styles.ContentFlex} ${styles[inStockClass]}`}>
       <div className={styles.innerContent}>
         <img
-          src={product.img.src}
-          alt={product.img.alt}
+          src={img.src}
+          alt={img.alt}
         />
-        <p className={styles.name}>{product.productName}</p>
-        <p className={styles.price}>£{product.price}</p>
+        <p className={styles.name}>{productName}</p>
+        <p className={styles.price}>£{price}</p>
         <QuantityInput setState={setDesiredQuantity} />
         {product.inventoryQuantity ? (
           <AddtoCartButton onClick={() => onClick(product, desiredQuantity)} />
