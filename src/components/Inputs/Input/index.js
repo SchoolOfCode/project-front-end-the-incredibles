@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { input, inputContainer, label } from './Input.module.css';
 
-function Input({ updateState, type, labelText, id }) {
-	const [ state, setState ] = useState('');
+function Input({ updateInfo, currentInfo ="", type, labelText, id }) {
+	const [ state, setState ] = useState(currentInfo);
 
 	return (
 		<div className={inputContainer}>
-			<label className={label} for={id}>
+			<label className={label} htmlFor={id}>
 				{labelText}
 			</label>
 			<input
@@ -16,7 +16,8 @@ function Input({ updateState, type, labelText, id }) {
 				value={state}
 				onChange={(e) => {
 					setState(e.target.value);
-					updateState(state);
+
+					updateInfo(state);
 				}}
 			/>
 		</div>

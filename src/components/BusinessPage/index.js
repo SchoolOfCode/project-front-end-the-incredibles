@@ -5,7 +5,7 @@ import BusinessPageStatic from './BusinessPageStatic';
 
 function BusinessPage() {
 	const [ canEdit, setCanEdit ] = useState(false);
-    const [ businessInfo, setBusinessIno] = useState(mockData);
+    const [ businessInfo, setBusinessInfo] = useState(mockData);
     
 	function toggleCanEdit() {
 		setCanEdit(!canEdit);
@@ -18,6 +18,7 @@ function BusinessPage() {
 				<BusinessPageEdit
 					businessInfo={businessInfo}
 					toggleCanEdit={toggleCanEdit}
+					setBusinessIno={setBusinessInfo}
 				/>
 			) : (
 				<BusinessPageStatic
