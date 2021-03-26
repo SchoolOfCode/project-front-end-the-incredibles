@@ -12,21 +12,25 @@ const mockBusiness = {
       productName: "one",
       price: 2.56,
       inventoryQuantity: 4,
+      productId: 1,
     },
     {
       productName: "two",
       price: 2.56,
       inventoryQuantity: 0,
+      productId: 2,
     },
     {
       productName: "three",
       price: 2.56,
       inventoryQuantity: 3,
+      productId: 3,
     },
     {
       productName: "one",
       price: 2.56,
       inventoryQuantity: 4,
+      productId: 4,
     },
     {
       productName: "two",
@@ -37,6 +41,7 @@ const mockBusiness = {
       productName: "three",
       price: 2.56,
       inventoryQuantity: 3,
+      productId: 5,
     },
   ],
 };

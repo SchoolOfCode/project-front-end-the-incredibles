@@ -1,9 +1,7 @@
-import Button from "../Button"
+import Button from "../Button";
 
-function AddToCartButton() {
-	return (
-		<Button className="addToCart" textContent="add" onClick={console.log("Add to cart")}/>
-	);
+function AddToCartButton({ onClick }) {
+  return <Button className="addToCart" textContent="add" onClick={onClick} />;
 }
 
 export default AddToCartButton;
