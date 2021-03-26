@@ -1,9 +1,9 @@
 import {useState} from "react";
 
 function useBasket() {
-	const [ cartItems, setCartItems ] = useState();
+	const [ cartItems, setCartItems ] = useState([]);
 
-	const onAdd = (product) => {
+	const onAdd = (product, quantity) => {
 		const exist = cartItems.find(
 			(cartProd) => cartProd.productId === product.productId
 		);

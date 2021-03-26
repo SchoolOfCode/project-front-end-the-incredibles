@@ -3,7 +3,7 @@ import AddtoCartButton from "../Buttons/AddToCartButton";
 import QuantityInput from "../Inputs/QuantityInput";
 import styles from "./ProductCard.module.css";
 
-function ProductCard({ name, price, inventoryQuantity = 0 }) {
+function ProductCard({ name, price, inventoryQuantity = 0, onClick }) {
   const inStockClass = inventoryQuantity ? "Stocked" : "OutOfStock";
   return (
     <div className={`${styles.ContentFlex} ${styles[inStockClass]}`}>
@@ -15,7 +15,7 @@ function ProductCard({ name, price, inventoryQuantity = 0 }) {
         <p className={styles.name}>{name}</p>
         <p className={styles.price}>£{price}</p>
         <QuantityInput />
-        {inventoryQuantity ? <AddtoCartButton /> : <p>Out of stock</p>}
+        {inventoryQuantity ? <AddtoCartButton onClick={onClick}/> : <p>Out of stock</p>}
       </div>
     </div>
   );
