@@ -3,10 +3,10 @@ import useBasket from '../../hooks/useBasket';
 import Button from '../Buttons/Button';
 import CheckoutButton from '../Buttons/CheckoutButton';
 import RemoveProductButton from '../Buttons/RemoveProductButton';
-import { basket } from './Basket.module.css';
+import { basket, productsContainer } from './Basket.module.css';
 
 
-function Basket({cartItems, onRemove}) {
+function Basket({cartItems, onRemoveAll, onRemoveOne, onAdd}) {
 
 	return (
 		<div className={`${basket} basket`}>
@@ -14,11 +14,13 @@ function Basket({cartItems, onRemove}) {
 			{cartItems &&
 				cartItems.map((product) => {
 					return (
-						<div>
+						<div className={productsContainer}>
 							<p>{product.productName}</p>
 							<p>{product.qty}</p>
+							<Button textContent="+" onClick={() => onAdd(product, 1)}/>
+							<Button textContent="-" onClick={() => onRemoveOne(product)}/>
 							<RemoveProductButton
-								onClick={() => onRemove(product)}
+								onClick={() => onRemoveAll(product)}
 							/>
 						</div>
 					);

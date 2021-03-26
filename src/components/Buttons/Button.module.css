@@ -51,8 +51,9 @@
     opacity: .9;
 }
 .removeProduct:hover {
-    background: var(--dark-red);
-    border: 2px solid var(--black);
+    background: var(--white);
+    border: 2px solid var(--dark-red);
+    color: var(--dark-red);
     opacity: 1;
 }
 

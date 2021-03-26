@@ -15,7 +15,6 @@ function ProductCard({ product, onClick }) {
           alt=""
         />
         <p className={styles.name}>{product.productName}</p>
-        <p>{desiredQuantity}</p>
         <p className={styles.price}>£{product.price}</p>
         <QuantityInput setState={setDesiredQuantity} />
         {product.inventoryQuantity ? (
