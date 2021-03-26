@@ -1,11 +1,12 @@
 .basket {
     background: #ff5a60eb;
     color: white;
-    height: 100%;
+    padding: 1rem 2rem;
     position: absolute;
     right: 0;
+    height: calc(100% - 80px);
     text-align: center;
-    top: 70px;
+    top: 80px;
     transform: translateX(100%);
     transition: transform .25s ease-in-out;
     width: 500px;
@@ -24,12 +25,14 @@
     grid-gap: 1rem;
     margin-bottom: 1rem;
     padding-bottom: 1rem;
+    align-items: center;
 }
 
 @media (max-width: 700px){
     .basket{
         background: #ff5a60eb;
         top: 170px;
+        height: calc(100% - 170px);
         width: 100%;
     }
 }

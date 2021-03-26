@@ -11,8 +11,8 @@ function ProductCard({ product, onClick }) {
     <div className={`${styles.ContentFlex} ${styles[inStockClass]}`}>
       <div className={styles.innerContent}>
         <img
-          src={product.src}
-          alt={product.alt}
+          src={product.img.src}
+          alt={product.img.alt}
         />
         <p className={styles.name}>{product.productName}</p>
         <p className={styles.price}>£{product.price}</p>
