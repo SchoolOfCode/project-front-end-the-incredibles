@@ -10,7 +10,7 @@ import Footer from "../Footer";
 import BusinessNavBar from "../NavBar/BusinessNavBar";
 import CustomerNavBar from "../NavBar/CustomerNavBar";
 import "./App.css";
-import QuantityInput from "../Inputs/NumberInput";
+import QuantityInput from "../Inputs/QuantityInput";
 import ProductCard from "../ProductCard";
 
 function App() {

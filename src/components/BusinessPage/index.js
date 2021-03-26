@@ -1,35 +1,32 @@
-import React from "react";
-import mockData from "../../libs/mockData";
-import BusinessProfile from "../BusinessProfile";
-import ProductCard from "../ProductCard";
-import "../../index.css";
-
-import {
-  container,
-  profileContainer,
-  cardContainer,
-} from "./BusinessPage.module.css";
+import { useState } from 'react';
+import mockData from '../../libs/mockData';
+import BusinessPageEdit from './BusinessPageEdit';
+import BusinessPageStatic from './BusinessPageStatic';
 
 function BusinessPage() {
-  const { name, about, img, isTrading, products } = mockData;
-
-  return (
-    <div className={container}>
-      <div className={profileContainer}>
-        <BusinessProfile
-          name={name}
-          about={about}
-          img={img}
-          isTrading={isTrading}
-        />
-      </div>
-      <div className={cardContainer}>
-        {products.map((product, i) => (
-          <ProductCard name={product.name} price={product.price} key={i} inventoryQuantity={product.inventoryQuantity }/>
-        ))}
-      </div>
-    </div>
-  );
+	const [ canEdit, setCanEdit ] = useState(false);
+    const [ businessInfo, setBusinessIno] = useState(mockData);
+    
+	function toggleCanEdit() {
+		setCanEdit(!canEdit);
+		console.log(canEdit);
+	}
+    
+	return (
+		<div className={BusinessPage}>
+			{canEdit ? (
+				<BusinessPageEdit
+					businessInfo={businessInfo}
+					toggleCanEdit={toggleCanEdit}
+				/>
+			) : (
+				<BusinessPageStatic
+					businessInfo={businessInfo}
+					toggleCanEdit={toggleCanEdit}
+				/>
+			)}
+		</div>
+	);
 }
 
 export default BusinessPage;

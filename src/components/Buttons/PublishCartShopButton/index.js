@@ -1,8 +1,8 @@
 import Button from "../Button"
 
-function AddToCartButton() {
+function AddToCartButton({onClick}) {
 	return (
-		<Button className="blackBtn" textContent="Publish" onClick={console.log("publish")}/>
+		<Button className="blackBtn" textContent="Publish" onClick={onClick}/>
 	);
 }
 
