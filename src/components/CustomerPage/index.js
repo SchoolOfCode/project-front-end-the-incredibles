@@ -1,25 +1,30 @@
 import React from "react";
-import Button from "../../Buttons/Button";
-import BusinessProfile from "../../BusinessProfile";
-import ProductCard from "../../ProductCard";
+import Button from "../Buttons/Button";
+import BusinessProfile from "../BusinessProfile";
+import ProductCard from "../ProductCard";
+import mockData from "../../libs/mockData.js";
+import useBasket from "../../hooks/useBasket";
 
 import {
   container,
   profileContainer,
   cardContainer,
-} from "./BusinessPageStatic.module.css";
+} from "./CustomerPage.module.css";
+import Basket from "../Basket";
 
-function BusinessPageStatic({ businessInfo, toggleCanEdit }) {
+function CustomerPage() {
+  const { cartItems, onAdd, onRemove } = useBasket();
   const {
     businessName,
     businessAbout,
     businessImg,
     isTrading,
     products,
-  } = businessInfo;
+  } = mockData;
 
   return (
     <div className={container}>
+      <Basket cartItems={cartItems} onRemove={onRemove} />
       <div className={profileContainer}>
         <BusinessProfile
           name={businessName}
@@ -28,14 +33,13 @@ function BusinessPageStatic({ businessInfo, toggleCanEdit }) {
           isTrading={isTrading}
         />
       </div>
-      <Button textContent="edit" onClick={toggleCanEdit} />
       <div className={cardContainer}>
         {products.map((product, i) => (
-          <ProductCard key={i} product={product} />
+          <ProductCard product={product} key={i} onClick={onAdd} />
         ))}
       </div>
     </div>
   );
 }
 
-export default BusinessPageStatic;
+export default CustomerPage;

@@ -1,13 +1,9 @@
-import Button from '../Button';
+import Button from "../Button";
 
-function PublishCartShopButton() {
-	return (
-		<Button
-			className='blackBtn'
-			textContent='Checkout'
-			onClick={console.log('checkout')}
-		/>
-	);
+function PublishCartShopButton({ onClick }) {
+  return (
+    <Button className="blackBtn" textContent="Checkout" onClick={onClick} />
+  );
 }
 
 export default PublishCartShopButton;

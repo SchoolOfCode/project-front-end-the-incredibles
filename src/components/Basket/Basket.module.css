@@ -1,0 +1,19 @@
+.basket {
+    width: 500px;
+    height: 100%;
+    background: #ff5a60eb;;
+    transition: transform .25s ease-in-out;
+    transform: translateX(100%);
+    position: absolute;
+    right: 0;
+    top: 70px;
+    z-index: 4;
+}
+
+@media (max-width: 700px){
+    .basket{
+        background: #ff5a60eb;
+        top: 170px;
+        width: 100%;
+    }
+}

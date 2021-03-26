@@ -27,6 +27,12 @@ input {
   font-size: inherit;
 }
 
+
+/* show or hides basket */
+.showBasket {
+    transform: translateX(0)!important;
+}
+
 @media (max-width){
   body {
     font-size: 1rem;
