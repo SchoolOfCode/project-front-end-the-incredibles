@@ -1,8 +1,8 @@
 import Button from "../Button"
 
-function RemoveProductButton() {
+function RemoveProductButton({onClick}) {
 	return (
-		<Button className="removeProduct" textContent="remove" onClick={console.log("remove product")}/>
+		<Button className="removeProduct" textContent="remove" onClick={onClick}/>
 	);
 }
 

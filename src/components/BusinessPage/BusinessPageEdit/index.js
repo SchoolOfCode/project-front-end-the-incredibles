@@ -12,11 +12,16 @@ import {
 } from "./BusinessPageEdit.module.css";
 
 function BusinessPageEdit({ businessInfo, setBusinessInfo, toggleCanEdit }) {
-  const { name, about, isTrading, products } = businessInfo;
+  const { businessName, businessAbout, isTrading, products } = businessInfo;
 
   function updateData(newValue, property) {
     setBusinessInfo({ ...businessInfo, [property]: newValue });
     console.log(businessInfo);
+  }
+
+  function removeProduct(index){
+	setBusinessInfo({...businessInfo, products: [...products.slice(0, index), ...products.slice(index + 1)]});
+	console.log(businessInfo.products);
   }
 
   return (
@@ -27,14 +32,14 @@ function BusinessPageEdit({ businessInfo, setBusinessInfo, toggleCanEdit }) {
           labelText="Business Name:"
           id="businessName"
           updateInfo={updateData}
-          currentInfo={name}
+          currentInfo={businessName}
         />
         <Input
           type="text"
           labelText="About The Business:"
           id="businessAbout"
           updateInfo={updateData}
-          currentInfo={about}
+          currentInfo={businessAbout}
         />
       </form>
       <form className={addProductsForm}>
@@ -59,8 +64,9 @@ function BusinessPageEdit({ businessInfo, setBusinessInfo, toggleCanEdit }) {
         <ul>
           {products.map((product, i) => (
             <li key={i} className={currentProduct}>
-              <span> {product.name}</span>
-              <RemoveProductButton />
+              <span> {product.productName}</span>
+			  <span> {product.price}</span>
+              <RemoveProductButton onClick={() => removeProduct(i)}/>
             </li>
           ))}
         </ul>

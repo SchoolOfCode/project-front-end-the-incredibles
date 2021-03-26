@@ -12,7 +12,7 @@ import {
 function BusinessPageStatic({ businessInfo, toggleCanEdit }) {
   const {
     businessName,
-    about,
+    businessAbout,
     businessImg,
     isTrading,
     products,
@@ -23,7 +23,7 @@ function BusinessPageStatic({ businessInfo, toggleCanEdit }) {
       <div className={profileContainer}>
         <BusinessProfile
           name={businessName}
-          about={about}
+          about={businessAbout}
           img={businessImg}
           isTrading={isTrading}
         />
