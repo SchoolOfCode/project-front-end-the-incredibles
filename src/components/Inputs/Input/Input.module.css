@@ -1,3 +1,13 @@
+.inputContainer {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+.inputContainer:last-child{
+    margin-bottom: 0;
+}
+
 .input {
     border: none;
     background: var(--white);
@@ -6,6 +16,7 @@
     opacity: .9;
     text-align: right;
     transition: border .25s;
+    flex-grow: 2;
 }
 
 .input:focus{

@@ -1,0 +1,11 @@
+.businessInfoForm {
+    border-bottom: 1px solid var(--gray);
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+.businessInfoForm label {
+    font-weight: bold;
+}
+.businessInfoForm input {
+    min-width: 300px;
+}

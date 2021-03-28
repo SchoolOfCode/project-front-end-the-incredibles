@@ -1,16 +1,14 @@
 import React from "react";
 import PublishCartShopButton from "../../Buttons/PublishCartShopButton";
-import RemoveProductButton from "../../Buttons/RemoveProductButton";
 import AddProductsForm from "../../AddProductsForm"
-
-import {
-  currentProduct,
-  container,
-  currentProductsContainer,
-} from "./BusinessPageEdit.module.css";
 import useGetInfo from '../../../hooks/useUpdateInfo';
 import BusinessInfoForm from '../../BusinessInfoForm';
 import CurrentProductList from '../../CurrentPoductsList';
+
+import {
+  container,
+  publishContainer
+} from "./BusinessPageEdit.module.css";
 
 function BusinessPageEdit({ businessInfo, setBusinessInfo, toggleCanEdit }) {
   const {updateData, removeProduct, addProduct} = useGetInfo(businessInfo, setBusinessInfo);
@@ -22,13 +20,16 @@ function BusinessPageEdit({ businessInfo, setBusinessInfo, toggleCanEdit }) {
       <AddProductsForm addProduct={addProduct}/>
       <CurrentProductList products={businessInfo.products} removeProduct={removeProduct}/>
       
+      <div className={publishContainer}>
       <PublishCartShopButton
         onClick={
           toggleCanEdit
           // console.log(businessInfo); 
           //also needs to send to DB
         }
-      />
+        />
+        <p>Don't worry, you can change this information at any time!</p>
+        </div>
     </div>
   );
 }
