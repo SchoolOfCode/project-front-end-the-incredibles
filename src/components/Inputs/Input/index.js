@@ -16,7 +16,6 @@ function Input({ updateInfo, currentInfo = "", type, labelText, id }) {
         value={state}
         onChange={(e) => {
           setState(e.target.value);
-
           updateInfo(e.target.value, id);
         }}
       />

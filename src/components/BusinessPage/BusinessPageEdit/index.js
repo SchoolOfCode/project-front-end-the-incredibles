@@ -19,9 +19,26 @@ function BusinessPageEdit({ businessInfo, setBusinessInfo, toggleCanEdit }) {
     console.log(businessInfo);
   }
 
-  function removeProduct(index){
-	setBusinessInfo({...businessInfo, products: [...products.slice(0, index), ...products.slice(index + 1)]});
-	console.log(businessInfo.products);
+  function removeProduct(index) {
+    setBusinessInfo({
+      ...businessInfo,
+      products: [...products.slice(0, index), ...products.slice(index + 1)],
+    });
+    console.log(businessInfo.products);
+  }
+
+  function addProduct(newProd, newPrice, newQuant) {
+    setBusinessInfo({
+      ...businessInfo,
+      products: [
+        ...products,
+        {
+          productName: newProd,
+          price: newPrice,
+          inventoryQuantity: newQuant,
+        },
+      ],
+    });
   }
 
   return (
@@ -48,25 +65,40 @@ function BusinessPageEdit({ businessInfo, setBusinessInfo, toggleCanEdit }) {
           type="text"
           labelText="Product Name:"
           id="productName"
-          updateInfo={"how"}
+          updateInfo={() => console.log()}
         />
-        <Input />
-        <Input type="text" labelText="Price:" id="price" updateInfo={"how"} />
+        {/* <Input /> */}
+        <Input
+          type="text"
+          labelText="Price:"
+          id="price"
+          updateInfo={() => console.log()}
+        />
         <Input
           type="number"
           labelText="Quantity:"
           id="inventoryQuantity"
-          updateInfo={"how"}
+          updateInfo={() => console.log()}
         />
-        <Button textContent="Add Product" onClick={"should add product"} />
+        <Button
+          textContent="Add Product"
+          onClick={(e) => {
+            e.preventDefault();
+            const newProd = e.target.form[0].value;
+            const newQuant = e.target.form[2].value;
+            const newPrice = e.target.form[1].value;
+            addProduct(newProd, newQuant, newPrice);
+            console.log(businessInfo);
+          }}
+        />
       </form>
       <div className={currentProductsContainer}>
         <ul>
           {products.map((product, i) => (
             <li key={i} className={currentProduct}>
               <span> {product.productName}</span>
-			  <span> {product.price}</span>
-              <RemoveProductButton onClick={() => removeProduct(i)}/>
+              <span> {product.price}</span>
+              <RemoveProductButton onClick={() => removeProduct(i)} />
             </li>
           ))}
         </ul>
@@ -74,6 +106,7 @@ function BusinessPageEdit({ businessInfo, setBusinessInfo, toggleCanEdit }) {
       <PublishCartShopButton
         onClick={
           toggleCanEdit
+          // console.log(businessInfo);
           //also needs to send to DB
         }
       />
