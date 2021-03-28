@@ -10,36 +10,12 @@ import {
   container,
   currentProductsContainer,
 } from "./BusinessPageEdit.module.css";
+import useGetInfo from '../../../hooks/useUpdateInfo';
 
 function BusinessPageEdit({ businessInfo, setBusinessInfo, toggleCanEdit }) {
   const { businessName, businessAbout, isTrading, products } = businessInfo;
 
-  function updateData(newValue, property) {
-    setBusinessInfo({ ...businessInfo, [property]: newValue });
-    console.log(businessInfo);
-  }
-
-  function removeProduct(index) {
-    setBusinessInfo({
-      ...businessInfo,
-      products: [...products.slice(0, index), ...products.slice(index + 1)],
-    });
-    console.log(businessInfo.products);
-  }
-
-  function addProduct(newProd, newPrice, newQuant) {
-    setBusinessInfo({
-      ...businessInfo,
-      products: [
-        ...products,
-        {
-          productName: newProd,
-          price: newPrice,
-          inventoryQuantity: newQuant,
-        },
-      ],
-    });
-  }
+  const {updateData, removeProduct, addProduct} = useGetInfo(businessInfo, setBusinessInfo);
 
   return (
     <div className={container}>
