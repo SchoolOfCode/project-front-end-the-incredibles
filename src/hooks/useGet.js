@@ -7,7 +7,7 @@ function useGet() {
     let res = await fetch(process.env.REACT_APP_BACKEND_URL);
     let data = await res.json();
     setFetchedData(data);
-    console.log(data)
+    // console.log(data)
   };
   useEffect(() => {
     // while(num < 5){
@@ -16,8 +16,11 @@ function useGet() {
     // }
     // eslint-disable-next-line
   }, []);
-  console.log(fetchedData);
+  
+  // console.log(`log from useGet ${fetchedData}`);
   return [fetchedData, setFetchedData];
+
+
 }
 
 export default useGet;
