@@ -12,6 +12,7 @@ import CustomerNavBar from "../NavBar/CustomerNavBar";
 import "./App.css";
 import QuantityInput from "../Inputs/QuantityInput";
 import ProductCard from "../ProductCard";
+import Stripe from "../Stripe";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
+      <Stripe/>
       <Footer />
     </div>
   );
