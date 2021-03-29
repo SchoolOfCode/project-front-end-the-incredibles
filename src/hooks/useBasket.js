@@ -29,12 +29,14 @@ function basketReducer(state, action) {
 function useBasket() {
 	const [ cartItems, dispatch ] = useReducer(basketReducer, []);
 	
-	const onAdd = (product, quantity) => {
-		if (quantity > 0) {
-			const exist = cartItems.find(
+	const exist = (product) => cartItems.find(
 				(cartProd) => cartProd.productId === product.productId
 				);
-				exist ?
+
+	const onAdd = (product, quantity) => {
+		if (quantity > 0) {
+
+				exist(product) ?
 				dispatch({ type: 'ADD_REMOVE', payload: quantity, product })
 				:
 				dispatch({ type: 'ADD_FIRST', payload: quantity, product });
@@ -46,12 +48,8 @@ function useBasket() {
 			dispatch({ type: 'REMOVE_ALL', product });
 		};
 		
-		const onRemoveOne = (product) => {
-			const exist = cartItems.find(
-				(cartProd) => cartProd.productId === product.productId
-				);
-				
-				exist.qty <= 1 ?
+		const onRemoveOne = (product) => {			
+				exist(product).qty <= 1 ?
 				dispatch({ type: 'REMOVE_ALL', product })
 				:
 				dispatch({ type: 'ADD_REMOVE', product });
