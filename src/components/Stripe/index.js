@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import ProductDisplay from "../ProductDisplay";
+import CheckoutButton from "../Buttons/CheckoutButton";
 import Message from "../Message";
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
-const stripePromise = loadStripe(
-  "pk_test_51IZfAwFRa1Oylsq2lp7aqOS2UMFNjtLkIvq37PCuvRbLtB8rVIW314mhGjSZ2v7ZjKmqvZWQqfwiXx31D4ZS3D2o00sfXcdJHn"
-);
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_CODE);
 
-function Stripe() {
+function Stripe({ total }) {
   const [message, setMessage] = useState("");
   const [redirect, setRedirect] = useState("");
 
@@ -20,10 +19,10 @@ function Stripe() {
     if (query.get("success")) {
       setMessage("Order placed! You will receive an email confirmation.");
       setRedirect("You will be redirected to the checkout in 5 seconds");
-      // we can add a button here to go back to the home back.
+      //we can add a button here to go back to the home back.
       setTimeout(function () {
-        window.location.replace("http://localhost:3000/checkout");
-      }, 5000);
+        window.location.replace("http://localhost:3000/store");
+      }, 10000);
     }
 
     if (query.get("canceled")) {
@@ -33,24 +32,25 @@ function Stripe() {
     }
   }, []);
 
-  const handleClick = async (event) => {
+  const handleClick = async (count) => {
     const stripe = await stripePromise;
+    console.log(message);
+    console.log(redirect);
 
     const response = await fetch("/create-checkout-session", {
       method: "POST",
       body: JSON.stringify({
-        cancelUrl: "https://www.google.com",
-        successUrl: "https://www.google.com",
+        cancelUrl: "https://localhost:3000/store",
+        successUrl: "https://localhost:3000/store",
         payment_method_types: ["card"],
         lineItems: [
           {
             price_data: {
-              currency: "usd",
+              currency: "gbp",
               product_data: {
-                name: "Macrame",
-                images: ["https://i.imgur.com/EHyR2nP.png"],
+                name: "Total",
               },
-              unit_amount: 1000,
+              unit_amount: count,
             },
             quantity: 1,
           },
@@ -80,7 +80,13 @@ function Stripe() {
   return message ? (
     <Message message={message} redirect={redirect} />
   ) : (
-    <ProductDisplay handleClick={handleClick} />
+    <CheckoutButton
+      onClick={() => {
+        handleClick(parseInt(total));
+        console.log(message);
+        console.log(redirect);
+      }}
+    />
   );
 }
 

@@ -5,7 +5,10 @@ import Stripe from "../Stripe";
 
 function Basket({ cartItems, onRemoveAll, onRemoveOne, onAdd }) {
   let count = 0;
-  cartItems.map((item)=>{count+=item.price})
+  cartItems.map((item) => {
+    return (count += item.price * item.qty * 100);
+  });
+  //   const [handleClick, message, redirect] = Stripe();
 
   return (
     <div className={`${basket} basket`}>
@@ -20,7 +23,7 @@ function Basket({ cartItems, onRemoveAll, onRemoveOne, onAdd }) {
             onAdd={onAdd}
           />
         ))}
-      <CheckoutButton onClick={Stripe.handleClick} />
+      <Stripe total={count} />
     </div>
   );
 }
