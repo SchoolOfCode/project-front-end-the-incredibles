@@ -32,12 +32,13 @@ function App() {
           </Route>
         </Switch>
       </Router>
-      <Blob />
       <Button
+        textContent={"HOWDY"}
         onClick={() => {
           setNum(num + 1);
         }}
       />
+      <Blob />
       <Footer />
     </div>
   );
