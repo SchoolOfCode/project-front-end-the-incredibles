@@ -1,24 +1,32 @@
-import Button from '../Buttons/Button';
-import ProductInBasket from '../ProductInBasket';
-import { basket } from './Basket.module.css';
+
+import CheckoutButton from "../Buttons/CheckoutButton";
+import ProductInBasket from "../ProductInBasket";
+import { basket } from "./Basket.module.css";
+import Stripe from "../Stripe";
 
 function Basket({ cartItems, onRemoveAll, onRemoveOne, onAdd }) {
-	return (
-		<div className={`${basket} basket`}>
-			<h2>Basket</h2>
-			{cartItems &&
-				cartItems.map((product, i) => (
-					<ProductInBasket
-						key={i}
-						product={product}
-						onRemoveAll={onRemoveAll}
-						onRemoveOne={onRemoveOne}
-						onAdd={onAdd}
-					/>
-				))}
-			<Button className="blackBtn" textContent="Checkout" onClick={() => console.log(cartItems)} />
-		</div>
-	);
+  let count = 0;
+  cartItems.map((item) => {
+    return (count += item.price * item.qty * 100);
+  });
+  //   const [handleClick, message, redirect] = Stripe();
+
+  return (
+    <div className={`${basket} basket`}>
+      <h2>Basket</h2>
+      {cartItems &&
+        cartItems.map((product, i) => (
+          <ProductInBasket
+            key={i}
+            product={product}
+            onRemoveAll={onRemoveAll}
+            onRemoveOne={onRemoveOne}
+            onAdd={onAdd}
+          />
+        ))}
+      <Stripe total={count} />
+    </div>
+  );
 }
 
 export default Basket;

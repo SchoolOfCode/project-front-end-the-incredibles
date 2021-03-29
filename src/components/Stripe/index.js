@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
-import ProductDisplay from '../ProductDisplay';
-import Message from '../Message';
+import ProductDisplay from "../ProductDisplay";
+import Button from "../Buttons/Button";
+import Message from "../Message";
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
-const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_CODE);
 
-
-function Stripe() {
+function Stripe({ total }) {
   const [message, setMessage] = useState("");
   const [redirect, setRedirect] = useState("");
 
@@ -18,11 +18,11 @@ function Stripe() {
 
     if (query.get("success")) {
       setMessage("Order placed! You will receive an email confirmation.");
-      setRedirect("You will be redirected to the checkout in 5 seconds")
-      // we can add a button here to go back to the home back. 
-      setTimeout(function() {
-        window.location.replace('http://localhost:3000/checkout');
-      }, 5000);
+      setRedirect("You will be redirected to the checkout in 5 seconds");
+      //we can add a button here to go back to the home back.
+      setTimeout(function () {
+        window.location.replace("http://localhost:3000/store");
+      }, 10000);
     }
 
     if (query.get("canceled")) {
@@ -32,11 +32,35 @@ function Stripe() {
     }
   }, []);
 
-  const handleClick = async (event) => {
+  const handleClick = async (count) => {
     const stripe = await stripePromise;
+    console.log(message);
+    console.log(redirect);
 
     const response = await fetch("/create-checkout-session", {
       method: "POST",
+      body: JSON.stringify({
+        cancelUrl: "https://localhost:3000/store",
+        successUrl: "https://localhost:3000/store",
+        payment_method_types: ["card"],
+        lineItems: [
+          {
+            price_data: {
+              currency: "gbp",
+              product_data: {
+                name: "Total",
+              },
+              unit_amount: count,
+            },
+            quantity: 1,
+          },
+        ],
+        mode: "payment",
+      }),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
     });
 
     const session = await response.json();
@@ -54,11 +78,16 @@ function Stripe() {
   };
 
   return message ? (
-    <Message message={message} redirect={redirect}/>
+    <Message message={message} redirect={redirect} />
   ) : (
-    <ProductDisplay handleClick={handleClick} />
+    <Button
+      className="blackBtn"
+      textContent="Checkout"
+      onClick={() => {
+        handleClick(parseInt(total));
+      }}
+    />
   );
 }
 
 export default Stripe;
-
