@@ -13,15 +13,12 @@ import "./App.css";
 import QuantityInput from "../Inputs/QuantityInput";
 import ProductCard from "../ProductCard";
 import Stripe from "../Stripe";
-import Blob from "../blob/src/Blob";
+import Blob from "../Blob/src/Blob";
 import Button from "../Buttons/Button";
 import useGet from "../../hooks/useGet";
 
 function App() {
-  const [num, setNum] = useState(0);
-  const [data, setData] = useGet(num);
 
-  
   return (
     <div className="app">
       <Router>
@@ -34,14 +31,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-      <Stripe/>
-      <Button
-        textContent={"HOWDY"}
-        onClick={() => {
-          setNum(num + 1);
-        }}
-      />
-      <Blob />
+      {/* <Blob /> */}
       <Footer />
     </div>
   );

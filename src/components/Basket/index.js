@@ -1,5 +1,5 @@
 
-import CheckoutButton from "../Buttons/CheckoutButton";
+
 import ProductInBasket from "../ProductInBasket";
 import { basket } from "./Basket.module.css";
 import Stripe from "../Stripe";

@@ -1,5 +1,6 @@
 
 import Input from "../Inputs/Input";
+import Blob from "../Blob/src/Blob";
 
 import {businessInfoForm} from "./BusinessInfoForm.module.css";
 
@@ -22,6 +23,7 @@ function BusinessInfoForm({updateData, businessInfo}) {
           updateInfo={updateData}
           currentInfo={businessAbout}
         />
+        <Blob updateInfo={updateData} updateField="businessImage"/>
       </form>
     )
 }

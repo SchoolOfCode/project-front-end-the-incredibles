@@ -9,8 +9,8 @@ import useGet from "../../hooks/useGet";
 
 function BusinessPage() {
   const [canEdit, setCanEdit] = useState(true);
-  const [businessInfo, setBusinessInfo] = useGet();
-  // const [businessInfo, setBusinessInfo] = useState(mockData);
+  //const [businessInfo, setBusinessInfo] = useGet();
+  const [businessInfo, setBusinessInfo] = useState(mockData);
     const { user } = useAuth0();
 
     console.log(user.sub);
@@ -23,6 +23,7 @@ function BusinessPage() {
   }
 
   return (
+    businessInfo &&
     <div className={BusinessPage}>
       <p>your custom url is: `https://localhost:3000/stores/{businessName.replace(" ", "-")}`</p>
       {canEdit ? (
