@@ -12,6 +12,8 @@ import CustomerNavBar from "../NavBar/CustomerNavBar";
 import "./App.css";
 import QuantityInput from "../Inputs/QuantityInput";
 import ProductCard from "../ProductCard";
+import Blob from "../blob/src/Blob"
+
 
 function App() {
   return (
@@ -26,7 +28,8 @@ function App() {
           </Route>
         </Switch>
       </Router>
-      <Footer />
+      <Blob/>
+      <Footer/>
     </div>
   );
 }

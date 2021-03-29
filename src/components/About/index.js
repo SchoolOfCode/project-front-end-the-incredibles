@@ -6,6 +6,7 @@ import {
 	subheading,
 } from './About.module.css';
 
+
 function About() {
 	return (
 		<div className={about}>
