@@ -5,10 +5,12 @@ import Basket from '../Basket';
 import BusinessProfile from '../BusinessProfile';
 import ProductCardGrid from '../ProductCardGrid';
 import { container, profileContainer } from './CustomerPage.module.css';
+import useGet from '../../hooks/useGet'
 
 function CustomerPage() {
 	const { cartItems, onAdd, onRemoveAll, onRemoveOne } = useBasket();
 	const { products } = mockData;
+	const [businessInfo, setBusinessInfo] = useGet()
 
 	return (
 		<div className={container}>
@@ -19,7 +21,7 @@ function CustomerPage() {
 				onAdd={onAdd}
 			/>
 			<div className={profileContainer}>
-				<BusinessProfile businessInfo={mockData} />
+				<BusinessProfile businessInfo={businessInfo} />
 			</div>
 			<ProductCardGrid products={products} onClick={onAdd}/>
 		</div>
