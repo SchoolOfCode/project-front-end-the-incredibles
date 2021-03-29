@@ -1,4 +1,4 @@
-import RemoveProductButton from "../Buttons/RemoveProductButton";
+import Button from "../Buttons/Button";
 
 import {currentProductsContainer, currentProduct} from "./CurrentProductList.module.css";
 
@@ -10,7 +10,7 @@ function CurrentProductList({products,removeProduct}) {
             <li key={i} className={currentProduct}>
               <span> {product.productName}</span>
               <span> £{product.price}</span>
-              <RemoveProductButton onClick={() => removeProduct(i)} />
+              <Button className="removeProduct" textContent="remove" onClick={() => removeProduct(i)} />
             </li>
           ))}
         </ul>
