@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+.ContentFlex img {
+  height: 200px;
+}
+
 .OutOfStock {
   opacity: 0.5;
   pointer-events: none;

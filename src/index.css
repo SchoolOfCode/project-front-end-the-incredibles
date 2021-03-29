@@ -14,6 +14,8 @@
 }
 
 body {
+  /*hides horizontal scroll for nav*/
+  overflow-x: hidden;
   margin: 0;
   font-family: var(--main-font-family);
   font-size: 1.25rem;

@@ -1,0 +1,18 @@
+.addProductsForm {
+	margin-bottom: 2rem;
+}
+.addProductsForm h2 {
+	text-align: left;
+	font-weight: bold !important;
+}
+
+.inputsContainer {
+	margin-left: auto;
+	margin-bottom: 1rem;
+	width: 80%;
+}
+
+.smallInputs {
+	margin-left: auto;
+	width: min-content;
+}

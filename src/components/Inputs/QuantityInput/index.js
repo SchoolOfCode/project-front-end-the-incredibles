@@ -8,7 +8,7 @@ function QuantityInput({ setState }) {
     getDecrementButtonProps,
   } = useNumberInput({
     step: 1,
-    defaultValue: 0,
+    defaultValue: 1,
     min: 0,
     max: 100,
     precision: 0,
@@ -16,8 +16,8 @@ function QuantityInput({ setState }) {
   const inc = getIncrementButtonProps();
   const dec = getDecrementButtonProps();
   const input = getInputProps({ onChange: () => console.log("hi") });
-  const hello = input.value;
-  setState(hello);
+
+  setState(parseInt(input.value));
 
   return (
     <HStack maxW="150px">
