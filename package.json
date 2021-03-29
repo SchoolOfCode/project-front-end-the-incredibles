@@ -26,9 +26,8 @@
     "@types/react-dom": "^16.9.0",
     "typescript": "~3.8.3"
   },
-
   "homepage": "http://localhost:3000/checkout",
-  "proxy": 	"http://localhost:4242",
+  "proxy": "http://localhost:4242",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

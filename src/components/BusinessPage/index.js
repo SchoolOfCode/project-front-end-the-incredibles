@@ -3,12 +3,14 @@ import {useAuth0} from "@auth0/auth0-react"
 import mockData from "../../libs/mockData";
 import BusinessPageEdit from "./BusinessPageEdit";
 import BusinessPageStatic from "./BusinessPageStatic";
-//import useGet from "../../hooks/useGet";
+import useGet from "../../hooks/useGet";
+
+
 
 function BusinessPage() {
   const [canEdit, setCanEdit] = useState(true);
-  //const [businessInfo, setBusinessInfo] = useGet();
-  const [businessInfo, setBusinessInfo] = useState(mockData);
+  const [businessInfo, setBusinessInfo] = useGet();
+  // const [businessInfo, setBusinessInfo] = useState(mockData);
     const { user } = useAuth0();
 
     console.log(user.sub);

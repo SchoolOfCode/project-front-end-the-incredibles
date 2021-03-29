@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function useGet(state) {
+function useGet() {
   const [fetchedData, setFetchedData] = useState(null);
 
   useEffect(() => {
