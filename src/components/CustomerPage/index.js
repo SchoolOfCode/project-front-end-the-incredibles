@@ -21,7 +21,7 @@ function CustomerPage() {
 			<div className={profileContainer}>
 				<BusinessProfile businessInfo={mockData} />
 			</div>
-			<ProductCardGrid products={products} />
+			<ProductCardGrid products={products} onClick={onAdd}/>
 		</div>
 	);
 }
