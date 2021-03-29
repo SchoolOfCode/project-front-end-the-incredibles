@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import ProductDisplay from "../ProductDisplay";
-import CheckoutButton from "../Buttons/CheckoutButton";
+import Button from "../Buttons/Button";
 import Message from "../Message";
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
@@ -80,11 +80,11 @@ function Stripe({ total }) {
   return message ? (
     <Message message={message} redirect={redirect} />
   ) : (
-    <CheckoutButton
+    <Button
+      className="blackBtn"
+      textContent="Checkout"
       onClick={() => {
         handleClick(parseInt(total));
-        console.log(message);
-        console.log(redirect);
       }}
     />
   );
