@@ -16,7 +16,7 @@ function Basket({ cartItems, onRemoveAll, onRemoveOne, onAdd }) {
 						onAdd={onAdd}
 					/>
 				))}
-			<Button classNames="blackBtn" textContent="Checkout" onClick={() => console.log(cartItems)} />
+			<Button className="blackBtn" textContent="Checkout" onClick={() => console.log(cartItems)} />
 		</div>
 	);
 }

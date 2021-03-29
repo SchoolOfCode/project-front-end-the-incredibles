@@ -6,7 +6,7 @@ function SignInUpButton({ textContent }) {
 
 	return (
 		<Button
-			classNames='signInUp'
+			className='signInUp'
 			textContent={textContent}
 			onClick={loginWithRedirect}
 		/>

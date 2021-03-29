@@ -27,8 +27,8 @@ function BusinessPageEdit({ businessInfo, setBusinessInfo, toggleCanEdit }) {
 
 			<div className={publishContainer}>
 				<Button
-					classNames='blackBtn'
-					textContent='Checkout'
+					className='blackBtn'
+					textContent='Publish CartShop'
 					onClick={
 						toggleCanEdit
 						// console.log(businessInfo);

@@ -10,7 +10,7 @@ function CurrentProductList({products,removeProduct}) {
             <li key={i} className={currentProduct}>
               <span> {product.productName}</span>
               <span> £{product.price}</span>
-              <Button classNames="removeProduct" textContent="remove" onClick={() => removeProduct(i)} />
+              <Button className="removeProduct" textContent="remove" onClick={() => removeProduct(i)} />
             </li>
           ))}
         </ul>

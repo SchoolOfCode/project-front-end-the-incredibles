@@ -1,10 +1,10 @@
 import {button} from '../Button.module.css';
-
-function Button({ classNames, textContent, onClick, disabled = false }) {
+import css from "../Button.module.css";
+function Button({ className, textContent, onClick, disabled = false }) {
 	
 	return (
 		<button
-			className={`${button} ${classNames}`}
+			className={`${css.button} ${css[className]}`}
 			onClick={onClick}
 			disabled={disabled}
 		>
