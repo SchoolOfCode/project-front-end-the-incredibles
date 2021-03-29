@@ -1,4 +1,4 @@
-import CheckoutButton from '../Buttons/CheckoutButton';
+import Button from '../Buttons/Button';
 import ProductInBasket from '../ProductInBasket';
 import { basket } from './Basket.module.css';
 
@@ -16,7 +16,7 @@ function Basket({ cartItems, onRemoveAll, onRemoveOne, onAdd }) {
 						onAdd={onAdd}
 					/>
 				))}
-			<CheckoutButton onClick={() => console.log(cartItems)} />
+			<Button classNames="blackBtn" textContent="Checkout" onClick={() => console.log(cartItems)} />
 		</div>
 	);
 }

@@ -6,7 +6,7 @@ function SignOutButton() {
 
   return (
     <Button
-      className="signOut"
+      classNames="signOut"
       textContent="Sign Out"
       onClick={() => logout({ returnTo: window.location.origin })}
     />
