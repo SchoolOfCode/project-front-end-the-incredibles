@@ -1,0 +1,29 @@
+.basket {
+    background: #ff5a60eb;
+    color: white;
+    padding: 1rem 2rem;
+    position: absolute;
+    right: 0;
+    height: calc(100% - 80px);
+    text-align: center;
+    top: 80px;
+    transform: translateX(100%);
+    transition: transform .25s ease-in-out;
+    width: 500px;
+    z-index: 4;
+}
+
+.basket h2{
+    font-size: 2rem;
+    margin-bottom: 1em;
+}
+
+
+@media (max-width: 700px){
+    .basket{
+        background: #ff5a60eb;
+        top: 170px;
+        height: calc(100% - 170px);
+        width: 100%;
+    }
+}

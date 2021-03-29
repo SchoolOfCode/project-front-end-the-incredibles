@@ -7,6 +7,7 @@
     color: var(--accent-color);
     border: 2px solid var(--accent-color);
     font-weight: bold;
+    font-size: 1rem;
     letter-spacing: .5px;
     padding: .5em 1em;
     text-transform: uppercase;
@@ -24,6 +25,7 @@
 }
 
 .addToCart {
+    margin: 1.5em auto 1em;
     background: var(--accent-color);
     color: var(--white);
 }
@@ -49,7 +51,14 @@
     opacity: .9;
 }
 .removeProduct:hover {
-    background: var(--dark-red);
-    border: 2px solid var(--black);
+    background: var(--white);
+    border: 2px solid var(--dark-red);
+    color: var(--dark-red);
     opacity: 1;
+}
+
+@media (max-width: 500px) {
+    .button{
+        font-size: .75rem;
+    }
 }

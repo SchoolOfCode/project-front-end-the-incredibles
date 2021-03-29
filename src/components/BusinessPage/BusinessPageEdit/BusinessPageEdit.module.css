@@ -1,0 +1,21 @@
+.container {
+	height: 100%;
+	padding: 2rem 3rem;
+	text-align: right;
+	max-width: 700px;
+	margin: auto;
+}
+
+.publishContainer {
+	margin-top: 2rem;
+	padding-top: 1rem;
+	border-top: 1px solid var(--gray);
+    text-align: center;
+}
+
+.publishContainer p {
+	font-style: italic;
+	font-size: .75rem;
+	font-weight: 300;
+    margin-top: .75rem;
+}

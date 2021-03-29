@@ -1,8 +1,8 @@
 :root {
-  --accent-color: #FF5A5F;
-  --white: #F1F1F1;
-  --black: #1E1E24;
-  --gray: #E0E1E8;
+  --accent-color: #ff5a5f;
+  --white: #f1f1f1;
+  --black: #1e1e24;
+  --gray: #7d7d7e;
   --main-font-family: Roboto;
 }
 
@@ -14,19 +14,29 @@
 }
 
 body {
+  /*hides horizontal scroll for nav*/
+  overflow-x: hidden;
   margin: 0;
   font-family: var(--main-font-family);
+  font-size: 1.25rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
 
 button,
 input {
   font-family: inherit;
   font-size: inherit;
+}
+
+
+/* show or hides basket */
+.showBasket {
+    transform: translateX(0)!important;
+}
+
+@media (max-width){
+  body {
+    font-size: 1rem;
+  }
 }

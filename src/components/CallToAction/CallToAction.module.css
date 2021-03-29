@@ -1,7 +1,7 @@
 .callToAction {
 	text-align: center;
 	margin: auto;
-	max-width: 400px;
+	max-width: 600px;
 	letter-spacing: 1.25px;
 }
 
@@ -13,9 +13,20 @@
 .heading {
 	padding-bottom: 1rem;
 	border-bottom: 3px solid var(--accent-color);
+	font-size: 3rem;
 	margin: 0;
 }
 
 .subheading {
     margin: 1rem auto 0;
+	font-size: 1.5rem;
+}
+
+@media (min-width: 600px){
+	.heading {
+		font-size: 2.75rem;
+	}
+	.subheading {
+		font-size: 1.75rem;
+	}
 }

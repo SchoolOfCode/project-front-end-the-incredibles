@@ -1,53 +1,61 @@
 .navFlex {
-  display: flex;
-  max-width: 100%;
-  margin: auto;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  font-family: var(--main-font-family);
-  align-items: center;
+	/*always at top*/
+	grid-area: header;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	margin: 0;
+	padding: .75rem 3rem 1rem;
+	width: 100%;
+	z-index: 2;
 }
-.innerFlex {
-  display: flex;
-  width: 80%;
-  margin: auto;
-  align-items: center;
-  justify-content: space-between;
+.linkFlex h1 {
+	font-size: 1.75rem;
 }
 
 .linkFlex {
-  justify-self: flex-end;
-  width: 80%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+	align-items: center;
+	justify-content: space-between;
+	display: flex;
 }
 
-.basketButtonFlex {
-  justify-self: flex-end;
-  width: 20%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
 .links {
-  text-decoration: none;
-  color: inherit;
+	text-decoration: none;
+	color: inherit;
+	font-weight: bold;
+	position: relative;
 }
-
 .links:visited {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	opacity: .8;
+	text-decoration: none;
+}
+/*for hover effect*/
+.links::before {
+	background: var(--accent-color);
+	bottom: -1px;
+	content: "";
+	height: 2px;
+	position: absolute;
+	transition: width .25s ease-in-out;
+	width: 0%;
+}
+.links:hover::before {
+	width: 100%;
+}
+.active {
+	color: var(--accent-color) !important;
 }
 
 @media (max-width: 768px) {
-  .navFlex {
-    width: 100vw;
-  }
-  .linkFlex {
-    width: 60%;
-    justify-content: space-between;
-  }
+	.linkFlex {
+		flex-direction: column;
+		width: 100%;
+		justify-content: center;
+		text-align: center;
+	}
+	.links {
+		margin: .25em 0;
+	}
+	.linkFlex h1 {
+		margin: .5rem 0;
+	}
 }
