@@ -2,10 +2,11 @@ import { useState } from "react";
 import mockData from "../../libs/mockData";
 import BusinessPageEdit from "./BusinessPageEdit";
 import BusinessPageStatic from "./BusinessPageStatic";
+import useGet from "../../hooks/useGet";
 
 function BusinessPage() {
   const [canEdit, setCanEdit] = useState(true);
-  const [businessInfo, setBusinessInfo] = useState(mockData);
+  const [businessInfo, setBusinessInfo] = useGet();
 
   function toggleCanEdit() {
     setCanEdit(!canEdit);
