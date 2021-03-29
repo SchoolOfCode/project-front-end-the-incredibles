@@ -1,8 +1,12 @@
 import CheckoutButton from "../Buttons/CheckoutButton";
 import ProductInBasket from "../ProductInBasket";
 import { basket } from "./Basket.module.css";
+import Stripe from "../Stripe";
 
 function Basket({ cartItems, onRemoveAll, onRemoveOne, onAdd }) {
+  let count = 0;
+  cartItems.map((item)=>{count+=item.price})
+
   return (
     <div className={`${basket} basket`}>
       <h2>Basket</h2>
@@ -16,7 +20,7 @@ function Basket({ cartItems, onRemoveAll, onRemoveOne, onAdd }) {
             onAdd={onAdd}
           />
         ))}
-      <CheckoutButton onClick={() => console.log(cartItems)} />
+      <CheckoutButton onClick={Stripe.handleClick} />
     </div>
   );
 }
