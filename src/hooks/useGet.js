@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function useGet() {
+function useGet(state) {
   const [fetchedData, setFetchedData] = useState(null);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ function useGet() {
     getData();
     // eslint-disable-next-line
   }, []);
-
+  console.log(fetchedData);
   return [fetchedData, setFetchedData];
 }
 

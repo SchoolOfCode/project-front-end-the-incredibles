@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   // NavLink,
@@ -12,10 +12,14 @@ import CustomerNavBar from "../NavBar/CustomerNavBar";
 import "./App.css";
 import QuantityInput from "../Inputs/QuantityInput";
 import ProductCard from "../ProductCard";
-import Blob from "../blob/src/Blob"
-
+import Blob from "../blob/src/Blob";
+import Button from "../Buttons/Button";
+import useGet from "../../hooks/useGet";
 
 function App() {
+  const [num, setNum] = useState(0);
+  const [data, setData] = useGet(num);
+
   return (
     <div className="app">
       <Router>
@@ -28,8 +32,13 @@ function App() {
           </Route>
         </Switch>
       </Router>
-      <Blob/>
-      <Footer/>
+      <Blob />
+      <Button
+        onClick={() => {
+          setNum(num + 1);
+        }}
+      />
+      <Footer />
     </div>
   );
 }
