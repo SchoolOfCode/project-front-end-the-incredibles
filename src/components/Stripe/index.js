@@ -36,32 +36,36 @@ function Stripe({ total }) {
     const stripe = await stripePromise;
     console.log(message);
     console.log(redirect);
+    console.log(count);
 
-    const response = await fetch("/create-checkout-session", {
-      method: "POST",
-      body: JSON.stringify({
-        cancelUrl: "https://localhost:3000/store",
-        successUrl: "https://localhost:3000/store",
-        payment_method_types: ["card"],
-        lineItems: [
-          {
-            price_data: {
-              currency: "gbp",
-              product_data: {
-                name: "Total",
+    const response = await fetch(
+      `${process.env.REACT_APP_STRIPE_API_URL}/create-checkout-session`,
+      {
+        method: "POST",
+        body: JSON.stringify({
+          cancelUrl: "https://localhost:3000/store",
+          successUrl: "https://localhost:3000/store",
+          payment_method_types: ["card"],
+          lineItems: [
+            {
+              price_data: {
+                currency: "gbp",
+                product_data: {
+                  name: "Total",
+                },
+                unit_amount: count,
               },
-              unit_amount: count,
+              quantity: 1,
             },
-            quantity: 1,
-          },
-        ],
-        mode: "payment",
-      }),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    });
+          ],
+          mode: "payment",
+        }),
+        headers: {
+          "Content-Type": "application/json",
+          //   Authorization: `Bearer ${process.env.REACT_APP_STRIPE_CODE}`,
+        },
+      }
+    );
 
     const session = await response.json();
 

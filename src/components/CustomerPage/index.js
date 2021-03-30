@@ -8,12 +8,14 @@ import { container, profileContainer } from './CustomerPage.module.css';
 import useGet from '../../hooks/useGet'
 
 function CustomerPage() {
+	//calls the custom hook which is a useReducer hook that is used in several methods (i.e. onAdd, onRemoveAll etc)
 	const { cartItems, onAdd, onRemoveAll, onRemoveOne } = useBasket();
 	const { products } = mockData;
 	const [businessInfo, setBusinessInfo] = useGet()
 
 	return (
 		<div className={container}>
+			{/* these are where all the methods are being handed down as props to the basket component */}
 			<Basket
 				cartItems={cartItems}
 				onRemoveAll={onRemoveAll}
@@ -23,6 +25,7 @@ function CustomerPage() {
 			<div className={profileContainer}>
 				<BusinessProfile businessInfo={businessInfo} />
 			</div>
+			{/* products is an array in mockdata which is passed down as a prop to this componenet and can add using the onAdd method */}
 			<ProductCardGrid products={products} onClick={onAdd}/>
 		</div>
 	);

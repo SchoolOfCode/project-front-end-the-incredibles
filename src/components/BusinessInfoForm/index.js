@@ -1,8 +1,8 @@
-
 import Input from "../Inputs/Input";
-import Blob from "../Blob/src/Blob";
+import Blob from "../Blob/src/Blob"
+;
 
-import {businessInfoForm} from "./BusinessInfoForm.module.css";
+import { businessInfoForm } from "./BusinessInfoForm.module.css";
 
 function BusinessInfoForm({updateData, businessInfo}) {
     const {businessName, primaryEmail} = businessInfo;
@@ -28,4 +28,4 @@ function BusinessInfoForm({updateData, businessInfo}) {
     )
 }
 
-export default BusinessInfoForm
+export default BusinessInfoForm;

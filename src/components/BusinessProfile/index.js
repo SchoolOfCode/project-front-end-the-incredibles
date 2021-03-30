@@ -8,9 +8,14 @@ import {
 } from './BusinessProfile.module.css';
 
 function BusinessProfile({ businessInfo }) {
+<<<<<<< HEAD
 	// console.log(businessInfo)
 	// console.log(`log from businessProfile ${businessInfo}`);
 	
+||||||| 53761db
+=======
+	//destructuring businessInfo object (which is our mockData) and displaying in on the page
+>>>>>>> development
 	return (
 		
 		<div>{businessInfo && 

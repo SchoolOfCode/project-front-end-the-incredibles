@@ -22,9 +22,11 @@ function App() {
       <Router>
         <Switch>
           <Route path="/store">
+            {/* taken to business store page for viewing by customer */}
             <CustomerNavBar />
           </Route>
           <Route path="/">
+                {/* main page. taken to business page for business owners  */}
             <BusinessNavBar />
           </Route>
         </Switch>
