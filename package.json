@@ -27,7 +27,8 @@
     "typescript": "~3.8.3"
   },
   "homepage": "http://localhost:3000/checkout",
-  "proxy": "http://localhost:4242",
+  "proxy": "https://nodejs-api-demo-day.herokuapp.com/",
+
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
