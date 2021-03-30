@@ -1,5 +1,6 @@
 import Input from "../Inputs/Input";
-import Blob from "../Blob/src/Blob";
+import Blob from "../Blob/src/Blob"
+;
 
 import { businessInfoForm } from "./BusinessInfoForm.module.css";
 

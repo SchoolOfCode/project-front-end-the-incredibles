@@ -8,6 +8,7 @@ import {
 } from './BusinessProfile.module.css';
 
 function BusinessProfile({ businessInfo }) {
+	//destructuring businessInfo object (which is our mockData) and displaying in on the page
 	return (
 		<div className={container}>
 			<IsBusinessOpen isTrading={businessInfo.isTrading} />

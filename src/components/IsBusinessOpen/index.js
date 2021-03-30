@@ -3,6 +3,7 @@ import styles from "./IsTrading.module.css";
 import "../../index.css";
 
 function IsBusinessOpen({ IsTrading = true }) {
+  // this is a ternary statement which renders is Trading or closed on the page depending on what information is given.
   return (
     <div className={styles.main}>
       {IsTrading ? (
