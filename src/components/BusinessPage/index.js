@@ -8,14 +8,18 @@ import useGet from "../../hooks/useGet";
 
 
 function BusinessPage() {
+  const { user } = useAuth0();
   const [canEdit, setCanEdit] = useState(true);
-  //const [businessInfo, setBusinessInfo] = useGet();
-  const [businessInfo, setBusinessInfo] = useState(mockData);
-    const { user } = useAuth0();
+
+  const [businessInfo, setBusinessInfo] = useGet("auth0|606198aac96e2800685cabff");
+  console.log(businessInfo);
+
+  // useGet("auth0|606198aac96e2800685cabff");
+  // const [businessInfo, setBusinessInfo] = useState(mockData);
 
     console.log(user.sub);
     //use this id to get access to DB.
-  const {businessName} = businessInfo
+  // const {businessName} = businessInfo
     //
   function toggleCanEdit() {
     setCanEdit(!canEdit);
@@ -25,7 +29,7 @@ function BusinessPage() {
   return (
     businessInfo &&
     <div className={BusinessPage}>
-      <p>your custom url is: `https://localhost:3000/stores/{businessName.replace(" ", "-")}`</p>
+      <p>your custom url is: `https://localhost:3000/stores/{businessInfo.businessName.replace(" ", "-")}`</p>
       {canEdit ? (
         <BusinessPageEdit
           businessInfo={businessInfo}

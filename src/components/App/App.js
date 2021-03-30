@@ -13,7 +13,6 @@ import "./App.css";
 import QuantityInput from "../Inputs/QuantityInput";
 import ProductCard from "../ProductCard";
 import Stripe from "../Stripe";
-import Blob from "../Blob/src/Blob";
 import Button from "../Buttons/Button";
 import useGet from "../../hooks/useGet";
 
@@ -30,7 +29,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-      {/* <Blob /> */}
+
       <Footer />
     </div>
   );

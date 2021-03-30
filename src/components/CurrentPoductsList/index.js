@@ -9,7 +9,7 @@ function CurrentProductList({products,removeProduct}) {
           {products.map((product, i) => (
             <li key={i} className={currentProduct}>
               <span> {product.productName}</span>
-              <span> £{product.price}</span>
+              <span> £{product.productPrice}</span>
               <Button className="removeProduct" textContent="remove" onClick={() => removeProduct(i)} />
             </li>
           ))}

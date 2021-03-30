@@ -5,7 +5,7 @@ import Blob from "../Blob/src/Blob";
 import {businessInfoForm} from "./BusinessInfoForm.module.css";
 
 function BusinessInfoForm({updateData, businessInfo}) {
-    const {businessName, businessAbout} = businessInfo;
+    const {businessName, primaryEmail} = businessInfo;
 
     return (
         <form className={businessInfoForm}>
@@ -18,10 +18,10 @@ function BusinessInfoForm({updateData, businessInfo}) {
         />
         <Input
           type="text"
-          labelText="About The Business:"
-          id="businessAbout"
+          labelText="Email:"
+          id="primaryEmail"
           updateInfo={updateData}
-          currentInfo={businessAbout}
+          currentInfo={primaryEmail}
         />
         <Blob updateInfo={updateData} updateField="businessImage"/>
       </form>

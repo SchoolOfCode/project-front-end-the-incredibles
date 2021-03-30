@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
-function useGet() {
+function useGet(Auth0) {
   const [fetchedData, setFetchedData] = useState(null);
   let num = 0;
   const getData = async () => {
-    let res = await fetch(process.env.REACT_APP_BACKEND_URL);
+    let res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/${Auth0}`);
     let data = await res.json();
     setFetchedData(data);
     // console.log(data)
