@@ -22,19 +22,28 @@ function useGetInfo(businessInfo, setBusinessInfo) {
       products: [
         ...products,
         {
+          id: businessInfo.businessId,
           productName: newProd,
-          price: newPrice,
-          inventoryQuantity: newQuant,
+          productPrice: newPrice,
+          productImage: "",
+          quantity: newQuant
         },
       ],
     });
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/business/insertbyproduct`, {method: 'POST', body: JSON.stringify({
+      id: parseInt(businessInfo.businessId),
+      productName: newProd,
+      productPrice: parseInt(newPrice),
+      productImage: "",
+      quantity: parseInt(newQuant)})
+  })
   }
-
   return {
       updateData,
       removeProduct,
       addProduct
   }
+
 }
 
 export default useGetInfo;

@@ -5,6 +5,7 @@ import {
 	inputsContainer,
 	smallInputs,
 } from './AddProductsForm.module.css';
+import Blob from '../Blob/src/Blob';
 
 function AddProductsForm({ addProduct }) {
 	return (
@@ -30,6 +31,7 @@ function AddProductsForm({ addProduct }) {
 						id='inventoryQuantity'
 						updateInfo={() => console.log()}
 					/>
+					<Blob />
 				</div>
 			</div>
 			<Button
