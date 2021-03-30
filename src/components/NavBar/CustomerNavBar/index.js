@@ -11,11 +11,14 @@ import CustomerPage from "../../CustomerPage";
 import css from "../NavBar.module.css";
 
 function CustomerNavBar(props) {
+  //useState hook to track whether basket button is clicked
   const [basketOpen, setBasketOpen] = useState(false);
-
+  //
   function toggleBasket() {
     const basket = document.querySelector(".basket");
+    //switches basket between visible and not visible 
     basket.classList.toggle("showBasket");
+    //changes the state of the basketopen to be the opposite of existing state
     setBasketOpen(!basketOpen);
   }
 
@@ -24,6 +27,7 @@ function CustomerNavBar(props) {
       <div className={css.navFlex}>
         <nav className={css.linkFlex}>
           <h1> CartShop</h1>
+          {/* NavLink allows styling attributes to be added to Link */}
           <NavLink
             to={"/store"}
             exact
@@ -32,7 +36,7 @@ function CustomerNavBar(props) {
           >
             Macrambé Master
           </NavLink>
-
+          {/* Turnary operator which changes button value to X or basket by tracking basketopen state */}
           <Button
             textContent={basketOpen ? "X" : "basket"}
             onClick={toggleBasket}
