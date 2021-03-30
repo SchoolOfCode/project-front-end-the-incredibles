@@ -9,14 +9,17 @@ import "../../../index.css";
 import Button from "../../Buttons/Button";
 import CustomerPage from "../../CustomerPage";
 import css from "../NavBar.module.css";
+import { useParams } from "react-router-dom";
 
-function CustomerNavBar(props) {
+function CustomerNavBar() {
   //useState hook to track whether basket button is clicked
   const [basketOpen, setBasketOpen] = useState(false);
+  const { businessUrl } = useParams();
+  console.log(businessUrl);
   //
   function toggleBasket() {
     const basket = document.querySelector(".basket");
-    //switches basket between visible and not visible 
+    //switches basket between visible and not visible
     basket.classList.toggle("showBasket");
     //changes the state of the basketopen to be the opposite of existing state
     setBasketOpen(!basketOpen);
