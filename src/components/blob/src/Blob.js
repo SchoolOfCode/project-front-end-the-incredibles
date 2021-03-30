@@ -1,13 +1,14 @@
 // ./src/App.tsx
 
 import React, { useState } from 'react';
+import Button from "../../Buttons/Button";
 import Path from 'path';
-import uploadFileToBlob, { isStorageConfigured } from './azure-storage-blob';
+import uploadFileToBlob, { isStorageConfigured } from './azure-storage-blob.ts';
 
 
 const storageConfigured = isStorageConfigured();
 
-function Blob (){
+function Blob ({updateInfo, updateField}){
   // all blobs in container
   const [blobList, setBlobList] = useState("");
 
@@ -37,15 +38,16 @@ function Blob (){
     setFileSelected(null);
     setUploading(false);
     setInputKey(Math.random().toString(36));
+
+    //update state with img url
+    updateInfo(blobList, updateField);
   };
 
   // display form
   const DisplayForm = () => (
     <div>
       <input type="file" onChange={onFileChange} key={inputKey || ''} />
-      <button type="submit" onClick={onFileUpload}>
-        Upload!
-          </button>
+      <Button className="upload" textContent="upload" onClick={onFileUpload}/>
     </div>
   )
 
@@ -53,6 +55,7 @@ function Blob (){
   const DisplayImagesFromContainer = () => (
     <div>
               <div>
+                <p>Your Image:</p>
                       <img src={blobList} alt={blobList} height="200" />
               </div>
     </div>
@@ -60,7 +63,6 @@ function Blob (){
 
   return (
     <div>
-      <h1>Upload file to Azure Blob Storage</h1>
       {storageConfigured && !uploading && DisplayForm()}
       {storageConfigured && uploading && <div>Uploading</div>}
       <hr />

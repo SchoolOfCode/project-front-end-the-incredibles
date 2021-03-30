@@ -13,14 +13,11 @@ import "./App.css";
 import QuantityInput from "../Inputs/QuantityInput";
 import ProductCard from "../ProductCard";
 import Stripe from "../Stripe";
-import Blob from "../blob/src/Blob";
+import Blob from "../Blob/src/Blob";
 import Button from "../Buttons/Button";
 import useGet from "../../hooks/useGet";
 
 function App() {
-  const [num, setNum] = useState(0);
-  
-  
   return (
     <div className="app">
       <Router>
@@ -33,8 +30,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-      <Stripe/>
-      <Blob />
+      {/* <Blob /> */}
       <Footer />
     </div>
   );

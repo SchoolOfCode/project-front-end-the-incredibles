@@ -4,7 +4,7 @@ function Button({ className, textContent, onClick, disabled = false }) {
 	
 	return (
 		<button
-			className={`${css.button} ${css[className]}`}
+			className={`${button} ${css[className]}`}
 			onClick={onClick}
 			disabled={disabled}
 		>
