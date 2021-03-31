@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function useGet(Auth0) {
+function useGet(query) {
   const [isLoading, setIsLoading] = useState(true);
   const [fetchedData, setFetchedData] = useState(null);
 
@@ -8,7 +8,7 @@ function useGet(Auth0) {
     setIsLoading(true);
 
     try {
-      let res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/${Auth0}`, {
+      let res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/${query}`, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       });
@@ -21,7 +21,7 @@ function useGet(Auth0) {
         {
           method: "POST",
           body: JSON.stringify({
-            auth0Id: Auth0,
+            auth0Id: query,
           }),
           headers: { "Content-Type": "application/json" },
         }

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
-import ProductDisplay from "../ProductDisplay";
 import Button from "../Buttons/Button";
 import Message from "../Message";
 

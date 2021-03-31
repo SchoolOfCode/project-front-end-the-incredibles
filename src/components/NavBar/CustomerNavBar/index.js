@@ -15,7 +15,7 @@ function CustomerNavBar() {
   //useState hook to track whether basket button is clicked
   const [basketOpen, setBasketOpen] = useState(false);
   const { businessUrl } = useParams();
-  console.log(businessUrl);
+  
   //
   function toggleBasket() {
     const basket = document.querySelector(".basket");
@@ -32,7 +32,7 @@ function CustomerNavBar() {
           <h1> CartShop</h1>
           {/* NavLink allows styling attributes to be added to Link */}
           <NavLink
-            to={"/store"}
+            to={`/${businessUrl}`}
             exact
             className={css.links}
             activeClassName={css.active}
@@ -48,7 +48,7 @@ function CustomerNavBar() {
       </div>
       <Switch>
         <Route path="/store">
-          <CustomerPage />
+          <CustomerPage route={businessUrl}/>
         </Route>
       </Switch>
     </Router>

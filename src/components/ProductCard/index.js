@@ -6,6 +6,7 @@ import styles from "./ProductCard.module.css";
 function ProductCard({ product, onClick }) {
   // this is all the product information 
   // product here is the...
+
   const { productName, productPrice, productImage, quantity } = product;
   const [desiredQuantity, setDesiredQuantity] = useState(0);
   const inStockClass = quantity ? "Stocked" : "OutOfStock";
@@ -14,7 +15,7 @@ function ProductCard({ product, onClick }) {
       <div className={styles.innerContent}>
         <img
           src={productImage}
-          alt={"."}
+          alt={"product"}
         />
         <p className={styles.name}>{productName}</p>
         <p className={styles.price}>£{productPrice}</p>

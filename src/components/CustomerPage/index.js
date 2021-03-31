@@ -7,15 +7,18 @@ import ProductCardGrid from '../ProductCardGrid';
 import { container, profileContainer } from './CustomerPage.module.css';
 import useGet from '../../hooks/useGet'
 
-function CustomerPage() {
+function CustomerPage({route}) {
 	//calls the custom hook which is a useReducer hook that is used in several methods (i.e. onAdd, onRemoveAll etc)
 	const { cartItems, onAdd, onRemoveAll, onRemoveOne } = useBasket();
-	const { products } = mockData;
-	const [businessInfo, setBusinessInfo] = useGet()
+	const {isLoading, data: businessInfo } = useGet(`store/pete-the-meat`)
+	if(isLoading){
+		return <div className={container}>Loading</div>
+	}
 
 	return (
 		<div className={container}>
 			{/* these are where all the methods are being handed down as props to the basket component */}
+			
 			<Basket
 				cartItems={cartItems}
 				onRemoveAll={onRemoveAll}
@@ -26,7 +29,7 @@ function CustomerPage() {
 				<BusinessProfile businessInfo={businessInfo} />
 			</div>
 			{/* products is an array in mockdata which is passed down as a prop to this componenet and can add using the onAdd method */}
-			<ProductCardGrid products={products} onClick={onAdd}/>
+			<ProductCardGrid products={businessInfo.products} onClick={onAdd}/>
 		</div>
 	);
 }

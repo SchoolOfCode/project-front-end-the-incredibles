@@ -5,6 +5,8 @@ function basketReducer(state, action) {
 	const id = product.productId;
 
 	
+	console.log(product);
+	console.log(state);
 	switch (action.type) {
 		case 'ADD_FIRST':
 			return [ ...state, { ...product, qty: action.payload } ];
