@@ -3,10 +3,12 @@ import Blob from "../Blob/src/Blob"
 ;
 
 import { businessInfoForm } from "./BusinessInfoForm.module.css";
+import { useState } from 'react';
 
 function BusinessInfoForm({updateData, businessInfo}) {
     const {businessName, primaryEmail} = businessInfo;
 
+  console.log(businessInfo)
     return (
         <form className={businessInfoForm}>
         <Input
@@ -23,7 +25,8 @@ function BusinessInfoForm({updateData, businessInfo}) {
           updateInfo={updateData}
           currentInfo={primaryEmail}
         />
-        <Blob updateInfo={updateData} updateField="businessImage"/>
+        <Blob updateInfo={updateData} updateField="businessLogo"
+        currentImage={businessInfo.businessLogo}/>
       </form>
     )
 }
