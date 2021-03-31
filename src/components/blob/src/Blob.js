@@ -8,9 +8,9 @@ import uploadFileToBlob, { isStorageConfigured } from './azure-storage-blob.ts';
 
 const storageConfigured = isStorageConfigured();
 
-function Blob ({updateInfo, updateField, currentImage = ""}){
+function Blob ({updateInfo, updateField}){
   // all blobs in container
-  const [blobList, setBlobList] = useState(currentImage);
+  const [blobList, setBlobList] = useState("");
 
   // current file to upload into container
   const [fileSelected, setFileSelected] = useState(null);
