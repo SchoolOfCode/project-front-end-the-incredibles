@@ -1,9 +1,7 @@
-
 function useGetInfo(businessInfo, setBusinessInfo) {
-    const {products} = businessInfo;
+  const { products } = businessInfo;
 
-
-    function updateData(newValue, property) {
+  function updateData(newValue, property) {
     setBusinessInfo({ ...businessInfo, [property]: newValue });
     console.log(businessInfo);
   }
@@ -27,40 +25,46 @@ function useGetInfo(businessInfo, setBusinessInfo) {
           productName: newProd,
           productPrice: newPrice,
           productImage: "",
-          quantity: newQuant
+          quantity: newQuant,
         },
       ],
     });
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/business/insertbyproduct`, 
-    {method: 'POST', 
-    body: JSON.stringify({
-      businessId: 2,
-      productName: newProd,
-      productPrice: newPrice,
-      productImage: "",
-      quantity: newQuant}), headers : { 'Content-Type': 'application/json' }
-
-  })
-}
-
-async function updateDatabase() {
-  const {id} = businessInfo;
-  const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/business/updatebybusiness/${parseInt(id)}`, 
-    {method: 'PUT', 
-    body: JSON.stringify({
-      ...businessInfo,
-      id: businessInfo.id
-    }), headers : { 'Content-Type': 'application/json' }
-  })
-  console.log(res);
-}
-  return {
-      updateData,
-      removeProduct,
-      addProduct,
-      updateDatabase
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/business/insertbyproduct`, {
+      method: "POST",
+      body: JSON.stringify({
+        businessId: businessInfo.id,
+        productName: newProd,
+        productPrice: newPrice,
+        productImage: "",
+        quantity: newQuant,
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
   }
 
+  async function updateDatabase() {
+    const { id } = businessInfo;
+    const res = await fetch(
+      `${
+        process.env.REACT_APP_BACKEND_URL
+      }/business/updatebybusiness/${parseInt(id)}`,
+      {
+        method: "PUT",
+        body: JSON.stringify({
+          ...businessInfo,
+          id: businessInfo.id,
+        }),
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+    console.log(res);
+  }
+  return {
+    updateData,
+    removeProduct,
+    addProduct,
+    updateDatabase,
+  };
 }
 
 export default useGetInfo;
