@@ -43,19 +43,22 @@ function useGetInfo(businessInfo, setBusinessInfo) {
   })
 }
 
-function postData() {
-  fetch(`${process.env.REACT_APP_BACKEND_URL}/business/updatebybusiness/${businessInfo.id}`, 
-    {method: 'POST', 
+async function updateDatabase() {
+  const {id} = businessInfo;
+  const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/business/updatebybusiness/${parseInt(id)}`, 
+    {method: 'PUT', 
     body: JSON.stringify({
-      ...businessInfo
+      ...businessInfo,
+      id: businessInfo.id
     }), headers : { 'Content-Type': 'application/json' }
   })
+  console.log(res);
 }
   return {
       updateData,
       removeProduct,
       addProduct,
-      postData
+      updateDatabase
   }
 
 }

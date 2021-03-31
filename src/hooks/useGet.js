@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 function useGet(Auth0) {
   const [fetchedData, setFetchedData] = useState(null);
-  let num = 0;
+ 
   const getData = async () => {
     try {
       let res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/${Auth0}`);
