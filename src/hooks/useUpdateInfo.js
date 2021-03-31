@@ -14,31 +14,26 @@ function useGetInfo(businessInfo, setBusinessInfo) {
     console.log(products);
   }
 
-  function addProduct(newProd, newPrice, newQuant) {
-    console.log(newQuant);
+  async function addProduct(product) {
+    const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/business/insertbyproduct`, {
+      method: "POST",
+      body: JSON.stringify({
+        ...product,
+        businessId: businessInfo.id,
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    const newProduct = await res.json();
+
     setBusinessInfo({
       ...businessInfo,
       products: [
         ...products,
         {
-          businessId: businessInfo.businessId,
-          productName: newProd,
-          productPrice: newPrice,
-          productImage: "",
-          quantity: newQuant,
+          ...newProduct
         },
       ],
-    });
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/business/insertbyproduct`, {
-      method: "POST",
-      body: JSON.stringify({
-        businessId: businessInfo.id,
-        productName: newProd,
-        productPrice: newPrice,
-        productImage: "",
-        quantity: newQuant,
-      }),
-      headers: { "Content-Type": "application/json" },
     });
   }
 

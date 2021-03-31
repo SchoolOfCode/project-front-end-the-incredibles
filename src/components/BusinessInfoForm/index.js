@@ -8,24 +8,27 @@ import { useState } from 'react';
 function BusinessInfoForm({updateData, businessInfo}) {
     const {businessName, primaryEmail} = businessInfo;
 
-  console.log(businessInfo)
+    const updateBlob = (blob) => {
+      updateData(blob, "businessLogo")
+    }
+
     return (
         <form className={businessInfoForm}>
         <Input
           type="text"
           labelText="Business Name:"
           id="businessName"
-          updateInfo={updateData}
+          updateInfo={(e) => updateData(e.target.value, "businessName")}
           currentInfo={businessName}
         />
         <Input
           type="text"
           labelText="Email:"
           id="primaryEmail"
-          updateInfo={updateData}
+          updateInfo={(e) => updateData(e.target.value, "primaryEmail")}
           currentInfo={primaryEmail}
         />
-        <Blob updateInfo={updateData} updateField="businessLogo" currentImage={businessInfo.businessLogo}
+        <Blob updateInfo={updateBlob} currentImage={businessInfo.businessLogo}
         />
       </form>
     )

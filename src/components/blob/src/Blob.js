@@ -8,7 +8,7 @@ import uploadFileToBlob, { isStorageConfigured } from './azure-storage-blob.ts';
 
 const storageConfigured = isStorageConfigured();
 
-function Blob ({updateInfo, updateField, currentImage = ""}){
+function Blob ({updateInfo, currentImage = ""}){
   
   // all blobs in container
   // const [blobList, setBlobList] = useState(currentImage);
@@ -41,7 +41,7 @@ function Blob ({updateInfo, updateField, currentImage = ""}){
     setInputKey(Math.random().toString(36));
 
     //update state with img url
-    updateInfo(blobsInContainer, updateField);
+    updateInfo(blobsInContainer);
     console.log(`this should be a test URL in bloblist ${currentImage}`);
   };
 

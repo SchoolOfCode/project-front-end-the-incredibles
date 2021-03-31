@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 
 function useGet(Auth0) {
+  const [isLoading, setIsLoading] = useState(true);
   const [fetchedData, setFetchedData] = useState(null);
 
   const getData = async () => {
+    setIsLoading(true);
+
     try {
       let res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/${Auth0}`, {
         method: "GET",
@@ -26,17 +29,21 @@ function useGet(Auth0) {
       let data = await res.json();
       setFetchedData(data);
     }
+
+    setIsLoading(false);
   };
   useEffect(() => {
-    // while(num < 5){
     getData();
-    // num++
-    // }
     // eslint-disable-next-line
   }, []);
 
-  // console.log(`log from useGet ${fetchedData}`);
-  return [fetchedData, setFetchedData];
+    return {
+      isLoading,
+      data: fetchedData,
+      setData: setFetchedData
+    }
+
+
 }
 
 export default useGet;

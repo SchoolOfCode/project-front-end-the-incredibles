@@ -8,7 +8,10 @@ function BusinessPage() {
 	const { user } = useAuth0();
 	const [ canEdit, setCanEdit ] = useState(true);
 
-	const [ businessInfo, setBusinessInfo ] = useGet(user.sub);
+	const { isLoading, data: businessInfo, setData: setBusinessInfo } = useGet(
+		user.sub
+	);
+	// const [ businessInfo, setBusinessInfo ] = useGet(user.sub);
 	console.log(businessInfo);
 
 	// useGet("auth0|606198aac96e2800685cabff");
@@ -17,6 +20,10 @@ function BusinessPage() {
 	console.log(`This is the users Auth0 ID: ${user.sub}`);
 	//use this id to get access to DB.
 	//
+	if (isLoading) {
+		return <p>Loading...</p>;
+	}
+
 	function toggleCanEdit() {
 		setCanEdit(!canEdit);
 		console.log(canEdit);
