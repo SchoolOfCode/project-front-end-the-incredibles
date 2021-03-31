@@ -41,7 +41,8 @@ function AddProductsForm({ addProduct }) {
 					const newProd = e.target.form[0].value;
 					const newQuant = e.target.form[2].value;
 					const newPrice = e.target.form[1].value;
-					addProduct(newProd, newQuant, newPrice);
+					addProduct(newProd, newPrice, newQuant);
+					console.log(e);
 				}}
 			/>
 		</form>

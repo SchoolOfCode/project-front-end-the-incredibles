@@ -17,12 +17,13 @@ function useGetInfo(businessInfo, setBusinessInfo) {
   }
 
   function addProduct(newProd, newPrice, newQuant) {
+    console.log(newQuant);
     setBusinessInfo({
       ...businessInfo,
       products: [
         ...products,
         {
-          id: businessInfo.businessId,
+          businessId: businessInfo.businessId,
           productName: newProd,
           productPrice: newPrice,
           productImage: "",
@@ -30,14 +31,17 @@ function useGetInfo(businessInfo, setBusinessInfo) {
         },
       ],
     });
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/business/insertbyproduct`, {method: 'POST', body: JSON.stringify({
-      id: parseInt(businessInfo.businessId),
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/business/insertbyproduct`, 
+    {method: 'POST', 
+    body: JSON.stringify({
+      businessId: 2,
       productName: newProd,
-      productPrice: parseInt(newPrice),
+      productPrice: newPrice,
       productImage: "",
-      quantity: parseInt(newQuant)})
+      quantity: newQuant}), headers : { 'Content-Type': 'application/json' }
+
   })
-  }
+}
   return {
       updateData,
       removeProduct,
