@@ -25,7 +25,7 @@ function BusinessInfoForm({updateData, businessInfo}) {
           updateInfo={updateData}
           currentInfo={primaryEmail}
         />
-        <Blob updateInfo={updateData} updateField="businessLogo"
+        <Blob updateInfo={updateData} updateField="businessLogo" currentImage={businessInfo.businessLogo}
         />
       </form>
     )

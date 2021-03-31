@@ -43,6 +43,7 @@ function useGetInfo(businessInfo, setBusinessInfo) {
   }
 
   async function updateDatabase() {
+    console.log(businessInfo);
     const { id } = businessInfo;
     const res = await fetch(
       `${
