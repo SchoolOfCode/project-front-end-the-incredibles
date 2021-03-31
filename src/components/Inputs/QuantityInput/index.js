@@ -17,7 +17,7 @@ function QuantityInput({ setState }) {
   const dec = getDecrementButtonProps();
   const input = getInputProps({ onChange: () => console.log("hi") });
 
-  setState(parseInt(input.value));
+  setState(input.value);
 
   return (
     <HStack maxW="150px">

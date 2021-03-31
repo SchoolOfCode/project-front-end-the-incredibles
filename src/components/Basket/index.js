@@ -4,11 +4,12 @@ import Stripe from "../Stripe";
 
 function Basket({ cartItems, onRemoveAll, onRemoveOne, onAdd }) {
   let count = 0;
+
   cartItems.map((item) => {
-    return (count += parseInt(item.price) * parseInt(item.qty) * 100);
+    return (count += parseInt(item.productPrice) * parseInt(item.qty) * 100);
   });
   //   const [handleClick, message, redirect] = Stripe();
-
+ console.log(count);
   return (
     <div className={`${basket} basket`}>
       <h2>Basket</h2>

@@ -5,8 +5,6 @@ function basketReducer(state, action) {
 	const id = product.productId;
 
 	
-	console.log(product);
-	console.log(state);
 	switch (action.type) {
 		case 'ADD_FIRST':
 			return [ ...state, { ...product, qty: action.payload } ];
@@ -31,15 +29,13 @@ function basketReducer(state, action) {
 
 function useBasket() {
 	const [ cartItems, dispatch ] = useReducer(basketReducer, []);
-	
 	const exist = (product) => cartItems.find(
-				(cartProd) => cartProd.productId === product.productId
-				);
-
-	const onAdd = (product, quantity) => {
-		if (quantity > 0) {
-
-				exist(product) ?
+		(cartProd) => cartProd.productId === product.productId
+		);
+		const onAdd = (product, quantity) => {
+			if (quantity > 0) {
+	
+				(exist(product)) ?
 				dispatch({ type: 'ADD_REMOVE', payload: quantity, product })
 				:
 				dispatch({ type: 'ADD_FIRST', payload: quantity, product });

@@ -21,7 +21,7 @@ function ProductCard({ product, onClick }) {
         <p className={styles.price}>£{productPrice}</p>
         <QuantityInput setState={setDesiredQuantity} />
         {product.quantity ? (
-          <Button className="addToCart" textContent="add" onClick={() => onClick(product, desiredQuantity)} />
+          <Button className="addToCart" textContent="add" onClick={() => onClick(product, parseInt(desiredQuantity))} />
         ) : (
           <p>Out of stock</p>
         )}

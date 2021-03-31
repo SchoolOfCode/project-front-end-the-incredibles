@@ -38,8 +38,7 @@ function CustomerNavBar() {
           <h1> CartShop</h1>
           {/* NavLink allows styling attributes to be added to Link */}
           <NavLink
-            to={`/${businessUrl}`}
-            exact
+            to={`store/${businessUrl}`}
             className={css.links}
             activeClassName={css.active}
           >
