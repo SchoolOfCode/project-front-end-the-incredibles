@@ -14,44 +14,25 @@ function About() {
 			<section className={introduction}>
 				<h2 className={subheading}>What we do</h2>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-					do eiusmod tempor incididunt ut labore et dolore magna
-					aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-					ullamco laboris nisi ut aliquip ex ea commodo consequat.
-					Duis aute irure dolor in reprehenderit in voluptate velit
-					esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-					occaecat cupidatat non proident, sunt in culpa qui officia
-					deserunt mollit anim id est laborum.
+				CartShop is an online platform designed to help entrepreneurs and small businesses to create and build their online presence in a cost conscious manner while they grow.  
 				</p>
+				<br/>
 				<p>
-					nulla facilisi cras fermentum odio eu feugiat pretium nibh
-					ipsum consequat nisl vel pretium lectus quam id leo in vitae
-					turpis massa sed elementum tempus egestas sed sed risus
-					pretium
+				We provide a dedicated web page for each business to showcase products to customers. Our simple and efficient functionality allows customers to place orders and for payment to be made via our secure interface with StripeTM whilst also providing inventory tracking capabilities through our database infrastructure.  Each CartShop link is dedicated to an individual business, so unlike other sites, businesses don’t need to worry about customers being diverted to competitors. 
+				</p>
+				<br/>
+				<p>
+				CartShop is designed to be clear and simple to use for both business users and their customers.  Log in requirements are limited to business users only (in partnership with Auth0), allowing customers to browse and purchase products easily but securely. 	
+				</p>
+				<br/>
+				<p>
+				We’ve kept our costs to a minimum and if you’re a social enterprise, access to CartShop is free of charge. 
 				</p>
 			</section>
 			<section className={mission}>
 				<h2 className={subheading}>Why we do it</h2>
 				<p>
-					quisque non tellus orci ac auctor augue mauris augue neque
-					gravida in fermentum et sollicitudin ac orci phasellus
-					egestas tellus rutrum tellus pellentesque eu tincidunt
-					tortor aliquam nulla facilisi cras:
-				</p>
-				<ul>
-					<li>Simple</li>
-					<li>Free</li>
-					<li>Macrame-friendly</li>
-				</ul>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-					do eiusmod tempor incididunt ut labore et dolore magna
-					aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-					ullamco laboris nisi ut aliquip ex ea commodo consequat.
-					Duis aute irure dolor in reprehenderit in voluptate velit
-					esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-					occaecat cupidatat non proident, sunt in culpa qui officia
-					deserunt mollit anim id est laborum.
+				We believe in entrepreneurs and small businesses and we know that that first step onto the web can be a daunting and expensive, but critical one, especially post COVID  and so we’ve created CartShop to help.  
 				</p>
 			</section>
 		</div>

@@ -10,12 +10,11 @@ import Footer from "../Footer";
 import BusinessNavBar from "../NavBar/BusinessNavBar";
 import CustomerNavBar from "../NavBar/CustomerNavBar";
 import "./App.css";
-// import QuantityInput from "../Inputs/QuantityInput";
-// import ProductCard from "../ProductCard";
-// import Stripe from "../Stripe";
-// import Blob from "../Blob/src/Blob";
-// import Button from "../Buttons/Button";
-// import useGet from "../../hooks/useGet";
+import QuantityInput from "../Inputs/QuantityInput";
+import ProductCard from "../ProductCard";
+import Stripe from "../Stripe";
+import Button from "../Buttons/Button";
+import useGet from "../../hooks/useGet";
 
 function App() {
   const businessUrl = "";
@@ -33,7 +32,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-      {/* <Blob /> */}
+
       <Footer />
     </div>
   );

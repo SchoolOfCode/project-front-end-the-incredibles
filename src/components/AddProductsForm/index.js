@@ -5,6 +5,7 @@ import {
 	inputsContainer,
 	smallInputs,
 } from './AddProductsForm.module.css';
+import Blob from '../Blob/src/Blob';
 
 function AddProductsForm({ addProduct }) {
 	return (
@@ -30,6 +31,7 @@ function AddProductsForm({ addProduct }) {
 						id='inventoryQuantity'
 						updateInfo={() => console.log()}
 					/>
+					<Blob />
 				</div>
 			</div>
 			<Button
@@ -39,7 +41,8 @@ function AddProductsForm({ addProduct }) {
 					const newProd = e.target.form[0].value;
 					const newQuant = e.target.form[2].value;
 					const newPrice = e.target.form[1].value;
-					addProduct(newProd, newQuant, newPrice);
+					addProduct(newProd, newPrice, newQuant);
+					console.log(e);
 				}}
 			/>
 		</form>

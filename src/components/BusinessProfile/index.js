@@ -9,21 +9,26 @@ import {
 
 function BusinessProfile({ businessInfo }) {
 	//destructuring businessInfo object (which is our mockData) and displaying in on the page
+	
 	return (
+		
+		<div>{businessInfo && 
 		<div className={container}>
 			<IsBusinessOpen isTrading={businessInfo.isTrading} />
 			<div className={contentContainer}>
 				<h2 className={businessName}>{businessInfo.businessName}</h2>
-				<p className={businessAbout}>{businessInfo.businessAbout}</p>
+				<p className={businessAbout}>{businessInfo.primaryEmail}</p>
 
 				<img
 					className={businessImg}
-					src={businessInfo.businessImg.src}
-					alt={businessInfo.businessImg.alt}
+					src={businessInfo.businessLogo}
+					alt="BusinessLogo"
 				/>
 			</div>
+		</div>}
 		</div>
-	);
+		);
+	
 }
 
 export default BusinessProfile;

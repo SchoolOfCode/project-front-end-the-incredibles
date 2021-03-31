@@ -8,10 +8,11 @@ import uploadFileToBlob, { isStorageConfigured } from './azure-storage-blob.ts';
 
 const storageConfigured = isStorageConfigured();
 
-function Blob ({updateInfo, updateField}){
+function Blob ({updateInfo, updateField, currentImage = ""}){
+  
   // all blobs in container
-  const [blobList, setBlobList] = useState("");
-
+  // const [blobList, setBlobList] = useState(currentImage);
+ 
   // current file to upload into container
   const [fileSelected, setFileSelected] = useState(null);
 
@@ -32,15 +33,16 @@ function Blob ({updateInfo, updateField}){
     const blobsInContainer = await uploadFileToBlob(fileSelected);
 
     // prepare UI for results
-    setBlobList(blobsInContainer);
-    console.log(blobList);
+    // setBlobList(blobsInContainer);
+    
     // reset state/form
     setFileSelected(null);
     setUploading(false);
     setInputKey(Math.random().toString(36));
 
     //update state with img url
-    updateInfo(blobList, updateField);
+    updateInfo(blobsInContainer, updateField);
+    console.log(`this should be a test URL in bloblist ${currentImage}`);
   };
 
   // display form
@@ -50,13 +52,13 @@ function Blob ({updateInfo, updateField}){
       <Button className="upload" textContent="upload" onClick={onFileUpload}/>
     </div>
   )
-
+ 
   // display file name and image
   const DisplayImagesFromContainer = () => (
     <div>
               <div>
                 <p>Your Image:</p>
-                      <img src={blobList} alt={blobList} height="200" />
+                      <img src={currentImage} alt={currentImage} height="200" />
               </div>
     </div>
   );
@@ -66,7 +68,7 @@ function Blob ({updateInfo, updateField}){
       {storageConfigured && !uploading && DisplayForm()}
       {storageConfigured && uploading && <div>Uploading</div>}
       <hr />
-      {storageConfigured && blobList.length > 0 && DisplayImagesFromContainer()}
+      {storageConfigured && currentImage.length > 0 && DisplayImagesFromContainer()}
       {!storageConfigured && <div>Storage is not configured.</div>}
     </div>
   );

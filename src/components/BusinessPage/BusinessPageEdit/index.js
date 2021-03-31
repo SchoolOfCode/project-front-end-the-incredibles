@@ -7,7 +7,7 @@ import CurrentProductList from '../../CurrentPoductsList';
 import { container, publishContainer } from './BusinessPageEdit.module.css';
 
 function BusinessPageEdit({ businessInfo, setBusinessInfo, toggleCanEdit }) {
-	const { updateData, removeProduct, addProduct } = useGetInfo(
+	const { updateData, removeProduct, addProduct, updateDatabase } = useGetInfo(
 		businessInfo,
 		setBusinessInfo
 	);
@@ -29,8 +29,10 @@ function BusinessPageEdit({ businessInfo, setBusinessInfo, toggleCanEdit }) {
 				<Button
 					className='blackBtn'
 					textContent='Publish CartShop'
-					onClick={
-						toggleCanEdit
+					onClick={ () => {
+						updateDatabase();
+						toggleCanEdit();
+					}
 						// console.log(businessInfo);
 						//also needs to send to DB
 					}
