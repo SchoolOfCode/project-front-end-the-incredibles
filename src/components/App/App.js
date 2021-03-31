@@ -17,16 +17,17 @@ import Button from "../Buttons/Button";
 import useGet from "../../hooks/useGet";
 
 function App() {
+  const businessUrl = "";
   return (
     <div className="app">
       <Router>
         <Switch>
-          <Route path="/store">
+          <Route exact path="/store/:businessUrl">
             {/* taken to business store page for viewing by customer */}
-            <CustomerNavBar />
+            <CustomerNavBar url={businessUrl} />
           </Route>
           <Route path="/">
-                {/* main page. taken to business page for business owners  */}
+            {/* main page. taken to business page for business owners  */}
             <BusinessNavBar />
           </Route>
         </Switch>
