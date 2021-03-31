@@ -10,12 +10,15 @@ import Button from "../../Buttons/Button";
 import CustomerPage from "../../CustomerPage";
 import css from "../NavBar.module.css";
 import { useParams } from "react-router-dom";
+import useGet from '../../../hooks/useGet'
+
 
 function CustomerNavBar() {
   //useState hook to track whether basket button is clicked
   const [basketOpen, setBasketOpen] = useState(false);
   const { businessUrl } = useParams();
   
+  const {isLoading, data: businessInfo } = useGet(`store/${businessUrl}`)
   //
   function toggleBasket() {
     const basket = document.querySelector(".basket");
@@ -24,7 +27,10 @@ function CustomerNavBar() {
     //changes the state of the basketopen to be the opposite of existing state
     setBasketOpen(!basketOpen);
   }
-
+  
+  if(isLoading){
+    return <div className={"loading"}>Loading</div>
+  }
   return (
     <Router>
       <div className={css.navFlex}>
@@ -37,7 +43,7 @@ function CustomerNavBar() {
             className={css.links}
             activeClassName={css.active}
           >
-            Macrambé Master
+            {businessInfo.businessName}
           </NavLink>
           {/* Turnary operator which changes button value to X or basket by tracking basketopen state */}
           <Button
@@ -48,7 +54,7 @@ function CustomerNavBar() {
       </div>
       <Switch>
         <Route path="/store">
-          <CustomerPage route={businessUrl}/>
+          <CustomerPage businessInfo={businessInfo}/>
         </Route>
       </Switch>
     </Router>

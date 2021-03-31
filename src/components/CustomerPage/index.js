@@ -1,19 +1,16 @@
 import React from 'react';
 import useBasket from '../../hooks/useBasket';
-import mockData from '../../libs/mockData.js';
+
 import Basket from '../Basket';
 import BusinessProfile from '../BusinessProfile';
 import ProductCardGrid from '../ProductCardGrid';
 import { container, profileContainer } from './CustomerPage.module.css';
-import useGet from '../../hooks/useGet'
 
-function CustomerPage({route}) {
+
+function CustomerPage({businessInfo}) {
 	//calls the custom hook which is a useReducer hook that is used in several methods (i.e. onAdd, onRemoveAll etc)
 	const { cartItems, onAdd, onRemoveAll, onRemoveOne } = useBasket();
-	const {isLoading, data: businessInfo } = useGet(`store/pete-the-meat`)
-	if(isLoading){
-		return <div className={container}>Loading</div>
-	}
+	
 
 	return (
 		<div className={container}>

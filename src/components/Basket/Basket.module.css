@@ -6,7 +6,7 @@
     right: 0;
     height: calc(100% - 80px);
     text-align: center;
-    top: 80px;
+    top: 70px;
     transform: translateX(100%);
     transition: transform .25s ease-in-out;
     width: 500px;

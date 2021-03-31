@@ -3,7 +3,7 @@ import { useState } from 'react';
 import useGet from '../../hooks/useGet';
 import BusinessPageEdit from './BusinessPageEdit';
 import BusinessPageStatic from './BusinessPageStatic';
-
+import StoreLink from "../StoreLink"
 function BusinessPage() {
 	const { user } = useAuth0();
 	const [ canEdit, setCanEdit ] = useState(true);
@@ -11,6 +11,9 @@ function BusinessPage() {
 	const { isLoading, data: businessInfo, setData: setBusinessInfo } = useGet(
 		user.sub
 	);
+	function toggleCanEdit() {
+		setCanEdit(!canEdit);
+	}
 	// const [ businessInfo, setBusinessInfo ] = useGet(user.sub);
 	console.log(businessInfo);
 
@@ -24,20 +27,10 @@ function BusinessPage() {
 		return <p>Loading...</p>;
 	}
 
-	function toggleCanEdit() {
-		setCanEdit(!canEdit);
-		console.log(canEdit);
-	}
-	console.log(businessInfo);
 	return (
 		businessInfo && (
 			<div className={BusinessPage}>
-				{businessInfo.businessName && (
-					<p>
-						your custom url is: `https://localhost:3000/stores/
-						{businessInfo.businessName.replace(/ /g, '-')}`
-					</p>
-				)}
+				<StoreLink businessName={businessInfo.businessName} />
 				{canEdit ? (
 					<BusinessPageEdit
 						businessInfo={businessInfo}

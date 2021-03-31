@@ -1,0 +1,39 @@
+.storeLink {
+  border: 2px solid var(--accent-color);
+  padding: 1rem;
+  margin: 1rem auto;
+  font-weight: bold;
+  text-align: center;
+  max-width: max-content;
+}
+
+.link {
+  opacity: .8;
+  position: relative;
+  transition: opacity .25s;
+}
+
+.link::before {
+	background: var(--accent-color);
+	bottom: -5px;
+  left: 50%;
+	content: "";
+	height: 2px;
+	position: absolute;
+	transition: all .5s ease-in-out;
+	width: 0px;
+}
+.link:hover::before {
+  left: 0%;
+	width: 100%;
+}
+
+.link:hover {
+  opacity: 1;
+}
+
+@media (max-width: 600px){
+  .link::before{
+    display: none;
+  }
+}
