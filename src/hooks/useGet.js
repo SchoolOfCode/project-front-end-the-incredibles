@@ -20,7 +20,7 @@ function useGet(Auth0) {
           headers: { "Content-Type": "application/json" },
         }
       );
-      let data = res.json();
+      let data = await res.json();
       setFetchedData(data);
     }
   };
