@@ -1,4 +1,5 @@
 import Button from "../Buttons/Button";
+import Product from '../Product/index';
 
 import {currentProductsContainer, currentProduct} from "./CurrentProductList.module.css";
 
@@ -12,12 +13,13 @@ function CurrentProductList({products,removeProduct}) {
         <ul className={currentProductsContainer}>
           <h2>Current Products:</h2>
           {products.map((product, i) => (
-            <li key={i} className={currentProduct}>
-              <span> {product.productName}</span>
-              <span> £{product.productPrice}</span>
-              <Button className="removeProduct" textContent="remove" onClick={() => {removeProduct(i)
-              deleteProduct(product.productId)}} />
-            </li>
+            <Product product={product} i={i} removeProduct={removeProduct} deleteProduct={deleteProduct}/>
+            // <li key={i} className={currentProduct}>
+            //   <span> {product.productName}</span>
+            //   <span> £{product.productPrice}</span>
+            //   <Button className="removeProduct" textContent="remove" onClick={() => {removeProduct(i)
+            //   deleteProduct(product.productId)}} />
+            // </li>
           ))}
         </ul>
     )
