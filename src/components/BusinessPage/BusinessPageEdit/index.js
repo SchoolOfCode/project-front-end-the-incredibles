@@ -5,12 +5,16 @@ import BusinessInfoForm from '../../BusinessInfoForm';
 import Button from '../../Buttons/Button';
 import CurrentProductList from '../../CurrentPoductsList';
 import { container, publishContainer } from './BusinessPageEdit.module.css';
+import {useLocation} from 'react-router-dom';
 
 function BusinessPageEdit({ businessInfo, setBusinessInfo, toggleCanEdit }) {
 	const { updateData, removeProduct, addProduct, updateDatabase } = useGetInfo(
 		businessInfo,
 		setBusinessInfo
 	);
+
+	let location = useLocation();
+	console.log(location.pathname)
 
 	return (
 		<div className={container}>
@@ -21,6 +25,7 @@ function BusinessPageEdit({ businessInfo, setBusinessInfo, toggleCanEdit }) {
 
 			<AddProductsForm addProduct={addProduct} />
 			<CurrentProductList
+				// updateProducts = {}
 				products={businessInfo.products}
 				removeProduct={removeProduct}
 			/>
@@ -32,6 +37,7 @@ function BusinessPageEdit({ businessInfo, setBusinessInfo, toggleCanEdit }) {
 					onClick={ () => {
 						updateDatabase();
 						toggleCanEdit();
+						
 					}
 						// console.log(businessInfo);
 						//also needs to send to DB

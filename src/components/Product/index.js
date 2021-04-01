@@ -20,7 +20,8 @@ export default function Product({product, i, removeProduct, deleteProduct}) {
     const [productData, setProductData] = useState({...product});
 
     function updateData(value, field){
-        setProductData({...product, [field]:value})
+        setProductData({...productData, [field]:value})
+        console.log(value)
     }
 
 
@@ -34,16 +35,16 @@ export default function Product({product, i, removeProduct, deleteProduct}) {
                   id="productName"
                   updateInfo={(e) => updateData(e.target.value, "productName")}
                   currentInfo={product.productName}/>
-                  <Input type="text"
+                  <Input type="number"
                   labelText="Product Price:"
                   id="productPrice"
                   updateInfo={(e) => updateData(e.target.value, "productPrice")}
                   currentInfo={product.productPrice}/>
-                  <Input type="text"
+                  <Input type="number"
                   labelText="Product Quantity:"
-                  id="Quantity"
-                  updateInfo={(e) => updateData(e.target.value, "Quantity")}
-                  currentInfo={product.Quantity}/>
+                  id="quantity"
+                  updateInfo={(e) => updateData(e.target.value, "quantity")}
+                  currentInfo={product.quantity}/>
                   </>
                 }
               <span> {product.productName}</span>
@@ -52,7 +53,7 @@ export default function Product({product, i, removeProduct, deleteProduct}) {
               <Button className="removeProduct" textContent="remove" onClick={() => {removeProduct(i)
               deleteProduct(product.productId)}} />
               <Button className="updateProduct" textContent="edit" onClick ={()=>{toggleCanEdit()}}/>
-              {canEditProduct && <Button className="submitProduct" textContent="submit" onClick ={()=>{console.log(productData)}}/>}
+              {canEditProduct && <Button className="submitProduct" textContent="submit" onClick ={()=>{editProduct(productData.productId)}}/>}
             </li>
 
     )
