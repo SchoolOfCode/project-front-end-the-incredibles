@@ -17,7 +17,7 @@ function App() {
 		<div className='app'>
 			<Router>
 				<Switch>
-					<Route exact path='/store/:businessUrl'>
+					<Route path='/store/:businessUrl'>
 						{/* taken to business store page for viewing by customer */}
 						<CustomerNavBar url={businessUrl} />
 					</Route>
