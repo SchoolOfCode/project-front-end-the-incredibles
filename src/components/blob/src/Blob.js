@@ -1,79 +1,80 @@
 // ./src/App.tsx
 
 import React, { useState } from 'react';
-import Button from "../../Buttons/Button";
-import Path from 'path';
+import Button from '../../Buttons/Button';
 import uploadFileToBlob, { isStorageConfigured } from './azure-storage-blob.ts';
-
 
 const storageConfigured = isStorageConfigured();
 
-function Blob ({updateInfo, currentImage = ""}){
-  
-  // all blobs in container
-  // const [blobList, setBlobList] = useState(currentImage);
- 
-  // current file to upload into container
-  const [fileSelected, setFileSelected] = useState(null);
+function Blob({ updateInfo, currentImage = '' }) {
+	// all blobs in container
+	// const [blobList, setBlobList] = useState(currentImage);
 
-  // UI/form management
-  const [uploading, setUploading] = useState(false);
-  const [inputKey, setInputKey] = useState(Math.random().toString(36));
+	// current file to upload into container
+	const [ fileSelected, setFileSelected ] = useState(null);
 
-  const onFileChange = (event) => {
-    // capture file into state
-    setFileSelected(event.target.files[0]);
-  };
+	// UI/form management
+	const [ uploading, setUploading ] = useState(false);
+	const [ inputKey, setInputKey ] = useState(Math.random().toString(36));
 
-  const onFileUpload = async () => {
-    // prepare UI
-    setUploading(true);
+	const onFileChange = (event) => {
+		// capture file into state
+		setFileSelected(event.target.files[0]);
+	};
 
-    // *** UPLOAD TO AZURE STORAGE ***
-    const blobsInContainer = await uploadFileToBlob(fileSelected);
+	const onFileUpload = async () => {
+		// prepare UI
+		setUploading(true);
 
-    // prepare UI for results
-    // setBlobList(blobsInContainer);
-    
-    // reset state/form
-    setFileSelected(null);
-    setUploading(false);
-    setInputKey(Math.random().toString(36));
+		// *** UPLOAD TO AZURE STORAGE ***
+		const blobsInContainer = await uploadFileToBlob(fileSelected);
 
-    //update state with img url
-    updateInfo(blobsInContainer);
-    console.log(`this should be a test URL in bloblist ${currentImage}`);
-  };
+		// prepare UI for results
+		// setBlobList(blobsInContainer);
 
-  // display form
-  const DisplayForm = () => (
-    <div>
-      <input type="file" onChange={onFileChange} key={inputKey || ''} />
-      <Button className="upload" textContent="upload" onClick={onFileUpload}/>
-    </div>
-  )
- 
-  // display file name and image
-  const DisplayImagesFromContainer = () => (
-    <div>
-              <div>
-                <p>Your Image:</p>
-                      <img src={currentImage} alt={currentImage} height="200" />
-              </div>
-    </div>
-  );
+		// reset state/form
+		setFileSelected(null);
+		setUploading(false);
+		setInputKey(Math.random().toString(36));
 
-  return (
-    <div>
-      {storageConfigured && !uploading && DisplayForm()}
-      {storageConfigured && uploading && <div>Uploading</div>}
-      <hr />
-      {storageConfigured && currentImage.length > 0 && DisplayImagesFromContainer()}
-      {!storageConfigured && <div>Storage is not configured.</div>}
-    </div>
-  );
-};
+		//update state with img url
+		updateInfo(blobsInContainer);
+		console.log(`this should be a test URL in bloblist ${currentImage}`);
+	};
+
+	// display form
+	const DisplayForm = () => (
+		<div>
+			<input type='file' onChange={onFileChange} key={inputKey || ''} />
+			<Button
+				className='upload'
+				textContent='upload'
+				onClick={onFileUpload}
+			/>
+		</div>
+	);
+
+	// display file name and image
+	const DisplayImagesFromContainer = () => (
+		<div>
+			<div>
+				<p>Your Image:</p>
+				<img src={currentImage} alt={currentImage} height='200' />
+			</div>
+		</div>
+	);
+
+	return (
+		<div>
+			{storageConfigured && !uploading && DisplayForm()}
+			{storageConfigured && uploading && <div>Uploading</div>}
+			<hr />
+			{storageConfigured &&
+				currentImage.length > 0 &&
+				DisplayImagesFromContainer()}
+			{!storageConfigured && <div>Storage is not configured.</div>}
+		</div>
+	);
+}
 
 export default Blob;
-
-
