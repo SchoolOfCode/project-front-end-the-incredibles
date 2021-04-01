@@ -42,7 +42,7 @@ function Stripe({ total }) {
       {
         method: "POST",
         body: JSON.stringify({
-          cancelUrl: "https://localhost:3000/store",
+          cancelUrl: "https://localhost:3000/store",  // needs to be amended to actual store customer is in.
           successUrl: "https://localhost:3000/store",
           payment_method_types: ["card"],
           lineItems: [
