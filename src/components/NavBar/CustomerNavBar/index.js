@@ -51,7 +51,7 @@ function CustomerNavBar() {
 				</nav>
 			</div>
 			<Switch>
-				<Route path='/store'>
+				<Route path='/store/:businessUrl'>
 					<CustomerPage businessInfo={businessInfo} />
 				</Route>
 			</Switch>

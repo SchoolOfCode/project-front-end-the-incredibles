@@ -2,12 +2,16 @@ import React, { useState, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import Button from "../Buttons/Button";
 import Message from "../Message";
+import {useLocation} from "react-router-dom";
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_CODE);
 
 function Stripe({ total }) {
+  const {pathname } = useLocation();
+
+  console.log(pathname);
   const [message, setMessage] = useState("");
   const [redirect, setRedirect] = useState("");
 
@@ -20,8 +24,11 @@ function Stripe({ total }) {
       setRedirect("You will be redirected to the checkout in 5 seconds");
       //we can add a button here to go back to the home back.
       setTimeout(function () {
-        window.location.replace("http://localhost:3000/store");
+        window.location.reload();
       }, 10000);
+      // setTimeout(function () {
+      //   window.location.replace("http://localhost:3000/store");
+      // }, 10000);
     }
 
     if (query.get("canceled")) {
@@ -42,8 +49,8 @@ function Stripe({ total }) {
       {
         method: "POST",
         body: JSON.stringify({
-          cancelUrl: "https://localhost:3000/store",  // needs to be amended to actual store customer is in.
-          successUrl: "https://localhost:3000/store",
+          cancelUrl: `https://cartshop.netlify.app${pathname}`,  // needs to be amended to actual store customer is in.
+          successUrl: `https://cartshop.netlify.app${pathname}`,
           payment_method_types: ["card"],
           lineItems: [
             {
