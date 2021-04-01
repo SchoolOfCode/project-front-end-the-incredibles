@@ -17,11 +17,11 @@ function App() {
 		<div className='app'>
 			<Router>
 				<Switch>
-					<Route path='/store/:businessUrl'>
+					<Route exact path='/store/:businessUrl'>
 						{/* taken to business store page for viewing by customer */}
 						<CustomerNavBar url={businessUrl} />
 					</Route>
-					<Route path='/'>
+					<Route exact path='/'>
 						{/* main page. taken to business page for business owners  */}
 						<BusinessNavBar />
 					</Route>
