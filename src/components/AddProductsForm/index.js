@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Blob from '../Blob/src/Blob';
+import Blob from '../blob/src/Blob';
 import Button from '../Buttons/Button';
 import Input from '../Inputs/Input';
 import {
@@ -16,7 +16,8 @@ function AddProductsForm({ addProduct }) {
 		quantity     : 1,
 	});
 
-	const updateBlob = (img) => setProductForm({...productForm, productImage: img})
+	const updateBlob = (img) =>
+		setProductForm({ ...productForm, productImage: img });
 
 	return (
 		<form className={addProductsForm}>
@@ -29,7 +30,7 @@ function AddProductsForm({ addProduct }) {
 					updateInfo={(e) =>
 						setProductForm({
 							...productForm,
-							productName: e.target.value,
+							productName : e.target.value,
 						})}
 				/>
 				<div className={smallInputs}>
@@ -40,7 +41,7 @@ function AddProductsForm({ addProduct }) {
 						updateInfo={(e) =>
 							setProductForm({
 								...productForm,
-								productPrice: e.target.value,
+								productPrice : e.target.value,
 							})}
 					/>
 					<Input
@@ -50,10 +51,13 @@ function AddProductsForm({ addProduct }) {
 						updateInfo={(e) =>
 							setProductForm({
 								...productForm,
-								productQuantity: e.target.value,
+								productQuantity : e.target.value,
 							})}
 					/>
-					<Blob updateInfo={updateBlob} currentImage={productForm.productImage}/>
+					<Blob
+						updateInfo={updateBlob}
+						currentImage={productForm.productImage}
+					/>
 				</div>
 			</div>
 			<Button
