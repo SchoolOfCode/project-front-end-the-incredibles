@@ -1,42 +1,52 @@
+import { useAuth0 } from "@auth0/auth0-react";
 import { useState } from "react";
-import {useAuth0} from "@auth0/auth0-react"
-import mockData from "../../libs/mockData";
+import useGet from "../../hooks/useGet";
 import BusinessPageEdit from "./BusinessPageEdit";
 import BusinessPageStatic from "./BusinessPageStatic";
-//import useGet from "../../hooks/useGet";
-
+import StoreLink from "../StoreLink";
 function BusinessPage() {
+  const { user } = useAuth0();
   const [canEdit, setCanEdit] = useState(true);
-  //const [businessInfo, setBusinessInfo] = useGet();
-  const [businessInfo, setBusinessInfo] = useState(mockData);
-    const { user } = useAuth0();
 
-    console.log(user.sub);
-    //use this id to get access to DB.
-  const {businessName} = businessInfo
-    //
+  const { isLoading, data: businessInfo, setData: setBusinessInfo } = useGet(
+    user.sub,
+    canEdit
+  );
   function toggleCanEdit() {
     setCanEdit(!canEdit);
-    console.log(canEdit);
+  }
+
+  // const [ businessInfo, setBusinessInfo ] = useGet(user.sub);
+  console.log(businessInfo);
+
+  // useGet("auth0|606198aac96e2800685cabff");
+  // const [businessInfo, setBusinessInfo] = useState(mockData);
+
+  console.log(`This is the users Auth0 ID: ${user.sub}`);
+  //use this id to get access to DB.
+  //
+  if (isLoading) {
+    return <p>Loading...</p>;
   }
 
   return (
-    <div className={BusinessPage}>
-      <p>your custom url is: `https://localhost:3000/stores/{businessName.replace(" ", "-")}`</p>
-      {canEdit ? (
-        <BusinessPageEdit
-          businessInfo={businessInfo}
-          toggleCanEdit={toggleCanEdit}
-          setBusinessInfo={setBusinessInfo}
-        />
-      ) : (
-        <BusinessPageStatic
-          businessInfo={businessInfo}
-          toggleCanEdit={toggleCanEdit}
-        />
-      )}
-    </div>
+    businessInfo && (
+      <div className={BusinessPage}>
+        <StoreLink businessName={businessInfo.businessName} />
+        {canEdit ? (
+          <BusinessPageEdit
+            businessInfo={businessInfo}
+            toggleCanEdit={toggleCanEdit}
+            setBusinessInfo={setBusinessInfo}
+          />
+        ) : (
+          <BusinessPageStatic
+            businessInfo={businessInfo}
+            toggleCanEdit={toggleCanEdit}
+          />
+        )}
+      </div>
+    )
   );
 }
-
 export default BusinessPage;

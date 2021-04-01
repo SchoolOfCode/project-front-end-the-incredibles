@@ -2,23 +2,41 @@ import React, { useState } from "react";
 import Button from "../Buttons/Button";
 import QuantityInput from "../Inputs/QuantityInput";
 import styles from "./ProductCard.module.css";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function ProductCard({ product, onClick }) {
-  const { productName, price, img, inventoryQuantity } = product;
+  // this is all the product information
+  // product here is the...
+  const { isAuthenticated } = useAuth0();
+  const { productName, productPrice, productImage, quantity } = product;
   const [desiredQuantity, setDesiredQuantity] = useState(0);
-  const inStockClass = inventoryQuantity ? "Stocked" : "OutOfStock";
+  const [disableAdd, setDisableAdd] = useState(false);
+
+  // if (isAuthenticated) {
+  //   setDisableAdd(false);
+  // }
+
+  const inStockClass = quantity ? "Stocked" : "OutOfStock";
   return (
     <div className={`${styles.ContentFlex} ${styles[inStockClass]}`}>
       <div className={styles.innerContent}>
-        <img
-          src={img.src}
-          alt={img.alt}
-        />
+        <img src={productImage} alt={"product"} />
         <p className={styles.name}>{productName}</p>
-        <p className={styles.price}>£{price}</p>
-        <QuantityInput setState={setDesiredQuantity} />
-        {product.inventoryQuantity ? (
-          <Button className="addToCart" textContent="add" onClick={() => onClick(product, desiredQuantity)} />
+        <p className={styles.price}>£{productPrice}</p>
+        <QuantityInput
+          setState={setDesiredQuantity}
+          disabled={disableAdd}
+          quantity={quantity}
+        />
+        {product.quantity ? (
+          <Button
+            className="addToCart"
+            textContent="add"
+            disabled={disableAdd}
+            onClick={() =>
+              onClick(product, parseInt(desiredQuantity), setDisableAdd(true))
+            }
+          />
         ) : (
           <p>Out of stock</p>
         )}

@@ -37,3 +37,36 @@ PlainDisabledButton.args = {
 		e.target.textContent = 'I was clicked!';
 	},
 };
+
+export const CheckoutButton = Template.bind({});
+
+CheckoutButton.args = {
+	/*👇 The args you need here will depend on your component */
+	className: "blackBtn",
+	textContent : 'Checkout',
+	onClick     : (e) => {
+		e.target.textContent = 'checked out!';
+	},
+};
+
+export const RemoveButton = Template.bind({});
+
+RemoveButton.args = {
+	/*👇 The args you need here will depend on your component */
+	className: "removeProduct",
+	textContent : 'Remove',
+	onClick     : (e) => {
+		e.target.textContent = 'removed!';
+	},
+};
+
+export const AddToCartButton = Template.bind({});
+
+AddToCartButton.args = {
+	/*👇 The args you need here will depend on your component */
+	className: "addToCart",
+	textContent : 'Remove',
+	onClick     : (e) => {
+		e.target.textContent = 'removed!';
+	},
+};

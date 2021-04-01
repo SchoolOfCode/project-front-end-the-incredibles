@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   // NavLink,
@@ -12,20 +12,27 @@ import CustomerNavBar from "../NavBar/CustomerNavBar";
 import "./App.css";
 import QuantityInput from "../Inputs/QuantityInput";
 import ProductCard from "../ProductCard";
+import Stripe from "../Stripe";
+import Button from "../Buttons/Button";
+import useGet from "../../hooks/useGet";
 
 function App() {
+  const businessUrl = "";
   return (
     <div className="app">
       <Router>
         <Switch>
-          <Route path="/store">
-            <CustomerNavBar />
+          <Route exact path="/store/:businessUrl">
+            {/* taken to business store page for viewing by customer */}
+            <CustomerNavBar url={businessUrl} />
           </Route>
           <Route path="/">
+            {/* main page. taken to business page for business owners  */}
             <BusinessNavBar />
           </Route>
         </Switch>
       </Router>
+
       <Footer />
     </div>
   );

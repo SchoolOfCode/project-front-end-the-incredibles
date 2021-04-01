@@ -1,17 +1,21 @@
 import React from 'react';
 import useBasket from '../../hooks/useBasket';
-import mockData from '../../libs/mockData.js';
+
 import Basket from '../Basket';
 import BusinessProfile from '../BusinessProfile';
 import ProductCardGrid from '../ProductCardGrid';
 import { container, profileContainer } from './CustomerPage.module.css';
 
-function CustomerPage() {
+
+function CustomerPage({businessInfo}) {
+	//calls the custom hook which is a useReducer hook that is used in several methods (i.e. onAdd, onRemoveAll etc)
 	const { cartItems, onAdd, onRemoveAll, onRemoveOne } = useBasket();
-	const { products } = mockData;
+	
 
 	return (
 		<div className={container}>
+			{/* these are where all the methods are being handed down as props to the basket component */}
+			
 			<Basket
 				cartItems={cartItems}
 				onRemoveAll={onRemoveAll}
@@ -19,9 +23,10 @@ function CustomerPage() {
 				onAdd={onAdd}
 			/>
 			<div className={profileContainer}>
-				<BusinessProfile businessInfo={mockData} />
+				<BusinessProfile businessInfo={businessInfo} />
 			</div>
-			<ProductCardGrid products={products} onClick={onAdd}/>
+			{/* products is an array in mockdata which is passed down as a prop to this componenet and can add using the onAdd method */}
+			<ProductCardGrid products={businessInfo.products} onClick={onAdd}/>
 		</div>
 	);
 }

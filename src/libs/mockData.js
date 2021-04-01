@@ -27,7 +27,8 @@ const mockBusiness = {
       },
       price: 2.83,
       inventoryQuantity: 4,
-      productId: 1,
+      productId: 2,
+      qty: 0
     },
     {
       productName: "Leaf Macramè",
@@ -37,7 +38,7 @@ const mockBusiness = {
       },
       price: 1.57,
       inventoryQuantity: 0,
-      productId: 2,
+      productId: 3,
     },
     {
      productName: "Plant Macramè",
@@ -47,7 +48,7 @@ const mockBusiness = {
       },
       price: 2.56,
       inventoryQuantity: 3,
-      productId: 3,
+      productId: 4,
     },
     {
       productName: "Poodle Macramè",
@@ -56,7 +57,7 @@ const mockBusiness = {
         alt: "Poodle macramè"
       },
       price: 25.99,
-      inventoryQuantity: 4,
+      inventoryQuantity: 5,
     },
     {
       productName: "Cat Macramè",
