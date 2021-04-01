@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function useGet(query) {
+function useGet(query, edit) {
   const [isLoading, setIsLoading] = useState(true);
   const [fetchedData, setFetchedData] = useState(null);
 
@@ -35,15 +35,13 @@ function useGet(query) {
   useEffect(() => {
     getData();
     // eslint-disable-next-line
-  }, []);
+  }, [edit]);
 
-    return {
-      isLoading,
-      data: fetchedData,
-      setData: setFetchedData
-    }
-
-
+  return {
+    isLoading,
+    data: fetchedData,
+    setData: setFetchedData,
+  };
 }
 
 export default useGet;

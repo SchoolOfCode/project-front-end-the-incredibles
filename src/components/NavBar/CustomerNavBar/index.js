@@ -10,15 +10,15 @@ import Button from "../../Buttons/Button";
 import CustomerPage from "../../CustomerPage";
 import css from "../NavBar.module.css";
 import { useParams } from "react-router-dom";
-import useGet from '../../../hooks/useGet'
-
+import useGet from "../../../hooks/useGet";
+import CSlogo from "../CSlogo.svg";
 
 function CustomerNavBar() {
   //useState hook to track whether basket button is clicked
   const [basketOpen, setBasketOpen] = useState(false);
   const { businessUrl } = useParams();
-  
-  const {isLoading, data: businessInfo } = useGet(`store/${businessUrl}`)
+
+  const { isLoading, data: businessInfo } = useGet(`store/${businessUrl}`);
   //
   function toggleBasket() {
     const basket = document.querySelector(".basket");
@@ -27,9 +27,9 @@ function CustomerNavBar() {
     //changes the state of the basketopen to be the opposite of existing state
     setBasketOpen(!basketOpen);
   }
-  
-  if(isLoading){
-    return <div className={"loading"}>Loading</div>
+
+  if (isLoading) {
+    return <div className={"loading"}>Loading</div>;
   }
   return (
     <Router>
@@ -53,7 +53,7 @@ function CustomerNavBar() {
       </div>
       <Switch>
         <Route path="/">
-          <CustomerPage businessInfo={businessInfo}/>
+          <CustomerPage businessInfo={businessInfo} />
         </Route>
       </Switch>
     </Router>
