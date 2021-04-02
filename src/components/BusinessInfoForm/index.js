@@ -1,14 +1,15 @@
 import Blob from '../blob/src/Blob';
 import Input from '../Inputs/Input';
+import IsTradingInput from '../Inputs/IsTradingInput';
 import { businessInfoForm } from './BusinessInfoForm.module.css';
 
 function BusinessInfoForm({ updateData, businessInfo }) {
-	const { businessName, primaryEmail } = businessInfo;
+	const { businessName, primaryEmail, isTrading } = businessInfo;
 
 	const updateBlob = (blob) => {
 		updateData(blob, 'businessLogo');
 	};
-
+	console.log(isTrading)
 	return (
 		<form className={businessInfoForm}>
 			<Input
@@ -24,6 +25,10 @@ function BusinessInfoForm({ updateData, businessInfo }) {
 				id='primaryEmail'
 				updateInfo={(e) => updateData(e.target.value, 'primaryEmail')}
 				currentInfo={primaryEmail}
+			/>
+			<IsTradingInput
+				updateIsTrading={(value) => updateData(value, 'isTrading')}
+				currentValue={isTrading}
 			/>
 			<Blob
 				updateInfo={updateBlob}
