@@ -17,7 +17,7 @@ function CustomerNavBar() {
 	const [ basketOpen, setBasketOpen ] = useState(false);
 	const { businessUrl } = useParams();
 
-	const { isLoading, data: businessInfo } = useGet(`store/${businessUrl}`);
+	const { isLoading, data: businessInfo } = useGet(`shop/${businessUrl}`);
 	//
 	function toggleBasket() {
 		const basket = document.querySelector('.basket');
@@ -51,7 +51,7 @@ function CustomerNavBar() {
 				</nav>
 			</div>
 			<Switch>
-				<Route path='/store/:businessUrl'>
+				<Route path='/shop/:businessUrl'>
 					<CustomerPage businessInfo={businessInfo} />
 				</Route>
 			</Switch>

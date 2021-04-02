@@ -3,7 +3,7 @@ import { useState } from "react";
 import useGet from "../../hooks/useGet";
 import BusinessPageEdit from "./BusinessPageEdit";
 import BusinessPageStatic from "./BusinessPageStatic";
-import StoreLink from "../StoreLink";
+import ShopLink from "../ShopLink";
 function BusinessPage() {
   const { user } = useAuth0();
   const [canEdit, setCanEdit] = useState(true);
@@ -32,7 +32,7 @@ function BusinessPage() {
   return (
     businessInfo && (
       <div className={BusinessPage}>
-        <StoreLink businessName={businessInfo.businessName} />
+        <ShopLink businessName={businessInfo.businessName} />
         {canEdit ? (
           <BusinessPageEdit
             businessInfo={businessInfo}
