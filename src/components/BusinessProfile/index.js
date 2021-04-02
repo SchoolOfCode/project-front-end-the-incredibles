@@ -14,7 +14,7 @@ function BusinessProfile({ businessInfo }) {
 		
 		<div>{businessInfo && 
 		<div className={container}>
-			<IsBusinessOpen isTrading={businessInfo.isTrading} />
+			<IsBusinessOpen IsTrading={businessInfo.isTrading} />
 			<div className={contentContainer}>
 				<h2 className={businessName}>{businessInfo.businessName}</h2>
 				<p className={businessAbout}>{businessInfo.primaryEmail}</p>
