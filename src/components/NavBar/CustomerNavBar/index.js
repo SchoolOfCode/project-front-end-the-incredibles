@@ -10,6 +10,7 @@ import useGet from '../../../hooks/useGet';
 import '../../../index.css';
 import Button from '../../Buttons/Button';
 import CustomerPage from '../../CustomerPage';
+import Logo from '../../Logo';
 import css from '../NavBar.module.css';
 
 function CustomerNavBar() {
@@ -34,7 +35,7 @@ function CustomerNavBar() {
 		<Router>
 			<div className={css.navFlex}>
 				<nav className={css.linkFlex}>
-					<h1> CartShop</h1>
+					<Logo />
 					{/* NavLink allows styling attributes to be added to Link */}
 					<NavLink
 						to={businessUrl}

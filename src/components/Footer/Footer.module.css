@@ -26,7 +26,8 @@ p i {
 
 .gitLink {
 	opacity: .75;
-	transition: opacity transform outline .25s ease-in-out;
+	transition-property: opacity, transform, outline;
+	transition-duration: .25s;
 }
 .gitLink:hover {
 	opacity: 1;

@@ -1,4 +1,8 @@
 
+.container {
+  position: relative;
+}
+
 .profileContainer {
   background-color: var(--accent-color);
 }

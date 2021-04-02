@@ -11,7 +11,8 @@
 	letter-spacing: .5px;
 	padding: .5em 1em;
 	text-transform: uppercase;
-	transition: color border background .25s;
+	transition-property: color, border, background;
+	transition-duration: .25s;
 }
 .button:hover {
 	background: var(--accent-color);
