@@ -13,6 +13,8 @@ import SignInUpButton from "../../Buttons/SignInUpButton";
 import SignOutButton from "../../Buttons/SignOutButton";
 import css from "../NavBar.module.css";
 import Tutorial from "../../Tutorial";
+import Logo from "../../Logo"
+
 
 function BusinessNavBar(props) {
   const { isAuthenticated, user } = useAuth0();
@@ -23,7 +25,7 @@ function BusinessNavBar(props) {
     <Router>
       <div className={css.navFlex}>
         <nav className={css.linkFlex}>
-          <h1> CartShop</h1>
+          <Logo />
           <NavLink
             to={"/"}
             exact

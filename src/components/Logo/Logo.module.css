@@ -1,0 +1,27 @@
+.logo {
+    color: var(--accent-color);
+    display: flex;
+    align-items: baseline;
+    font-size: 2rem;
+}
+
+.heading {
+    position: relative;
+    padding-left: .5rem;
+    margin-left: .5rem;
+    font-weight: 900;
+}
+.heading::before {
+    background: var(--accent-color);
+    content: "";
+    height: 80%;
+    width: 3px;
+    position: absolute;
+    left: 0px;
+    top: 10%;
+}
+
+.logo i {
+    transform: scaleX(-.95);
+    width: auto;
+}
