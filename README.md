@@ -10,4 +10,7 @@
 - need to take out hard-coded frontend urls for stores
 - When on /store can we get title of webpage to say business name.
 
+
+add to readme
+
 ,
