@@ -51,7 +51,7 @@ function AddProductsForm({ addProduct }) {
 						updateInfo={(e) =>
 							setProductForm({
 								...productForm,
-								productQuantity : e.target.value,
+								quantity : e.target.value,
 							})}
 					/>
 					<Blob

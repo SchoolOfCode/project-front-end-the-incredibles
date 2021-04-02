@@ -1,0 +1,10 @@
+.currentProduct {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+
+.currentProductsContainer span {
+    text-align: left;
+}

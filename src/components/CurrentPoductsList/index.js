@@ -2,6 +2,7 @@ import Product from '../Product/index';
 import { currentProductsContainer } from './CurrentProductList.module.css';
 
 function CurrentProductList({ products, removeProduct }) {
+	console.log(products)
 	async function deleteProduct(id) {
 		await fetch(
 			`${process.env
@@ -19,16 +20,10 @@ function CurrentProductList({ products, removeProduct }) {
 			{products.map((product, i) => (
 				<Product
 					product={product}
-					i={i}
-					removeProduct={removeProduct}
+					key={i}
+					removeProduct={() => removeProduct(i)}
 					deleteProduct={deleteProduct}
 				/>
-				// <li key={i} className={currentProduct}>
-				//   <span> {product.productName}</span>
-				//   <span> £{product.productPrice}</span>
-				//   <Button className="removeProduct" textContent="remove" onClick={() => {removeProduct(i)
-				//   deleteProduct(product.productId)}} />
-				// </li>
 			))}
 		</ul>
 	);

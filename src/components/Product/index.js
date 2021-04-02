@@ -2,10 +2,10 @@ import { useState } from "react";
 import Button from "../Buttons/Button/index";
 import {
   currentProduct
-} from "../CurrentPoductsList/CurrentProductList.module.css";
+} from "./Product.module.css";
 import Input from "../Inputs/Input";
 
-export default function Product({ product, i, removeProduct, deleteProduct }) {
+export default function Product({ product, removeProduct, deleteProduct }) {
   const [canEditProduct, setCanEditProduct] = useState(false);
 
   function toggleCanEdit() {
@@ -30,7 +30,7 @@ export default function Product({ product, i, removeProduct, deleteProduct }) {
   }
 
   return (
-    <li key={i} className={currentProduct}>
+    <li className={currentProduct}>
       {canEditProduct && (
         <>
           <Input
@@ -58,12 +58,12 @@ export default function Product({ product, i, removeProduct, deleteProduct }) {
       )}
       <span> {productData.productName}</span>
       <span> £{productData.productPrice}</span>
-      <span> {productData.Quantity}</span>
+      <span> {productData.quantity}</span>
       <Button
         className="removeProduct"
         textContent="remove"
         onClick={() => {
-          removeProduct(i);
+          removeProduct();
           deleteProduct(product.productId);
         }}
       />

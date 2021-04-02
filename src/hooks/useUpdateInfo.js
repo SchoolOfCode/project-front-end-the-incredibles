@@ -3,7 +3,6 @@ function useGetInfo(businessInfo, setBusinessInfo) {
 
   function updateData(newValue, property) {
     setBusinessInfo({ ...businessInfo, [property]: newValue });
-    console.log(businessInfo);
   }
 
   function removeProduct(index) {
@@ -11,7 +10,6 @@ function useGetInfo(businessInfo, setBusinessInfo) {
       ...businessInfo,
       products: [...products.slice(0, index), ...products.slice(index + 1)],
     });
-    console.log(products);
   }
 
   async function addProduct(product) {
@@ -38,9 +36,8 @@ function useGetInfo(businessInfo, setBusinessInfo) {
   }
 
   async function updateDatabase() {
-    console.log(businessInfo);
     const { id } = businessInfo;
-    const res = await fetch(
+    await fetch(
       `${
         process.env.REACT_APP_BACKEND_URL
       }/business/updatebybusiness/${parseInt(id)}`,
@@ -53,8 +50,8 @@ function useGetInfo(businessInfo, setBusinessInfo) {
         headers: { "Content-Type": "application/json" },
       }
     );
-    console.log(res);
   }
+
   return {
     updateData,
     removeProduct,
