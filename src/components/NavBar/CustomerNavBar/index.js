@@ -16,8 +16,8 @@ function CustomerNavBar() {
 	//useState hook to track whether basket button is clicked
 	const [ basketOpen, setBasketOpen ] = useState(false);
 	const { businessUrl } = useParams();
-
-	const { isLoading, data: businessInfo } = useGet(`shop/${businessUrl}`);
+    //this has to stay as store for now
+	const { isLoading, data: businessInfo } = useGet(`store/${businessUrl}`);
 	//
 	function toggleBasket() {
 		const basket = document.querySelector('.basket');

@@ -7,7 +7,7 @@ function Footer({ textContent = "made with love in birmingham" }) {
     <div className={styles.footerFlex}>
       <div className={styles.contentFlex}>
         <p>{textContent}</p>
-        <p>github icon</p>
+        <i class="fab fa-github"></i>
       </div>
     </div>
   );
