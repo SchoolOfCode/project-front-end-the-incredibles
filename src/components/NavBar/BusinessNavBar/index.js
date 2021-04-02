@@ -54,13 +54,13 @@ function BusinessNavBar(props) {
         </nav>
       </div>
       <Switch>
-        <Route path="/about">
+        <Route exact path="/about">
           <About />
         </Route>
-        <Route path="/tutorial">
+        <Route exact path="/tutorial">
           <Tutorial />
         </Route>
-        <Route path="/">
+        <Route exact path="/">
           <HomePage />
         </Route>
       </Switch>

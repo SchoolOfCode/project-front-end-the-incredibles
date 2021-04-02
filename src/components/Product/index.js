@@ -1,8 +1,7 @@
 import { useState } from "react";
 import Button from "../Buttons/Button/index";
 import {
-  currentProductsContainer,
-  currentProduct,
+  currentProduct
 } from "../CurrentPoductsList/CurrentProductList.module.css";
 import Input from "../Inputs/Input";
 
