@@ -1,64 +1,90 @@
-:root{
-    --dark-red: rgba(109, 4, 4, 0.918);
+:root {
+	--dark-red: rgba(109, 4, 4, 0.918);
 }
 .button {
-    background: var(--white);
-    border-radius: 10px;
-    color: var(--accent-color);
-    border: 2px solid var(--accent-color);
-    font-weight: bold;
-    font-size: 1rem;
-    letter-spacing: .5px;
-    padding: .5em 1em;
-    text-transform: uppercase;
-    transition: color border background .25s;
+	background: var(--white);
+	border-radius: 10px;
+	color: var(--accent-color);
+	border: 2px solid var(--accent-color);
+	font-weight: bold;
+	font-size: 1rem;
+	letter-spacing: .5px;
+	padding: .5em 1em;
+	text-transform: uppercase;
+	transition: color border background .25s;
 }
-.button:hover{
-    background: var(--accent-color);
-    color: var(--white);
-    cursor: pointer;
+.button:hover {
+	background: var(--accent-color);
+	color: var(--white);
+	cursor: pointer;
 }
 
 .button:disabled {
-    pointer-events: none;
-    opacity: .5;
+	pointer-events: none;
+	opacity: .5;
 }
 
 .addToCart {
-    margin: 1.5em auto 1em;
-    background: var(--accent-color);
-    color: var(--white);
+	margin: 1.5em auto 1em;
+	background: var(--accent-color);
+	color: var(--white);
 }
 .addToCart:hover {
-    background: var(--white);
-    color: var(--accent-color);
+	background: var(--white);
+	color: var(--accent-color);
 }
 
 .blackBtn {
-    border: 2px solid var(--black);
-    color: var(--white);
-    background: var(--black);
+	border: 2px solid var(--black);
+	color: var(--white);
+	background: var(--black);
 }
 .blackBtn:hover {
-    color: var(--black);
-    background: var(--white);
+	color: var(--black);
+	background: var(--white);
 }
 
-.removeProduct {
-    border: 2px solid var(--dark-red);
-    background: var(--dark-red);
-    color: var(--white);
-    opacity: .9;
+.removeProduct,
+.removeCurrentProduct {
+	border: 2px solid var(--dark-red);
+	border-radius: 20%/50%;
+	background: var(--dark-red);
+	color: var(--white);
+	opacity: .9;
 }
-.removeProduct:hover {
-    background: var(--white);
-    border: 2px solid var(--dark-red);
-    color: var(--dark-red);
-    opacity: 1;
+.removeProduct:hover,
+.removeCurrentProduct:hover {
+	background: var(--white);
+	border: 2px solid var(--dark-red);
+	color: var(--dark-red);
+	opacity: 1;
+}
+
+.updateProductEdit {
+	background: var(--black);
+	color: var(--white);
+	font-size: .75rem;
+	margin-bottom: .5rem;
+}
+
+.removeCurrentProduct {
+	grid-area: remove;
+	font-size: .75rem;
+}
+
+.submitProduct {
+	background: var(--white);
+	color: var(--black);
+	border: 2px solid var(--black);
+    font-size: .8rem;
+}
+.submitProduct:hover {
+	background: var(--black);
+	color: var(--white);
 }
 
 @media (max-width: 500px) {
-    .button{
-        font-size: .75rem;
-    }
+	.button {
+		font-size: .75rem;
+	}
 }

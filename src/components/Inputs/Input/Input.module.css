@@ -27,3 +27,14 @@
 input[type=file]:focus {
     border-bottom: 2px solid var(--gray);
 }
+
+@media (max-width: 500px) {
+    .inputContainer {
+        flex-direction: column;
+    }
+    .input, .label {
+        margin: auto;
+        text-align: center;
+        width: 90%;
+    }
+}

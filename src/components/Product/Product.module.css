@@ -1,10 +1,32 @@
 .currentProduct {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    align-items: center;
-    margin-bottom: .5rem;
+    padding-bottom: 1rem;
+    position: relative;
+    margin-bottom: 1rem;
+}
+.currentProduct::before{
+    background: var(--gray);
+    left: 40%;
+    bottom: -1rem;
+    width: 20%;
+    height: 1px;
+    content: "";
+    position: absolute;
+}
+.currentProduct:last-child:before{
+    display: none;
 }
 
-.currentProductsContainer span {
-    text-align: left;
+.currentProductInfo {
+    display: grid;
+    grid-gap: 1rem;
+    place-items: center;
+    grid-template-areas: "name qauntity price" ". remove .";
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.currentProductForm {
+    display: grid;
+    grid-gap: .5rem;
+    place-items: center;
+    grid-template-rows: repeat(4, 1fr);
 }
