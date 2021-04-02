@@ -45,9 +45,10 @@ function CustomerNavBar() {
 					</NavLink>
 					{/* Turnary operator which changes button value to X or basket by tracking basketopen state */}
 					<Button
-						textContent={basketOpen ? 'X' : 'basket'}
+						textContent={basketOpen ? <i class="fas fa-times"></i> : <i class="fas fa-shopping-cart"> </i>}
 						onClick={toggleBasket}
 					/>
+				
 				</nav>
 			</div>
 			<Switch>

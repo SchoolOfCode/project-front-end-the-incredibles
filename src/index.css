@@ -42,5 +42,6 @@ input {
 }
 
 i {
-  font-size: 3rem;
+  font-size: 2rem;
+  width: 2rem;
 }
