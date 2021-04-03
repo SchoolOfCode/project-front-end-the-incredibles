@@ -1,48 +1,55 @@
 :root {
-	--accent-color: #ff5a5f;
-	--white: #f1f1f1;
-	--black: #1e1e24;
-	--gray: #7d7d7e;
-	--main-font-family: Roboto;
+  --accent-color: #ff5a5f;
+  --white: #f1f1f1;
+  --black: #1e1e24;
+  --gray: #7d7d7e;
+  --main-font-family: Roboto;
 }
 
 * {
-	box-sizing: border-box;
-	margin: 0;
-	max-width: 100%;
-	padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  max-width: 100%;
+  padding: 0;
 }
-body, html {
+body,
+html {
   overflow-x: hidden;
 }
 body {
-	/*hides horizontal scroll for nav*/
-	margin: 0;
-	font-family: var(--main-font-family);
-	font-size: 1.25rem;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  /*hides horizontal scroll for nav*/
+  margin: 0;
+  font-family: var(--main-font-family);
+  font-size: 1.25rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 button,
 input {
-	font-family: inherit;
-	font-size: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+/* loading css for spinner */
+.loading {
+  display: grid;
+  place-items: center;
+  height: 80vh;
 }
 
 /* show or hides basket */
 .showBasket {
-  opacity: 1!important;
-	transform: translateX(0) !important;
+  opacity: 1 !important;
+  transform: translateX(0) !important;
 }
 
 @media (max-width) {
-	body {
-		font-size: 1rem;
-	}
+  body {
+    font-size: 1rem;
+  }
 }
 
 i {
-	font-size: 2rem;
-	width: 2rem;
+  font-size: 2rem;
+  width: 2rem;
 }

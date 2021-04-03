@@ -4,6 +4,9 @@ import useGet from "../../hooks/useGet";
 import BusinessPageEdit from "./BusinessPageEdit";
 import BusinessPageStatic from "./BusinessPageStatic";
 import ShopLink from "../ShopLink";
+import { Spinner } from "@chakra-ui/react";
+import "../../index.css";
+
 function BusinessPage() {
   const { user } = useAuth0();
   const [canEdit, setCanEdit] = useState(true);
@@ -26,7 +29,11 @@ function BusinessPage() {
   //use this id to get access to DB.
   //
   if (isLoading) {
-    return <p>Loading...</p>;
+    return (
+      <div className={"loading"}>
+        <Spinner color="#FF5A5F" size="xl" />
+      </div>
+    );
   }
 
   return (
