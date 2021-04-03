@@ -8,32 +8,38 @@
 }
 
 .link {
-  opacity: .8;
+  opacity: 0.8;
   position: relative;
-  transition: opacity .25s;
+  transition: opacity 0.25s;
 }
 
 .link::before {
-	background: var(--accent-color);
-	bottom: -5px;
+  background: var(--accent-color);
+  bottom: -5px;
   left: 50%;
-	content: "";
-	height: 2px;
-	position: absolute;
-	transition: all .5s ease-in-out;
-	width: 0px;
+  content: "";
+  height: 2px;
+  position: absolute;
+  transition: all 0.5s ease-in-out;
+  width: 0px;
 }
 .link:hover::before {
   left: 0%;
-	width: 100%;
+  width: 100%;
 }
 
 .link:hover {
   opacity: 1;
 }
 
-@media (max-width: 600px){
-  .link::before{
+@media (max-width: 600px) {
+  .link::before {
     display: none;
+  }
+  .link {
+    display: block;
+  }
+  .shopLink {
+    display: block;
   }
 }

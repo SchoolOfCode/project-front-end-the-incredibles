@@ -1,43 +1,47 @@
 .footerFlex {
-	border-top: 3px solid var(--black);
-	width: 100%;
-	background-color: var(--accent-color);
-	color: var(--white);
-	padding: 1rem 3rem;
-	/*always on bottom*/
-	grid-area: footer;
+  border-top: 3px solid var(--black);
+  width: 100%;
+  background-color: var(--accent-color);
+  color: var(--white);
+  padding: 1rem 3rem;
+  /*always on bottom*/
+  grid-area: footer;
 }
 
 .contentFlex {
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
-p {
-	display: flex;
-	align-items: center;
-	font-weight: light;
+.contentFlex p {
+  display: flex;
+  align-items: center;
+  font-weight: light;
 }
 
-p i {
-	font-size: 1.6rem;
-	opacity: .9;
+.cotentFlex p i {
+  font-size: 1.6rem;
+  opacity: 0.9;
 }
 
 .gitLink {
-	opacity: .75;
-	transition-property: opacity, transform, outline;
-	transition-duration: .25s;
+  opacity: 0.75;
+  transition-property: opacity, transform, outline;
+  transition-duration: 0.25s;
 }
 .gitLink:hover {
-	opacity: 1;
-	transform: scale(1.15);
+  opacity: 1;
+  transform: scale(1.15);
 }
 
 /*center with two columns*/
 @media (max-width: 500px) {
-	.contentFlex {
-		flex-direction: column;
-		align-items: center;
-	}
+  .footerFlex {
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 1.5rem;
+  }
+  .contentFlex p {
+    font-size: 0.95rem;
+  }
 }

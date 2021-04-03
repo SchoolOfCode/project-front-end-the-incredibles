@@ -1,18 +1,30 @@
 .addProductsForm {
-	margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 .addProductsForm h2 {
-	text-align: left;
-	font-weight: bold !important;
+  text-align: left;
+  font-weight: bold !important;
 }
 
 .inputsContainer {
-	margin-left: auto;
-	margin-bottom: 1rem;
-	width: 80%;
+  margin-left: auto;
+  margin-bottom: 1rem;
+  width: 80%;
 }
 
 .smallInputs {
-	margin-left: auto;
-	width: min-content;
+  margin-left: auto;
+  width: min-content;
+}
+
+@media (max-width: 600px) {
+  .addProductsForm h2 {
+    text-align: center;
+    padding: 1rem 0;
+  }
+  .inputsContainer {
+    margin: auto;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
 }
