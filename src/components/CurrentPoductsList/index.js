@@ -1,10 +1,9 @@
-import {  useState } from 'react';
+import { useState } from 'react';
 import Product from '../Product/index';
 import { currentProductsContainer } from './CurrentProductList.module.css';
 
 function CurrentProductList({ products, removeProduct }) {
 	const [productList, setProductList] = useState([...products]);
-
 
 	async function deleteProduct(id) {
 		setProductList(productList.filter(product => product.productId !== id))
