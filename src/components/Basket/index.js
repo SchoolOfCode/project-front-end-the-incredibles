@@ -4,7 +4,7 @@ import Stripe from "../Stripe";
 
 
 function Basket({ inBasket, onRemoveAll, onRemoveOne, onAdd }) {
-  const count = inBasket.reduce((acc, curr) =>  acc += (parseInt(curr.productPrice) * parseInt(curr.quantityInBasket) * 100), 0);
+  const total = inBasket.reduce((acc, curr) =>  acc += (parseInt(curr.productPrice) * parseInt(curr.quantityInBasket) * 100), 0);
   
  
   return (
@@ -20,7 +20,7 @@ function Basket({ inBasket, onRemoveAll, onRemoveOne, onAdd }) {
             onAdd={() => onAdd(product, 1)}
           />
         ))}
-      <Stripe total={count} />
+      <Stripe total={total} />
     </div>
   );
 }
