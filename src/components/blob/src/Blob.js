@@ -1,5 +1,6 @@
 // ./src/App.tsx
 
+import { Spinner } from '@chakra-ui/spinner';
 import React, { useState } from 'react';
 import Button from '../../Buttons/Button';
 import uploadFileToBlob, { isStorageConfigured } from './azure-storage-blob.ts';
@@ -47,7 +48,7 @@ function Blob({ updateInfo, currentImage = '' }) {
 			<input type='file' onChange={onFileChange} key={inputKey || ''} />
 			<Button
 				className='upload'
-				textContent='upload'
+				textContent={<span><i class="fas fa-upload"></i>Upload</span>}
 				onClick={onFileUpload}
 			/>
 		</div>
@@ -58,7 +59,7 @@ function Blob({ updateInfo, currentImage = '' }) {
 		<div>
 			<div>
 				<p>Your Image:</p>
-				<img src={currentImage} alt={currentImage} height='200' />
+				<img src={currentImage} alt={currentImage} height='100' />
 			</div>
 		</div>
 	);
@@ -66,7 +67,7 @@ function Blob({ updateInfo, currentImage = '' }) {
 	return (
 		<div>
 			{storageConfigured && !uploading && DisplayForm()}
-			{storageConfigured && uploading && <div>Uploading</div>}
+			{storageConfigured && uploading && <Spinner color="#FF5A5F" size="m" />}
 			<hr />
 			{storageConfigured &&
 				currentImage.length > 0 &&

@@ -61,6 +61,7 @@ function AddProductsForm({ addProduct }) {
 				</div>
 			</div>
 			<Button
+				className='addProduct'
 				textContent='Add Product'
 				onClick={(e) => {
 					e.preventDefault();

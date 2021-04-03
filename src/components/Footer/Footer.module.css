@@ -19,8 +19,9 @@
   font-weight: light;
 }
 
-.cotentFlex p i {
+.contentFlex p i {
   font-size: 1.6rem;
+  margin-right: .5rem;
   opacity: 0.9;
 }
 
