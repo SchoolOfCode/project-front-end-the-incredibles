@@ -1,57 +1,77 @@
 :root {
-	--section-bg: rgba(0, 0, 0, 0.904);
+  --section-bg: rgba(0, 0, 0, 0.904);
 }
 
 .tutorial {
-	background: var(--section-bg);
-	text-align: center;
+  background: var(--section-bg);
+  text-align: center;
+  width: 100%;
 }
 
 .heading,
 .subheading {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 .heading {
-	background: white;
-	font-size: 3rem;
-	padding: 5rem 20rem;
-	position: relative;
-	width: 100%;
+  background: white;
+  font-size: 3rem;
+  padding: 5rem 20rem;
+  position: relative;
+  width: 100%;
 }
-.heading::before{
-	color: white;
-	content: "cartshop";
-	position: absolute;
-	bottom: 5rem;
-	background: var(--accent-color);
-	height: 3px;
-	width: max-content;
+.heading::before {
+  color: white;
+  content: "cartshop";
+  position: absolute;
+  bottom: 5rem;
+  background: var(--accent-color);
+  height: 3px;
+  width: max-content;
 }
 
 .subheading {
-	font-size: 1.25rem;
-	margin: 0 auto .75rem;
-	border-bottom: 2px solid var(--accent-color);
-	width: max-content;
+  font-size: 1.25rem;
+  margin: 0 auto 0.75rem;
+  border-bottom: 2px solid var(--accent-color);
+  width: max-content;
 }
 
 .introduction,
 .mission {
-	color: white;
-	padding: 3rem 3rem 0;
+  color: white;
+  padding: 3rem 3rem 0;
 }
 
 .mission {
-	padding-bottom: 3rem;
+  padding-bottom: 3rem;
 }
 .mission ul {
-	list-style-position: inside;
-    margin: .5rem 0;
+  list-style-position: inside;
+  margin: 0.5rem 0;
 }
 
 .video {
-	margin: 4rem auto 0;
-	height: 800px;
-	width: 50%;
+  margin: 4rem auto 0;
+  height: 500px;
+  width: 50%;
+}
+
+@media (max-width: 700px) {
+  .tutorial {
+    width: 100vw;
+  }
+  .heading {
+    width: 100vh;
+    padding: 50px 10px;
+    border-bottom: 3px solid var(--accent-color);
+  }
+  .heading::before {
+    display: none;
+  }
+  .video {
+    width: 90%;
+    height: 300px;
+    margin: 0 auto;
+  }
 }
