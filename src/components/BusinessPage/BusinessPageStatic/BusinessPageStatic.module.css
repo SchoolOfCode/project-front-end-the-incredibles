@@ -1,3 +1,11 @@
 .profileContainer {
   background-color: var(--accent-color);
 }
+
+@media (max-width: 600px) {
+  .profileContainer {
+    padding: 0px;
+    margin: 0px;
+    background-color: white;
+  }
+}
