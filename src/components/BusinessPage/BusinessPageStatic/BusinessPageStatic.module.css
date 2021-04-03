@@ -8,3 +8,8 @@
     margin: 0px;
   }
 }
+@media (max-width: 300px) {
+  .profileContainer {
+    padding: 0 .25rem;
+  }
+}

@@ -43,3 +43,16 @@
     display: block;
   }
 }
+
+
+@media (max-width: 450px) {
+  .shopLink {
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .shopLink {
+    margin: 1rem .25rem;
+  }
+}
