@@ -1,27 +1,39 @@
 .basket {
-    background: #ff5a60eb;
-    color: white;
-    height: calc(100% - 80px);
-    padding: 1rem 2rem;
-    position: absolute;
-    right: 0;
-    text-align: center;
-    top: 0;
-    transform: translateX(100%);
-    transition: transform .25s ease-in-out;
-    width: 500px;
-    z-index: 4;
+	background: #ff5a60eb;
+	color: white;
+	height: 100%;
+	padding: 1rem 2rem;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	top: 0;
+	transform: translateX(100%);
+	transition: transform .25s ease-in-out;
+	width: 500px;
+	z-index: 4;
 }
 
-.basket h2{
-    font-size: 2rem;
-    margin-bottom: 1em;
+.basket h2 {
+	font-size: 2rem;
+	margin-bottom: 1em;
+	position: relative;
+	letter-spacing: 1.5px;
+	font-weight: bold;
+}
+.basket h2::before {
+	height: 1px;
+	bottom: 0;
+    color: transparent;
+	background: var(--white);
+	width: max-content;
+	content: "basket";
+	position: absolute;
 }
 
-@media (max-width: 700px){
-    .basket{
-        height: auto;
-        width: 100%;
-        bottom: 100vh;
-    }
+@media (max-width: 700px) {
+	.basket {
+		height: auto;
+		width: 100%;
+		bottom: 100vh;
+	}
 }
