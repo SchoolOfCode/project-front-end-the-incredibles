@@ -4,8 +4,7 @@
 
 @media (max-width: 600px) {
   .profileContainer {
-    padding: 0px;
+    padding: 0 2rem;
     margin: 0px;
-    background-color: white;
   }
 }

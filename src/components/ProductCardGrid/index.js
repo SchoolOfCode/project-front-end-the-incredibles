@@ -1,10 +1,10 @@
 import ProductCard from '../ProductCard';
 import { cardContainer } from './ProductCardGrid.module.css';
 
-function ProductCardGrid({ cartItems, onAdd }) {
+function ProductCardGrid({ products, onAdd }) {
 	return (
 		<div className={cardContainer}>
-			{cartItems.map((product, i) => (
+			{products.map((product, i) => (
 				<ProductCard key={i} product={product}  onAdd={onAdd}/>
 			))}
 		</div>

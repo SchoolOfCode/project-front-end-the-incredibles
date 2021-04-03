@@ -84,6 +84,25 @@
 	color: var(--white);
 }
 
+.editBusinessPage {
+	border-radius: 0;
+	color: var(--black);
+	padding: 5px 0px 5px 10px;
+	border: none;
+	top: 0;
+	right: 0;
+	position: absolute;
+}
+.editBusinessPage i {
+	padding: 0;
+	margin: 0;
+	font-size: 1rem;
+	font-weight: light;
+}
+.editBusinessPage:hover {
+	background: var(--black);
+}
+
 @media (max-width: 500px) {
 	.button {
 		font-size: .75rem;

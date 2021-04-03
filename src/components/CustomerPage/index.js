@@ -25,9 +25,6 @@ function CustomerPage({ businessInfo, setItemsInBasket }) {
 		[ cartItems, setItemsInBasket ]
 	);
 
-	console.log(cartItems);
-	console.log(inBasket)
-
 	return (
 		<div className={container}>
 			{/* these are where all the methods are being handed down as props to the basket component */}
@@ -43,7 +40,7 @@ function CustomerPage({ businessInfo, setItemsInBasket }) {
 			</div>
 			{/* products is an array in mockdata which is passed down as a prop to this componenet and can add using the onAdd method */}
 			<ProductCardGrid
-				cartItems={cartItems}
+				products={cartItems}
 				onAdd={onAdd}
 			/>
 		</div>
