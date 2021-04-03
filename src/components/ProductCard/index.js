@@ -1,20 +1,33 @@
 //import { useAuth0 } from '@auth0/auth0-react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '../Buttons/Button';
 import QuantityInput from '../Inputs/QuantityInput';
 import styles from './ProductCard.module.css';
 
-function ProductCard({ product, onClick }) {
-	// this is all the product information
-	// product here is the...
-	//const { isAuthenticated } = useAuth0();
-	const { productName, productPrice, productImage, quantity } = product;
+function ProductCard({ product, onAdd }) {
+	const {
+		productName,
+		productPrice,
+		productImage,
+		quantity,
+		quantityInBasket,
+	} = product;
 	const [ desiredQuantity, setDesiredQuantity ] = useState(0);
+	
 	const [ disableAdd, setDisableAdd ] = useState(false);
+	useEffect(
+		() => {
+			if (quantityInBasket === 0) {
+				setDisableAdd(false);
+			}
+		},
+		[ quantityInBasket ]
+	);
 
-	// if (isAuthenticated) {
-	//   setDisableAdd(false);
-	// }
+	function onClick() {
+		onAdd(product, parseInt(desiredQuantity));
+		setDisableAdd(true);
+	}
 
 	const inStockClass = quantity ? 'Stocked' : 'OutOfStock';
 	return (
@@ -33,12 +46,7 @@ function ProductCard({ product, onClick }) {
 						className='addToCart'
 						textContent='add'
 						disabled={disableAdd}
-						onClick={() =>
-							onClick(
-								product,
-								parseInt(desiredQuantity),
-								setDisableAdd(true)
-							)}
+						onClick={onClick}
 					/>
 				) : (
 					<p>Out of stock</p>

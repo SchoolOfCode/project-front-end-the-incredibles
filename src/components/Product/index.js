@@ -29,7 +29,6 @@ export default function Product({ product, removeProduct, deleteProduct }) {
 
 	function updateData(value, field) {
 		setProductData({ ...productData, [field]: value });
-		console.log(value);
 	}
 
 	return (

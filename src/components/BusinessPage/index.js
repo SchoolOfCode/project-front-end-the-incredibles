@@ -19,13 +19,6 @@ function BusinessPage() {
     setCanEdit(!canEdit);
   }
 
-  // const [ businessInfo, setBusinessInfo ] = useGet(user.sub);
-  console.log(businessInfo);
-
-  // useGet("auth0|606198aac96e2800685cabff");
-  // const [businessInfo, setBusinessInfo] = useState(mockData);
-
-  console.log(`This is the users Auth0 ID: ${user.sub}`);
   //use this id to get access to DB.
   //
   if (isLoading) {

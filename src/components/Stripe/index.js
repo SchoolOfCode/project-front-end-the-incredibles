@@ -11,7 +11,6 @@ const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_CODE);
 function Stripe({ total }) {
   const {pathname } = useLocation();
 
-  console.log(pathname);
   const [message, setMessage] = useState("");
   const [redirect, setRedirect] = useState("");
 
@@ -40,9 +39,6 @@ function Stripe({ total }) {
 
   const handleClick = async (count) => {
     const stripe = await stripePromise;
-    console.log(message);
-    console.log(redirect);
-    console.log(count);
 
     const response = await fetch(
       `${process.env.REACT_APP_STRIPE_API_URL}/create-checkout-session`,

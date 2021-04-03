@@ -40,7 +40,6 @@ msRestNodeAuth.interactiveLogin().then(async (creds) => {
     }
     const createStorageAccountResponse = await client.storageAccounts.create(existingResourceGroup, accountName, blobServiceOptions);
     
-    console.log(createStorageAccountResponse);
     
 }).catch((err) => {
     console.error(err);

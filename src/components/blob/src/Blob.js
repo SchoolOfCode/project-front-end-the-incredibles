@@ -39,7 +39,6 @@ function Blob({ updateInfo, currentImage = '' }) {
 
 		//update state with img url
 		updateInfo(blobsInContainer);
-		console.log(`this should be a test URL in bloblist ${currentImage}`);
 	};
 
 	// display form

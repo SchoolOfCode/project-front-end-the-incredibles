@@ -19,7 +19,7 @@ import Logo from "../../Logo"
 function BusinessNavBar(props) {
   const { isAuthenticated, user } = useAuth0();
 
-  console.log(user);
+
 
   return (
     <Router>

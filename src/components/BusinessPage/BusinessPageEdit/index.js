@@ -32,8 +32,6 @@ function BusinessPageEdit({ businessInfo, setBusinessInfo, toggleCanEdit }) {
               updateDatabase();
               toggleCanEdit();
             }
-            // console.log(businessInfo);
-            //also needs to send to DB
           }
         />
         <p>Don't worry, you can change this information at any time!</p>

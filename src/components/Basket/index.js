@@ -2,24 +2,22 @@ import ProductInBasket from "../ProductInBasket";
 import { basket } from "./Basket.module.css";
 import Stripe from "../Stripe";
 
-function Basket({ cartItems, onRemoveAll, onRemoveOne, onAdd }) {
-  let count = 0;
 
-  cartItems.map((item) => {
-    return (count += parseInt(item.productPrice) * parseInt(item.qty) * 100);
-  });
+function Basket({ inBasket, onRemoveAll, onRemoveOne, onAdd }) {
+  const count = inBasket.reduce((acc, curr) =>  acc += (parseInt(curr.productPrice) * parseInt(curr.quantityInBasket) * 100), 0);
+  
  
   return (
     <div className={`${basket} basket`}>
       <h2>Basket</h2>
-      {cartItems &&
-        cartItems.map((product, i) => (
+      {inBasket &&
+        inBasket.map((product, i) => (
           <ProductInBasket
             key={i}
             product={product}
-            onRemoveAll={onRemoveAll}
-            onRemoveOne={onRemoveOne}
-            onAdd={onAdd}
+            onRemoveAll={() => onRemoveAll(product)}
+            onRemoveOne={() => onRemoveOne(product)}
+            onAdd={() => onAdd(product, 1)}
           />
         ))}
       <Stripe total={count} />

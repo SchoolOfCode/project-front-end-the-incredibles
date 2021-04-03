@@ -15,7 +15,7 @@ function QuantityInput({ setState, disabled, quantity }) {
   });
   const inc = getIncrementButtonProps();
   const dec = getDecrementButtonProps();
-  const input = getInputProps({ onChange: () => console.log("hi") });
+  const input = getInputProps({ onChange: () => null});
 
   setState(input.value);
 

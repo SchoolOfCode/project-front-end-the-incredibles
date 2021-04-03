@@ -2,7 +2,6 @@ import Product from '../Product/index';
 import { currentProductsContainer } from './CurrentProductList.module.css';
 
 function CurrentProductList({ products, removeProduct }) {
-	console.log(products)
 	async function deleteProduct(id) {
 		await fetch(
 			`${process.env

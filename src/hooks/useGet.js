@@ -13,8 +13,8 @@ function useGet(query, edit) {
         headers: { "Content-Type": "application/json" },
       });
       let data = await res.json();
+      
       setFetchedData(data);
-      // console.log(data)
     } catch {
       let res = await fetch(
         `${process.env.REACT_APP_BACKEND_URL}/business/insertbybusiness`,
@@ -27,6 +27,7 @@ function useGet(query, edit) {
         }
       );
       let data = await res.json();
+      
       setFetchedData(data);
     }
 

@@ -9,7 +9,7 @@ function BusinessInfoForm({ updateData, businessInfo }) {
 	const updateBlob = (blob) => {
 		updateData(blob, 'businessLogo');
 	};
-	console.log(isTrading)
+
 	return (
 		<form className={businessInfoForm}>
 			<Input
