@@ -5,7 +5,7 @@ import BusinessProfile from '../BusinessProfile';
 import ProductCardGrid from '../ProductCardGrid';
 import { container, profileContainer } from './CustomerPage.module.css';
 
-function CustomerPage({ businessInfo }) {
+function CustomerPage({ businessInfo, setItemsInBasket }) {
 	const products = businessInfo.products.map((product) => {
 		const newProd = { ...product, quantityInBasket: 0 };
 		return newProd;
@@ -20,8 +20,9 @@ function CustomerPage({ businessInfo }) {
 			);
 
 			setInBasket(productsInBasket);
+			setItemsInBasket(productsInBasket.length)
 		},
-		[ cartItems ]
+		[ cartItems, setItemsInBasket ]
 	);
 
 	console.log(cartItems);

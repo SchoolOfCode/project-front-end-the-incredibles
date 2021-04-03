@@ -18,9 +18,11 @@ import "../../../index.css";
 function CustomerNavBar() {
   //useState hook to track whether basket button is clicked
   const [basketOpen, setBasketOpen] = useState(false);
+  const [itemsInBasket, setItemsInBasket] = useState(0)
   const { businessUrl } = useParams();
   //this has to stay as store for now
   const { isLoading, data: businessInfo } = useGet(`store/${businessUrl}`);
+  
   //
   function toggleBasket() {
     const basket = document.querySelector(".basket");
@@ -56,7 +58,7 @@ function CustomerNavBar() {
               basketOpen ? (
                 <i class="fas fa-times"></i>
               ) : (
-                <i class="fas fa-shopping-cart"> </i>
+                <i class="fas fa-shopping-cart">{itemsInBasket}</i>
               )
             }
             onClick={toggleBasket}
@@ -65,7 +67,7 @@ function CustomerNavBar() {
       </div>
       <Switch>
         <Route path="/shop/:businessUrl">
-          <CustomerPage businessInfo={businessInfo} />
+          <CustomerPage businessInfo={businessInfo} setItemsInBasket={setItemsInBasket}/>
         </Route>
       </Switch>
     </Router>
