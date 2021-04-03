@@ -5,7 +5,7 @@
 .tutorial {
   background: var(--section-bg);
   text-align: center;
-  width: 100%;
+  max-width: 100%;
 }
 
 .heading,
@@ -54,10 +54,10 @@
 .video {
   margin: 4rem auto 0;
   height: 500px;
-  width: 50%;
+  width: 90%;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .tutorial {
     width: 100vw;
   }

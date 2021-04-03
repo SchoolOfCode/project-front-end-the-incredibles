@@ -17,7 +17,14 @@ function BusinessProfile({ businessInfo, editButton }) {
       {businessInfo && (
         <div className={container}>
           <IsBusinessOpen IsTrading={businessInfo.isTrading} />
-          <Button className="editBusinessPage" textContent={<span>Edit<i class="fas fa-edit"></i></span>} onClick={editButton.onClick} />
+          <>
+          {editButton && (
+          <Button 
+          className="editBusinessPage" 
+          textContent={<span>Edit<i 
+          class="fas fa-edit"></i></span>} 
+          onClick={editButton.onClick} />)}
+          </>
           <div className={contentContainer}>
             <h2 className={businessName}>{businessInfo.businessName}</h2>
             <p className={businessAbout}>{businessInfo.primaryEmail}</p>

@@ -1,7 +1,7 @@
 .currentProduct {
     padding-bottom: 1rem;
     position: relative;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
 }
 .currentProduct::before{
     background: var(--gray);

@@ -9,12 +9,13 @@ import {
 } from './AddProductsForm.module.css';
 
 function AddProductsForm({ addProduct }) {
-	const [ productForm, setProductForm ] = useState({
+	const defaultProduct = {
 		productImage : '',
 		productName  : '',
-		productPrice : null,
-		quantity     : 1,
-	});
+		productPrice : 0.00,
+		quantity     : 0,
+	};
+	const [ productForm, setProductForm ] = useState(defaultProduct);
 
 	const updateBlob = (img) =>
 		setProductForm({ ...productForm, productImage: img });
@@ -32,6 +33,7 @@ function AddProductsForm({ addProduct }) {
 							...productForm,
 							productName : e.target.value,
 						})}
+					currentInfo={productForm.productName}
 				/>
 				<div className={smallInputs}>
 					<Input
@@ -43,6 +45,7 @@ function AddProductsForm({ addProduct }) {
 								...productForm,
 								productPrice : e.target.value,
 							})}
+							currentInfo={productForm.productPrice}
 					/>
 					<Input
 						type='number'
@@ -53,6 +56,7 @@ function AddProductsForm({ addProduct }) {
 								...productForm,
 								quantity : e.target.value,
 							})}
+							currentInfo={productForm.quantity}
 					/>
 					<Blob
 						updateInfo={updateBlob}
@@ -66,6 +70,8 @@ function AddProductsForm({ addProduct }) {
 				onClick={(e) => {
 					e.preventDefault();
 					addProduct(productForm);
+					/*resets felids*/
+					setProductForm(defaultProduct);
 				}}
 			/>
 		</form>
