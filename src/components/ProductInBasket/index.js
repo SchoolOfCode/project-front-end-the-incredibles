@@ -4,7 +4,6 @@ import { productContainer } from './ProductInBasket.module.css';
 
 function ProductInBasket({
 	product,
-	setProduct,
 	onAdd,
 	onRemoveOne,
 	onRemoveAll,

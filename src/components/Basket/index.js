@@ -3,10 +3,17 @@ import { basket } from "./Basket.module.css";
 import Stripe from "../Stripe";
 
 
+
 function Basket({ inBasket, onRemoveAll, onRemoveOne, onAdd }) {
-  const total = inBasket.reduce((acc, curr) =>  acc += (parseInt(curr.productPrice) * parseInt(curr.quantityInBasket) * 100), 0);
-  
- 
+  function reduceBasket(acc, curr) {
+    const price = curr.productPrice
+    const quantity = curr.quantityInBasket
+    const currTotal = (price * quantity) * 100;
+
+    return acc + currTotal;
+  }
+  const total = inBasket.reduce((acc, curr) => reduceBasket(acc, curr), 0.00);
+
   return (
     <div className={`${basket} basket`}>
       <h2>Basket</h2>
