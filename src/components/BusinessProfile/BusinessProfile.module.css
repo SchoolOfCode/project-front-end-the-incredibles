@@ -1,73 +1,78 @@
 .container {
-  background: white;
-  padding: 2em 2em 1em;
-  max-width: 500px;
-  position: relative;
-  margin-left: 10%;
-  /*covers nav box shadow*/
-  z-index: 3;
+	background: white;
+	padding: 2em 2em 1em;
+	max-width: 500px;
+	position: relative;
+	margin-left: 10%;
+	/*covers nav box shadow*/
+	z-index: 3;
 }
 
 .contentContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: ". img" "name img" "about about";
-  position: relative;
-  align-items: center;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: ". img" "name img" "about about";
+	position: relative;
+	align-items: center;
 }
 
 .businessImg {
-  border-radius: 50%;
-  object-fit: cover;
-  width: 200px;
-  height: 200px;
+	border-radius: 50%;
+	object-fit: cover;
+	width: 200px;
+	height: 200px;
 }
 
 .businessName {
-  font-size: 2.5rem;
-  line-height: 1.25;
-  margin-top: 0.25em;
+	font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+	line-height: 1.25;
+	margin-top: 0.25em;
 }
 .businessAbout {
-  margin: 1em 0 0;
-  padding: 1em 0;
-  border-top: 1px solid var(--accent-color);
-  border-bottom: 1px solid var(--accent-color);
-  grid-area: about;
+	margin: 1em 0 0;
+	padding: 1em 0;
+	border-top: 1px solid var(--accent-color);
+	border-bottom: 1px solid var(--accent-color);
+	grid-area: about;
 }
 
 /*center at break*/
 @media (max-width: 700px) {
-  .container {
-    background: white;
-    /*covers nav box shadow*/
-    z-index: 3;
-    margin: 0px;
-    padding: 0;
-  }
-  .contentContainer {
-    grid-template-areas: "img" "name" "about";
-    grid-template-columns: 1fr;
-    text-align: center;
-    place-items: center;
-    padding-top: 2rem;
-  }
-  .businessImg {
-    width: 200px;
-    height: 200px;
-  }
+	.container {
+		background: white;
+		/*covers nav box shadow*/
+		z-index: 3;
+		margin: 0px;
+		padding: 0;
+	}
+	.contentContainer {
+		grid-template-areas: "img" "name" "about";
+		grid-template-columns: 1fr;
+		text-align: center;
+		place-items: center;
+		padding-top: 2rem;
+	}
+	.businessName {
+		margin-top: 1.5rem;
+	}
+	.businessImg {
+		width: 200px;
+		height: 200px;
+	}
 }
 /*change to column when small*/
- @media (max-width: 500px) {
-  .contentContainer {
-    grid-template-areas: "img" "name" "about";
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  /*centre image below name*/
-.businessImg {
-  height: 150px;
-  margin: 1rem auto 0;
-  width: 150px;
+@media (max-width: 500px) {
+	.contentContainer {
+		grid-template-areas: "img" "name" "about";
+		grid-template-columns: 1fr;
+		text-align: center;
+	}
+	/*centre image below name*/
+	.businessImg {
+		height: 150px;
+		margin: 1rem auto 0;
+		width: 150px;
+	}
 }
-} 
