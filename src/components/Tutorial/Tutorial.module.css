@@ -54,7 +54,7 @@
 .video {
   margin: 4rem auto 0;
   height: 500px;
-  width: 90%;
+  width: 50%;
 }
 
 @media (max-width: 800px) {
