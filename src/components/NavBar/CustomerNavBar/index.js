@@ -20,7 +20,7 @@ function CustomerNavBar() {
 	const [ itemsInBasket, setItemsInBasket ] = useState(0);
 	const { businessUrl } = useParams();
 	//this has to stay as store for now
-	const { isLoading, data: businessInfo } = useGet(`store/${businessUrl}`);
+	const { isLoading, data: businessInfo } = useGet(`shop/${businessUrl}`);
 
 	//
 	function toggleBasket() {
