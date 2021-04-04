@@ -1,13 +1,12 @@
-import Button from '../Buttons/Button';
+import Button from "../Buttons/Button";
 import IsBusinessOpen from "../IsBusinessOpen";
 import {
   businessAbout,
   businessImg,
   businessName,
   container,
-  contentContainer
+  contentContainer,
 } from "./BusinessProfile.module.css";
-
 
 function BusinessProfile({ businessInfo, editButton }) {
   //destructuring businessInfo object (which is our mockData) and displaying in on the page
@@ -18,12 +17,17 @@ function BusinessProfile({ businessInfo, editButton }) {
         <div className={container}>
           <IsBusinessOpen IsTrading={businessInfo.isTrading} />
           <>
-          {editButton && (
-          <Button 
-          className="editBusinessPage" 
-          textContent={<span>Edit<i 
-          class="fas fa-edit"></i></span>} 
-          onClick={editButton.onClick} />)}
+            {editButton && (
+              <Button
+                className="editBusinessPage"
+                textContent={
+                  <span>
+                    Edit<i className="fas fa-edit"></i>
+                  </span>
+                }
+                onClick={editButton.onClick}
+              />
+            )}
           </>
           <div className={contentContainer}>
             <h2 className={businessName}>{businessInfo.businessName}</h2>

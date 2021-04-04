@@ -7,14 +7,14 @@ function Footer({ textContent = "made with love in birmingham" }) {
     <div className={styles.footerFlex}>
       <div className={styles.contentFlex}>
         <p>
-          <i class="fas fa-heart"></i>
+          <i className="fas fa-heart"></i>
           {textContent}
         </p>
         <a
           className={styles.gitLink}
           href="https://github.com/orgs/SchoolOfCode/teams/the-incredibles/repositories"
         >
-          <i class="fab fa-github" />
+          <i className="fab fa-github" />
         </a>
       </div>
     </div>
