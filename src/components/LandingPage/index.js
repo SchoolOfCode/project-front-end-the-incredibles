@@ -1,6 +1,5 @@
 import React from 'react';
 import CallToAction from '../CallToAction';
-import Card from "./Card.png"
 import Profile from "./Profile.png"
 import Cards from "./Cards.png"
 import styles from './LandingPage.module.css';
