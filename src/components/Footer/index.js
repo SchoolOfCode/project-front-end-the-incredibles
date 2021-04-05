@@ -7,9 +7,7 @@ function Footer() {
     <div className={styles.footerFlex}>
       <div className={styles.contentFlex}>
         <p>
-          made with
-          <i className="fas fa-heart"></i>
-          in Birmingham
+          made with<i className="fas fa-heart footerHeart"></i>in Birmingham
         </p>
         <a
           className={styles.gitLink}

@@ -35,6 +35,8 @@
   transform: scale(1.15);
 }
 
+
+
 /*center with two columns*/
 @media (max-width: 500px) {
   .footerFlex {

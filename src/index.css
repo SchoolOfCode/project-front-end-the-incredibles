@@ -37,6 +37,12 @@ input {
   height: 80vh;
 }
 
+.footerHeart {
+  font-size: inherit!important;
+  margin: 0 2px 0 5px;
+  width: max-content;
+}
+
 /* show or hides basket */
 .showBasket {
   opacity: 1 !important;
