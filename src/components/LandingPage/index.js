@@ -1,6 +1,8 @@
 import React from 'react';
 import CallToAction from '../CallToAction';
-
+import Card from "./Card.png"
+import Profile from "./Profile.png"
+import Cards from "./Cards.png"
 import styles from './LandingPage.module.css';
 
 function LandingPage() {
@@ -10,10 +12,18 @@ function LandingPage() {
 				<CallToAction />
 			</div>
 			<div className={styles.feature}>
-				<img
-					src='https://images.unsplash.com/photo-1606074508174-6fa572bd2777?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'
-					alt='demo'
-				/>
+				<div className={styles.featureContainer}>
+					<img
+					className={styles.profileImg}
+					src={Profile}
+					alt='Example CartShop Profile'
+					/>
+					<img
+					className={styles.cardsImg}
+					src={Cards}
+					alt='Example CartShop Product Grid'
+					/>
+					</div>
 			</div>
 		</div>
 	);

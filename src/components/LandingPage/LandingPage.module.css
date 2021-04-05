@@ -26,13 +26,32 @@
   margin: 0 auto;
 }
 
-img {
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  border: 2px solid var(--white);
-  border-radius: 10px;
-  width: 400px;
-  height: 700px;
+.featureContainer {
+  border-radius: 20px;
+  display: grid;
+  grid-template-areas: "profile profile" "cards cards";
+  width: 60%;
+}
+
+.profileImg {
+  border-radius: 10px 10px 0 0;
+}
+.cardsImg{
+  border-radius: 0 0 10px 10px;
+}
+
+.profileImg,
+.cardsImg {
+  border: 5px solid white;
+  max-width: 100%;
+  height: auto;
   object-fit: cover;
+}
+.profileImg{
+  grid-area: profile;
+}
+.cardsImg{
+  grid-area: cards;
 }
 
 @media (max-width: 900px) {
