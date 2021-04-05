@@ -42,7 +42,7 @@ function useProductForm(products, setProducts) {
 	async function updateProduct(product) {
 		await fetch(
 			`${process.env
-				.REACT_APP_BACKEND_URL}/business/updatebyproduct/${product.id}`,
+				.REACT_APP_BACKEND_URL}/business/updatebyproduct/${product.productId}`,
 			{
 				method  : 'PUT',
 				body    : JSON.stringify({ ...product }),
