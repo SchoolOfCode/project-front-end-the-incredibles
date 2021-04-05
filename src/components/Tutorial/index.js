@@ -80,7 +80,7 @@ function Tutorial() {
       <section>
         <YouTube
           className={video}
-          video={getId("https://youtu.be/di4KLmuvOxA")}
+          video={getId("https://youtu.be/OKHJF3ksx4w")}
         />
       </section>
       <section className={mission}>
