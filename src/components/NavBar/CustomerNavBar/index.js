@@ -7,7 +7,7 @@ import {
   Switch,
   useParams,
 } from "react-router-dom";
-import useGet from "../../../hooks/useGet";
+import useGetForCustomer from "../../../hooks/useGetForCustomer";
 import "../../../index.css";
 import Button from "../../Buttons/Button";
 import CustomerPage from "../../CustomerPage";
@@ -20,7 +20,7 @@ function CustomerNavBar() {
   const [itemsInBasket, setItemsInBasket] = useState(0);
   const { businessUrl } = useParams();
   //this has to stay as store for now
-  const { isLoading, data: businessInfo } = useGet(`shop/${businessUrl}`);
+  const { isLoading, data: businessInfo } = useGetForCustomer(`shop/${businessUrl}`);
 
   //
   function toggleBasket() {

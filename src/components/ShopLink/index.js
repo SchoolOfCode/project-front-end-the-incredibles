@@ -2,7 +2,7 @@ import { shopLink, link, flexContainer } from "./StoreLink.module.css";
 
 function ShopLink({ businessName }) {
   const linkAddress = `https://cartshop.netlify.app/shop/${businessName
-    .replace(/ /g, "-")}`;
+    .replace(/ /g, "-").toLowerCase()}`;
   return (
     <div className={flexContainer}>
       <p className={shopLink}>

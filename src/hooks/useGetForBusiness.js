@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function useGet(query, edit) {
+function useGetForBusiness(auth0Id, edit) {
   const [isLoading, setIsLoading] = useState(true);
   const [fetchedData, setFetchedData] = useState(null);
 
@@ -8,7 +8,7 @@ function useGet(query, edit) {
     setIsLoading(true);
 
     try {
-      let res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/${query}`, {
+      let res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/${auth0Id}`, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       });
@@ -21,7 +21,7 @@ function useGet(query, edit) {
         {
           method: "POST",
           body: JSON.stringify({
-            auth0Id: query,
+            auth0Id: auth0Id,
           }),
           headers: { "Content-Type": "application/json" },
         }
@@ -33,6 +33,7 @@ function useGet(query, edit) {
 
     setIsLoading(false);
   };
+
   useEffect(() => {
     getData();
     // eslint-disable-next-line
@@ -45,4 +46,4 @@ function useGet(query, edit) {
   };
 }
 
-export default useGet;
+export default useGetForBusiness;

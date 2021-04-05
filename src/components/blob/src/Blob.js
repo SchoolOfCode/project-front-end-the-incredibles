@@ -71,7 +71,7 @@ function Blob({ updateInfo, currentImage = "" }) {
   return (
     <div>
       {storageConfigured && !uploading && DisplayForm()}
-      {storageConfigured && uploading && <Spinner color="#FF5A5F" size="l" />}
+      {storageConfigured && uploading && <Spinner color="#FF5A5F" size="xl" />}
       <hr />
       {storageConfigured &&
         currentImage.length > 0 &&

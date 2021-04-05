@@ -1,17 +1,18 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { useState } from "react";
-import useGet from "../../hooks/useGet";
+import useGetForBusiness from "../../hooks/useGetForBusiness";
 import BusinessPageEdit from "./BusinessPageEdit";
 import BusinessPageStatic from "./BusinessPageStatic";
 import ShopLink from "../ShopLink";
 import { Spinner } from "@chakra-ui/react";
 import "../../index.css";
 
+
 function BusinessPage() {
   const { user } = useAuth0();
   const [canEdit, setCanEdit] = useState(true);
 
-  const { isLoading, data: businessInfo, setData: setBusinessInfo } = useGet(
+  const { isLoading, data: businessInfo, setData: setBusinessInfo } = useGetForBusiness(
     user.sub,
     canEdit
   );
