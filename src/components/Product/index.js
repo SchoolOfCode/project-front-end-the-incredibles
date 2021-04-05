@@ -7,25 +7,14 @@ import {
 	currentProductInfo,
 } from './Product.module.css';
 
-export default function Product({ product, removeProduct, deleteProduct }) {
+export default function Product({ product, removeProduct, updateProduct }) {
 	const [ canEditProduct, setCanEditProduct ] = useState(false);
-
 	function toggleCanEdit() {
 		setCanEditProduct(!canEditProduct);
 	}
-
-	async function editProduct(id) {
-		await fetch(
-			`${process.env
-				.REACT_APP_BACKEND_URL}/business/updatebyproduct/${id}`,
-			{
-				method  : 'PUT',
-				body    : JSON.stringify({ ...productData }),
-				headers : { 'Content-Type': 'application/json' },
-			}
-		);
-	}
+	
 	const [ productData, setProductData ] = useState({ ...product });
+	
 
 	function updateData(value, field) {
 		setProductData({ ...productData, [field]: value });
@@ -71,7 +60,7 @@ export default function Product({ product, removeProduct, deleteProduct }) {
 						className='submitProduct'
 						textContent='submit'
 						onClick={() => {
-							editProduct(productData.productId);
+							updateProduct(productData);
 							toggleCanEdit();
 						}}
 					/>
@@ -84,10 +73,7 @@ export default function Product({ product, removeProduct, deleteProduct }) {
 					<Button
 						className='removeCurrentProduct'
 						textContent='remove'
-						onClick={() => {
-							removeProduct();
-							deleteProduct(product.productId);
-						}}
+						onClick={removeProduct}
 					/>
 				</div>
 			)}

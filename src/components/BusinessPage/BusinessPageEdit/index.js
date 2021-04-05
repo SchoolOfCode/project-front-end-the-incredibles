@@ -1,5 +1,6 @@
-import React from "react";
-import useGetInfo from "../../../hooks/useUpdateInfo";
+import {useState} from "react";
+import useProductForm from '../../../hooks/useProductForm';
+import useGetInfo from "../../../hooks/useUpdateBusiness";
 import AddProductsForm from "../../AddProductsForm";
 import BusinessInfoForm from "../../BusinessInfoForm";
 import Button from "../../Buttons/Button";
@@ -7,7 +8,10 @@ import CurrentProductList from "../../CurrentPoductsList";
 import { container, publishContainer } from "./BusinessPageEdit.module.css";
 
 function BusinessPageEdit({ businessInfo, setBusinessInfo, toggleCanEdit }) {
-  const { updateData, removeProduct, addProduct, updateDatabase } = useGetInfo(
+  const [products, setProducts] = useState([...businessInfo.products]);
+
+  const {updateProduct, removeProduct, addProduct} = useProductForm(products, setProducts);
+  const { updateBusiness, updateData} = useGetInfo(
     businessInfo,
     setBusinessInfo
   );
@@ -18,8 +22,8 @@ function BusinessPageEdit({ businessInfo, setBusinessInfo, toggleCanEdit }) {
 
       <AddProductsForm addProduct={addProduct} />
       <CurrentProductList
-        // updateProducts = {}
-        products={businessInfo.products}
+        products={products}
+        updateProduct={updateProduct}
         removeProduct={removeProduct}
       />
 
@@ -29,7 +33,7 @@ function BusinessPageEdit({ businessInfo, setBusinessInfo, toggleCanEdit }) {
           textContent="Publish CartShop"
           onClick={
             () => {
-              updateDatabase();
+              updateBusiness();
               toggleCanEdit();
             }
           }
