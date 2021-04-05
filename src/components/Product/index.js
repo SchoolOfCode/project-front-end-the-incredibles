@@ -35,7 +35,7 @@ export default function Product({ product, removeProduct, deleteProduct }) {
 		<li className={currentProduct}>
       	<Button
 				className='updateProductEdit'
-				textContent='edit'
+				textContent={canEditProduct ? 'X' : "edit"}
 				onClick={() => {
 					toggleCanEdit();
 				}}
