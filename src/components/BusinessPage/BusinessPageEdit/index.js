@@ -1,6 +1,6 @@
 import {useState} from "react";
 import useProductForm from '../../../hooks/useProductForm';
-import useGetInfo from "../../../hooks/useUpdateBusiness";
+import useUpdateBusiness from "../../../hooks/useUpdateBusiness";
 import AddProductsForm from "../../AddProductsForm";
 import BusinessInfoForm from "../../BusinessInfoForm";
 import Button from "../../Buttons/Button";
@@ -11,7 +11,7 @@ function BusinessPageEdit({ businessInfo, setBusinessInfo, toggleCanEdit }) {
   const [products, setProducts] = useState([...businessInfo.products]);
 
   const {updateProduct, removeProduct, addProduct} = useProductForm(products, setProducts, businessInfo.id);
-  const { updateBusiness, updateData} = useGetInfo(
+  const { updateBusiness, updateData} = useUpdateBusiness(
     businessInfo,
     setBusinessInfo
   );
