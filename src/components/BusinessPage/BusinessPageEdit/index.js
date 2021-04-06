@@ -10,7 +10,7 @@ import { container, publishContainer } from "./BusinessPageEdit.module.css";
 function BusinessPageEdit({ businessInfo, setBusinessInfo, toggleCanEdit }) {
   const [products, setProducts] = useState([...businessInfo.products]);
 
-  const {updateProduct, removeProduct, addProduct} = useProductForm(products, setProducts);
+  const {updateProduct, removeProduct, addProduct} = useProductForm(products, setProducts, businessInfo.id);
   const { updateBusiness, updateData} = useGetInfo(
     businessInfo,
     setBusinessInfo
@@ -21,6 +21,8 @@ function BusinessPageEdit({ businessInfo, setBusinessInfo, toggleCanEdit }) {
       <BusinessInfoForm updateData={updateData} businessInfo={businessInfo} />
 
       <AddProductsForm addProduct={addProduct} />
+
+      
       <CurrentProductList
         products={products}
         updateProduct={updateProduct}

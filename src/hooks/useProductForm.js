@@ -1,8 +1,8 @@
 
 
-function useProductForm(products, setProducts) {
+function useProductForm(products, setProducts, id) {
     //sets businessId to be used for add and update (avoids overwritng it later)
-    const businessId = products[0].businessId;
+    const businessId = id;
 
 	async function removeProduct(id) {
 		console.log(id);

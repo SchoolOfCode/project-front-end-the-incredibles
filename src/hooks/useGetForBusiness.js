@@ -27,7 +27,7 @@ function useGetForBusiness(auth0Id, edit) {
         }
       );
       let data = await res.json();
-      
+
       setFetchedData(data);
     }
 
@@ -38,7 +38,7 @@ function useGetForBusiness(auth0Id, edit) {
     getData();
     // eslint-disable-next-line
   }, [edit]);
-
+  console.log(fetchedData);
   return {
     isLoading,
     data: fetchedData,
