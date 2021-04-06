@@ -14,12 +14,12 @@ function ProductInBasket({
 	return (
 		<div className={productContainer}>
 			<p>{product.productName}</p>
-			<p>{product.quantityInBasket}</p>
 			<Button
 				textContent='-'
 				onClick={onRemoveOne}
 				disabled={oneInBasket}
 			/>
+			<p>{product.quantityInBasket}</p>
 			<Button textContent='+' onClick={onAdd} disabled={outOfStock} />
 			<Button
 				lassNames='removeProduct'
