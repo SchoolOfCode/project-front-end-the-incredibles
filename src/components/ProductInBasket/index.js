@@ -22,7 +22,7 @@ function ProductInBasket({
 			<p>{product.quantityInBasket}</p>
 			<Button textContent='+' onClick={onAdd} disabled={outOfStock} />
 			<Button
-				lassNames='removeProduct'
+				classNames='removeProduct'
 				textContent='remove'
 				onClick={onRemoveAll}
 			/>
