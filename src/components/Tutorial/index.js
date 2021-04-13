@@ -28,16 +28,15 @@ function Tutorial() {
         <br />
         <p>Watch our tutorial or read on......</p>
         <br />
-        <p>Here's how to get started in 5 easy steps:</p>
+        <p>Here's how to get started in 4 easy steps:</p>
         <br />
         <ul>
           <li>
             <p>
-              {" "}
               To get set up, just click the sign up button on our home page,
               create a user ID and password and you'll be taken to our business
               details page where you can add the details and logo that will be
-              displayed on the unique cart shop page for your business.{" "}
+              displayed on the unique cart shop page for your business.
             </p>
             <br />
             <p>
