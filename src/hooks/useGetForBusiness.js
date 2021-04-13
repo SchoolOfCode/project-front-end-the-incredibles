@@ -13,7 +13,7 @@ function useGetForBusiness(auth0Id, edit) {
         headers: { "Content-Type": "application/json" },
       });
       let data = await res.json();
-      
+
       setFetchedData(data);
     } catch {
       let res = await fetch(
@@ -38,7 +38,6 @@ function useGetForBusiness(auth0Id, edit) {
     getData();
     // eslint-disable-next-line
   }, [edit]);
-  console.log(fetchedData);
   return {
     isLoading,
     data: fetchedData,

@@ -53,7 +53,6 @@ const createBlobInContainer = async (
 	// upload file
 	let item = await blobClient.uploadBrowserData(file, options);
 	let data = await item._response.request.url;
-	console.log(`TESTING URL ${data}`);
 	return data;
 };
 // </snippet_createBlobInContainer>
