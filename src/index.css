@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 :root {
   --accent-color: #ff5a5f;
   --white: #f1f1f1;
   --black: #1e1e24;
   --gray: #7d7d7e;
-  --main-font-family: Roboto;
+  --main-font-family: 'Poppins', sans-serif;
 }
 
 * {
@@ -19,7 +21,6 @@ html {
 body {
   /*hides horizontal scroll for nav*/
   margin: 0;
-  font-family: var(--main-font-family);
   font-size: 1.25rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

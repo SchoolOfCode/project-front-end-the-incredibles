@@ -1,8 +1,9 @@
 .app {
 	min-height: 100vh;
 	/*allows for easy position of nav and footer*/
-	 display: grid;
-    /* let content auto to occupy remaining height and pass value in fit-content with min-height for header and footer */
-    grid-template-rows: min-content auto min-content;
-    grid-template-areas: "header" "main" "footer";
+	display: grid;
+	font-family: var(--main-font-family);
+	/* let content auto to occupy remaining height and pass value in fit-content with min-height for header and footer */
+	grid-template-rows: min-content auto min-content;
+	grid-template-areas: "header" "main" "footer";
 }
