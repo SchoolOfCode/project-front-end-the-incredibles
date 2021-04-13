@@ -45,7 +45,7 @@ function Stripe({ total }) {
       {
         method: "POST",
         body: JSON.stringify({
-          cancelUrl: `https://cartshop.netlify.app${pathname}`,  // needs to be amended to actual store customer is in.
+          cancelUrl: `https://cartshop.netlify.app${pathname}`,  
           successUrl: `https://cartshop.netlify.app${pathname}`,
           payment_method_types: ["card"],
           lineItems: [
@@ -64,7 +64,6 @@ function Stripe({ total }) {
         }),
         headers: {
           "Content-Type": "application/json",
-          //   Authorization: `Bearer ${process.env.REACT_APP_STRIPE_CODE}`,
         },
       }
     );
