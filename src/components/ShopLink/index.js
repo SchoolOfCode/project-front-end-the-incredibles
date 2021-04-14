@@ -8,8 +8,7 @@ function ShopLink({ businessName }) {
       <p className={shopLink}>
         Your personal shop link is:
         <a className={link} href={linkAddress}>
-          {" "}
-          {linkAddress}{" "}
+          {linkAddress}
         </a>
       </p>
     </div>

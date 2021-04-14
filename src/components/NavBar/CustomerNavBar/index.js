@@ -18,8 +18,8 @@ function CustomerNavBar() {
 	//useState hook to track whether basket button is clicked
 	const [ basketOpen, setBasketOpen ] = useState(false);
 	const [ itemsInBasket, setItemsInBasket ] = useState(0);
+	// hook from React Router to extract business URL
 	const { businessUrl } = useParams();
-	//this has to stay as store for now
 	const { isLoading, data: businessInfo } = useGetForCustomer(
 		`shop/${businessUrl}`
 	);
