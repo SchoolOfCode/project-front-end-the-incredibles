@@ -1,41 +1,30 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import Button from "../Buttons/Button";
-import Message from "../Message";
-import {useLocation} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_CODE);
 
 function Stripe({ total }) {
-  const {pathname } = useLocation();
-
-  const [message, setMessage] = useState("");
-  const [redirect, setRedirect] = useState("");
-
+  const { pathname } = useLocation();
   useEffect(() => {
     // Check to see if this is a redirect back from Checkout
     const query = new URLSearchParams(window.location.search);
 
     if (query.get("success")) {
-      setMessage("Order placed! You will receive an email confirmation.");
-      setRedirect("You will be redirected to the checkout in 5 seconds");
-      //we can add a button here to go back to the home back.
-      setTimeout(function () {
-        window.location.reload();
-      }, 10000);
-      // setTimeout(function () {
-      //   window.location.replace("http://localhost:3000/store");
-      // }, 10000);
+      alert("Order placed! You will receive an email confirmation.");
+      window.location.replace(`https://cartshop.netlify.app${pathname}`);
     }
 
     if (query.get("canceled")) {
-      setMessage(
-        "Order canceled -- continue to shop around and checkout when you're ready."
+      alert(
+        "Order canceled - continue to shop around and checkout when you're ready."
       );
+      window.location.replace(`https://cartshop.netlify.app${pathname}`);
     }
-  }, []);
+  }, [pathname]);
 
   const handleClick = async (count) => {
     const stripe = await stripePromise;
@@ -45,8 +34,8 @@ function Stripe({ total }) {
       {
         method: "POST",
         body: JSON.stringify({
-          cancelUrl: `https://cartshop.netlify.app${pathname}`,  
-          successUrl: `https://cartshop.netlify.app${pathname}`,
+          cancelUrl: `https://cartshop.netlify.app${pathname}?canceled=true`,
+          successUrl: `https://cartshop.netlify.app${pathname}?success=true`,
           payment_method_types: ["card"],
           lineItems: [
             {
@@ -82,9 +71,7 @@ function Stripe({ total }) {
     }
   };
 
-  return message ? (
-    <Message message={message} redirect={redirect} />
-  ) : (
+  return (
     <Button
       className="blackBtn"
       textContent="Checkout"
